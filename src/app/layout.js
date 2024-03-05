@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-            <Navbar/>
+            
             {children}
           </ThemeProvider>
         </AppRouterCacheProvider>
