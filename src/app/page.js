@@ -9,7 +9,6 @@ export default function Home() {
     height: '100%',
     overflowY: 'auto',
   };
-  const sub1 = H1();
   return (
     <RootLayout style={styles}>
       

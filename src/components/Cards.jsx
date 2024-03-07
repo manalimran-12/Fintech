@@ -2,8 +2,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import { text } from '../styling';
-
+import {H1,text} from '../styling';
 export const Cards = ({ ImageUrl, Title, Description }) => {
   const tech = text({
     fontSize: '1.1em',
@@ -31,7 +30,7 @@ export const Cards = ({ ImageUrl, Title, Description }) => {
   const buttontxt = text({ fontSize: '1.16em', fontWeight: '600', left: '0px' });
 
   return (
-    <Container sx={{ position: 'relative', top: '-2em'}}>
+    <Container sx={{ position: 'relative', top: '-2em' }}>
       <Box
         sx={{
           backgroundImage: `url(${ImageUrl})`,

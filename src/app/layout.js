@@ -19,10 +19,6 @@ export default function RootLayout({ children }) {
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-<<<<<<< HEAD
-            
-=======
->>>>>>> 58d060c9e656d6ba59a44d325eb3f8921c0cfcfa
             {children}
           </ThemeProvider>
         </AppRouterCacheProvider>
