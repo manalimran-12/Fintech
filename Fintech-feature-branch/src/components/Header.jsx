@@ -123,6 +123,7 @@
 import { Box, Typography, Button, useMediaQuery, createTheme } from '@mui/material';
 import Navbar from "@/components/Navbar";
 import Image from 'next/image';
+import Services from "@/components/Services"
 
 const Home = () => {
   const theme = createTheme({
@@ -142,14 +143,14 @@ const Home = () => {
   const contentData = {
     box: {
       position: 'absolute',
-      width: '100%', 
-      height: isSmScreen ? '200vh' : '120vh', 
+      width: '100%',
+      height: isSmScreen ? '200vh' : '120vh',
       background: 'linear-gradient(180deg, #351D5B 0%, #272727 53.33%)',
       overflow: 'hidden',
     },
     innerBox: {
-      width: '55%', 
-      marginLeft: isSmScreen? '20px': '90px',
+      width: '55%',
+      marginLeft: isSmScreen ? '20px' : '90px',
       marginTop: isSmScreen ? '20px' : '110px',
       marginBottom: '10px',
     },
@@ -182,7 +183,7 @@ const Home = () => {
       fontSize: isSmScreen ? '12px' : '20px',
       color: 'white',
       backgroundColor: '#D8B150',
-      width: '150px', 
+      width: '150px',
       height: isSmScreen ? '30px' : '49.19px',
       borderRadius: '9837.85px',
       textTransform: 'capitalize',
@@ -194,7 +195,7 @@ const Home = () => {
       fontFamily: 'Montserrat',
       fontSize: isSmScreen ? '12px' : '20px',
       color: 'white',
-      width: '180px', 
+      width: '180px',
       height: isSmScreen ? '30px' : '49.19px',
       borderRadius: '9837.85px',
       textTransform: 'capitalize',
@@ -208,49 +209,52 @@ const Home = () => {
   };
 
   return (
-    <Box sx={contentData.box}>
-      <Navbar />
-      <Box sx={contentData.innerBox}>
-        <Typography variant="h4" sx={contentData.title}>
-          Virtual Islamic Banking
-        </Typography>
-        <Image src='/line 1.png' width={isSmScreen ? 153.1 : 263} height={4} style={{ paddingTop: '0px' }} />
-        <Typography variant="h5" sx={contentData.subTitle}>
-          Transforming Finance
-        </Typography>
-        <Typography variant="h5" sx={{ ...contentData.subTitle, color: '#FFFFFF', fontSize: isSmScreen ? '17px' : '30px' }}>
-          with Fast & Easy!
-        </Typography>
-        <Typography variant='body2' sx={contentData.description}>
-          From Virtual Islamic/ Digital Banking and payment platforms to asset management, our FinTech products encompass a wide spectrum of offerings that are reshaping the financial landscape.
-        </Typography>
-        <Box sx={{ display: 'flex', flexDirection: isSmScreen ? 'column' : 'row', gap: isSmScreen ? '10px' : '20px', marginTop: isSmScreen ? '18px' : '35px' }}>
-          <Button variant='text' sx={contentData.getStartedButton}>
-            Get Started
-          </Button>
-          <Button variant='text' endIcon={<Image src='/playCircle.png' width={24} height={24} /> }  sx={contentData.demoButton}>
-            See Live Demo
-          </Button>
+    <Box sx={{width:'100%', height:'280vh', position: 'absolute' }}>
+      <Box sx={contentData.box}>
+        <Navbar />
+        <Box sx={contentData.innerBox}>
+          <Typography variant="h4" sx={contentData.title}>
+            Virtual Islamic Banking
+          </Typography>
+          <Image src='/line 1.png' width={isSmScreen ? 153.1 : 263} height={4} style={{ paddingTop: '0px' }} />
+          <Typography variant="h5" sx={contentData.subTitle}>
+            Transforming Finance
+          </Typography>
+          <Typography variant="h5" sx={{ ...contentData.subTitle, color: '#FFFFFF', fontSize: isSmScreen ? '17px' : '30px' }}>
+            with Fast & Easy!
+          </Typography>
+          <Typography variant='body2' sx={contentData.description}>
+            From Virtual Islamic/ Digital Banking and payment platforms to asset management, our FinTech products encompass a wide spectrum of offerings that are reshaping the financial landscape.
+          </Typography>
+          <Box sx={{ display: 'flex', flexDirection: isSmScreen ? 'column' : 'row', gap: isSmScreen ? '10px' : '20px', marginTop: isSmScreen ? '18px' : '35px' }}>
+            <Button variant='text' sx={contentData.getStartedButton}>
+              Get Started
+            </Button>
+            <Button variant='text' endIcon={<Image src='/playCircle.png' width={24} height={24} />} sx={contentData.demoButton}>
+              See Live Demo
+            </Button>
+          </Box>
         </Box>
+        <Image src="/Vector.png" width={isSmScreen ? 90 : 240} height={isSmScreen ? 35 : 100} style={{ marginTop: isSmScreen ? '70px' : '15px' }} />
+        <div
+          style={{
+            ...contentData.gradientBox,
+            ...{
+              width: isSmScreen ? '60px' : '265.8px',
+              height: isSmScreen ? '100px' : '419.19px',
+              left: isSmScreen ? '220px' : 'calc(70% - 132.9px)',
+              top: isSmScreen ? '130px' : '156.45px',
+            },
+          }}
+        />
+        <div
+          style={{
+            ...contentData.gradientBox,
+            ...{ width: isSmScreen ? '14px' : '2.5vw', height: isSmScreen ? '8vh' : '32vh', left: isSmScreen ? '295px' : '1160px', top: isSmScreen ? '20vh' : '50vh' },
+          }}
+        />
       </Box>
-      <Image src="/Vector.png" width={isSmScreen ? 90 : 240} height={isSmScreen ? 35 : 100} style={{ marginTop: isSmScreen ? '70px' : '15px' }} />
-      <div
-        style={{
-          ...contentData.gradientBox,
-          ...{
-            width: isSmScreen ? '60px' : '265.8px',
-            height: isSmScreen ? '100px' : '419.19px',
-            left: isSmScreen ? '220px' : 'calc(70% - 132.9px)',
-            top: isSmScreen ? '130px' : '156.45px',
-          },
-        }}
-      />
-      <div
-        style={{
-          ...contentData.gradientBox,
-          ...{ width: isSmScreen ? '14px' : '2.5vw', height: isSmScreen ? '8vh' : '32vh', left: isSmScreen ? '295px' : '1160px', top: isSmScreen ? '20vh' : '50vh' },
-        }}
-      />
+      <Services/>
     </Box>
   );
 };
