@@ -5,6 +5,7 @@ import Box from '@mui/material/Box'
 import { Cards } from './Cards';
 import { H1, text,button} from '../styling';
 import { Grid } from '@mui/material';
+import Foo from '@/components/Foo'
 import { NewsLetter } from '@/components/NewsLetter';
 
 export const BlogSection = () => {
@@ -61,6 +62,7 @@ export const BlogSection = () => {
         <img style={{ height: '50%', width: '12%', position: 'relative',top:'2px' }} src='./arrow.png' alt="Arrow Icon" />
       </button>
       <NewsLetter/> 
+      <Foo/>
     </Box>
     
   );

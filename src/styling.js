@@ -1,4 +1,5 @@
 'use client'
+import { Margin } from '@mui/icons-material';
 import { styled } from '@mui/system';
 export const H1 = (additionalStyles = {}) => ({
     fontFamily: 'Roboto,sans-serif',
@@ -36,6 +37,7 @@ export const box =(additionalStyles={})=>({
   height:'14rem',
   position: 'relative',
   left: '8%', 
+  marginBottom:'5em',
   ...additionalStyles,
 })
 
