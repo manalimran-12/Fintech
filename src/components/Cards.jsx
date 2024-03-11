@@ -1,88 +1,65 @@
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-import {H1,text} from '../styling';
-export const Cards = ({ ImageUrl, Title, Description }) => {
-  const tech = text({
-    fontSize: '1.1em',
-    left: '1em',
-    fontWeight: '0',
-    letterSpacing: '0.7px',
-    top: '.2em',
-  });
-  const smalltxt = text({
-    fontSize: '1.25em',
-    fontWeight: '500',
-    top: '10.5em',
-    letterSpacing: '0px',
-    left: '1.25em',
-    
-  });
-  const smalltxt1 = text({
-    fontSize: '0.85em',
-    fontWeight: '400',
-    top: '17em',
-    letterSpacing: '0px',
-    left: '1.75em',
-    width: '80%',
-  });
-  const buttontxt = text({ fontSize: '1.16em', fontWeight: '600', left: '0px' });
+import { Box, Card, CardContent, Typography, useMediaQuery } from "@mui/material";
+import Image from 'next/image';
 
+const Cards = () => {
+  const isSmScreen = useMediaQuery("(max-width:600px)");
+  const isMdScreen = useMediaQuery("(min-width: 600px) and (max-width: 1024px)");
+  const isIpadProScreen = useMediaQuery("(min-width: 1024px) and (max-width: 1024px)");
+
+  const cardData = [
+    {
+      imageSrc: "/card1.png",
+      title: "Digital Financing",
+      description: "This term refers to the impact of new technologies on the financial services industry. It includes a variety of products, applications that have transformed the traditional way.",
+    },
+    {
+      imageSrc: "/card2.png",
+      title: "Digital Investment",
+      description: "This is a digital solution that allows customers to save and invest money in stocks, shares, and investment funds through an automated platform.",
+    },
+    {
+      imageSrc: "/card3.png",
+      title: "Digital SME Commercial",
+      description: "This product caters to the SME sector and provides long-term financing for infrastructure development and industrial projects.",
+    },
+    {
+      imageSrc: "/card4.png",
+      title: "Low Cost Housing Finance",
+      description: "This product provides digital solutions for low-cost housing finance schemes. This creates employment and boosts demand in industries.",
+    },
+  ];
   return (
-    <Container sx={{ position: 'relative', top: '-2em' }}>
-      <Box
-        sx={{
-          backgroundImage: `url(${ImageUrl})`,
-          backgroundSize: '33em 22em',
-          backgroundPosition: '-9em',
-          height: '22em',
-          position:'relative',
-          width: '370px',
-          marginTop: '3px',
-          borderRadius: '0.6em',
-          boxShadow: '0px -40px 56px 0px inset #000000',
-        }}
-      >
-        <Box
+    <Box sx={{
+      width: '1558px',
+      height: '368px',
+      // left: 'calc(50% - 1558px/2)',
+      top: '3596px',
+      display: isSmScreen ? 'block' : 'flex',
+      flexDirection: isSmScreen ? 'column' : 'row',
+    }}>
+      {cardData.map((card, index) => (
+        <Card
+          key={index}
           sx={{
-            height: '5.6vh',
-            width: '85px',
-            backgroundColor: '#D8B150',
-            borderRadius: '2em',
-            position: 'absolute',
-            top: '1.65em',
-            left: '15.5em',
+            width: isSmScreen ? '230px' : (isMdScreen ? '165px' : '280px'),
+            height: isSmScreen ? '200px' : (isMdScreen ? '170px' : '250px'),
+            backgroundColor: '#313131',
+            boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.1)',
+            borderRadius: '14.4083px',
+            marginTop: isSmScreen ? '30px' : '60px',
+            marginLeft: index === 0 ? isSmScreen ? '4%' : (isMdScreen? '2.5%': '4%') : isSmScreen ? '4%' : (isMdScreen? '1%': '2%'), 
+            marginRight: isIpadProScreen? '75px' : ''
           }}
         >
-          <Typography style={tech}>Tech</Typography>
-        </Box>
-        <Box position='absolute'>
-          <Typography style={smalltxt}>{Title}</Typography>
-          <Typography style={smalltxt1}>{Description}</Typography>
-          <Button
-            sx={{
-              background: 'transparent',
-              border: 'none',
-              left: '1.25em',
-              top: '16.8em',
-              height: '2em',
-              
-            }}
-          >
-            <Typography style={buttontxt}>Know More</Typography>
-            <img
-              style={{
-                height: '1.5em',
-                width: '1.5em',
-                position: 'relative',
-              }}
-              src='./arrow.png'
-              alt="arrow"
-            />
-          </Button>
-        </Box>
-      </Box>
-    </Container>
+          <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <Image src={card.imageSrc} width={40} height={40} style={{ marginTop: isMdScreen ? '0px' : '12px', marginBottom: '10px' }} />
+            <Typography variant="h6" sx={{ fontStyle: 'Montserrat', fontSize: isSmScreen ? '15px' : (isMdScreen ? '14px' : '18.65px'), fontWeight: isSmScreen ? '500' : '700', lineHeight: isMdScreen ? '15px' : '22.73px', textAlign: 'center', color: '#FFFFFF' }}>{card.title}</Typography>
+            <Typography variant="body1" sx={{ fontStyle: 'Raleway', fontSize: isSmScreen ? '10px' : (isMdScreen ? "11px" : '15px'), fontWeight: isSmScreen ? '50' : '100', lineHeight: '20px', textAlign: 'center', marginTop: isMdScreen ? '14px' : '18px', color: 'white' }}>{card.description}</Typography>
+          </CardContent>
+        </Card>
+      ))}
+    </Box>
   );
 };
+
+export default Cards;
