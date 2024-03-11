@@ -1,29 +1,29 @@
 import { Box, Card, CardContent, Typography, useMediaQuery } from "@mui/material";
 import Image from 'next/image';
 
-const Card = () => {
+const Cards1 = () => {
   const isSmScreen = useMediaQuery("(max-width:600px)");
   const isMdScreen = useMediaQuery("(min-width: 600px) and (max-width: 1024px)");
   const isIpadProScreen = useMediaQuery("(min-width: 1024px) and (max-width: 1024px)");
 
   const cardData = [
     {
-      imageSrc: "/card1.png",
+      imageSrc: "/cards1.png",
       title: "Digital Financing",
       description: "This term refers to the impact of new technologies on the financial services industry. It includes a variety of products, applications that have transformed the traditional way.",
     },
     {
-      imageSrc: "/card2.png",
+      imageSrc: "/cards2.png",
       title: "Digital Investment",
       description: "This is a digital solution that allows customers to save and invest money in stocks, shares, and investment funds through an automated platform.",
     },
     {
-      imageSrc: "/card3.png",
+      imageSrc: "/cards3.png",
       title: "Digital SME Commercial",
       description: "This product caters to the SME sector and provides long-term financing for infrastructure development and industrial projects.",
     },
     {
-      imageSrc: "/card4.png",
+      imageSrc: "/cards4.png",
       title: "Low Cost Housing Finance",
       description: "This product provides digital solutions for low-cost housing finance schemes. This creates employment and boosts demand in industries.",
     },
@@ -62,4 +62,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default Cards1;

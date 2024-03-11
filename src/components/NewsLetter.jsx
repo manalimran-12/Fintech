@@ -14,7 +14,7 @@ export const NewsLetter =()=>{
     backgroundSize: '330px 180px, 300px 300px,120px 37px, cover', 
     backgroundPosition: '50px 100%, 750px 0px,200px 100%'});
     const yheader= text({color:'#D8B150',fontSize:'35px',fontWeight:'500',left:'0px'});
-    const input1=input({height:'3%'});
+    const input1=input({height : isSmallScreen? '12%':'22%'});
     const inputtxt =text({fontWeight:'100px',fontSize:'14px',top:'19%',left:'5%',
       width:'70%',background:'#444444',border:'none'});
     const inputbtn =button({width:isSmallScreen1?'70px':'30%',left:isSmallScreen1?'20%':'69.1%',position:'absolute',height:'85%',top:isSmallScreen1?'105%':'6.5%'});

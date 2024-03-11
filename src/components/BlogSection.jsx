@@ -12,7 +12,7 @@ export const BlogSection = () => {
   const Blogs = H1({});
   const isSmallScreen = window.innerWidth <= 600;
   const Headings = text({  top: '-1.6em'});
-  const Readmore = button({marginLeft: '43%'});
+  const Readmore = button({marginLeft: isSmallScreen?'12%' :'43%'});
   const H2yellow = text({ color: '#D8B150',position: 'absolute', left:isSmallScreen? '0em': '6.8em',top: isSmallScreen? '1em':'0em' });
   const smalltxt = text({ left:'7.5%', fontSize: '14px',width:'60%', fontWeight: '360', top: '-5em', letterSpacing: '-0.5px',marginTop:'45px'});
   const cardData = [
@@ -24,6 +24,7 @@ export const BlogSection = () => {
   return (
     <Box
     sx={{
+      
       overflowX: 'auto',
       position: 'absolute',
       left: '0px',
@@ -31,6 +32,7 @@ export const BlogSection = () => {
       minHeight: '100vh',
       background: '#272727',
       display: 'flex',
+      top:'110%',
       flexDirection: 'column',
       paddingTop: '10em',
     }}

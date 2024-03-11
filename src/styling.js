@@ -53,13 +53,12 @@ export const button =(additionalStyles={})=>({
   ...additionalStyles
 })
 
-export const input =(addistionStyles={})=>({
+export const input =(additionalStyles={})=>({
   width:'35%',
-  height:'22%',
   top:'30%',
   right:'9%',
   borderRadius:'60px',
   position:'absolute',
-  background: '#444444'
-
+  background: '#444444',
+  ...additionalStyles
 })
