@@ -1,6 +1,6 @@
 "use client"
 import { Box, Button, Typography, useMediaQuery, } from '@mui/material';
-import Cards from '@/components/Cards';
+import Card from '@/components/Card';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Image from 'next/image';
 const Services = () => {
@@ -42,7 +42,7 @@ const Services = () => {
                         Virtual Islamic & Digital Banking
                     </Typography>
                 </Box>
-                <Cards />
+                <Card />
                 <Button
                     endIcon={<ArrowForwardIcon />}
                     variant='text'
