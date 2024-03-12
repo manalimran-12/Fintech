@@ -4,6 +4,8 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import {H1,text} from '../styling';
 export const Cards = ({ ImageUrl, Title, Description }) => {
+  
+  const isSmallScreen = window.innerWidth <= 600;
   const tech = text({
     fontSize: '1.1em',
     left: '1em',
@@ -12,7 +14,7 @@ export const Cards = ({ ImageUrl, Title, Description }) => {
     top: '.2em',
   });
   const smalltxt = text({
-    fontSize: '1.25em',
+    fontSize: isSmallScreen?'1em':'1.25em',
     fontWeight: '500',
     top: '10.5em',
     letterSpacing: '0px',
@@ -20,14 +22,14 @@ export const Cards = ({ ImageUrl, Title, Description }) => {
     
   });
   const smalltxt1 = text({
-    fontSize: '0.85em',
+    fontSize: isSmallScreen?'0.75em':'0.85em',
     fontWeight: '400',
-    top: '17em',
+    top:isSmallScreen?'14em':'17em',
     letterSpacing: '0px',
     left: '1.75em',
     width: '80%',
   });
-  const buttontxt = text({ fontSize: '1.16em', fontWeight: '600', left: '0px' });
+  const buttontxt = text({ fontSize: '1.16em', fontWeight: '600', left: '0px',top:isSmallScreen?'-60px':'0px' });
 
   return (
     <Container sx={{ position: 'relative', top: '-2em' }}>
@@ -36,9 +38,9 @@ export const Cards = ({ ImageUrl, Title, Description }) => {
           backgroundImage: `url(${ImageUrl})`,
           backgroundSize: '33em 22em',
           backgroundPosition: '-9em',
-          height: '22em',
+          height:isSmallScreen?'18em': '22em',
           position:'relative',
-          width: '370px',
+          width: isSmallScreen?'300px':'370px',
           marginTop: '3px',
           borderRadius: '0.6em',
           boxShadow: '0px -40px 56px 0px inset #000000',
@@ -52,7 +54,7 @@ export const Cards = ({ ImageUrl, Title, Description }) => {
             borderRadius: '2em',
             position: 'absolute',
             top: '1.65em',
-            left: '15.5em',
+            left: isSmallScreen?'200px':'250px',
           }}
         >
           <Typography style={tech}>Tech</Typography>
@@ -76,6 +78,7 @@ export const Cards = ({ ImageUrl, Title, Description }) => {
                 height: '1.5em',
                 width: '1.5em',
                 position: 'relative',
+                top:isSmallScreen?'-60px':'0px' 
               }}
               src='./arrow.png'
               alt="arrow"

@@ -11,10 +11,10 @@ import { NewsLetter } from '@/components/NewsLetter';
 export const BlogSection = () => {
   const Blogs = H1({});
   const isSmallScreen = window.innerWidth <= 600;
-  const Headings = text({  top: '-1.6em'});
+  const Headings = text({  top: '-1.6em', fontSize:isSmallScreen?'20px':'30px'});
   const Readmore = button({marginLeft: isSmallScreen?'12%' :'43%'});
-  const H2yellow = text({ color: '#D8B150',position: 'absolute', left:isSmallScreen? '0em': '6.8em',top: isSmallScreen? '1em':'0em' });
-  const smalltxt = text({ left:'7.5%', fontSize: '14px',width:'60%', fontWeight: '360', top: '-5em', letterSpacing: '-0.5px',marginTop:'45px'});
+  const H2yellow = text({ color: '#D8B150', fontSize:isSmallScreen?'20px':'30px',position: 'absolute', left:isSmallScreen? '0em': '6.8em',top: isSmallScreen? '1em':'0em' });
+  const smalltxt = text({ left:'7.5%', fontSize: '14px',width:'60%', fontWeight: '360', top: isSmallScreen?'-4em':'-5em', letterSpacing: '-0.5px',marginTop:'45px'});
   const cardData = [
     { imageUrl: './card1.png', title: 'Lorem ipsum dolor sit amet', Desc: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt...' },
     { imageUrl: './card2.png', title: 'Lorem ipsum dolor sit amet', Desc: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt...' },
@@ -26,7 +26,7 @@ export const BlogSection = () => {
     sx={{
       
       overflowX: 'auto',
-      position: 'absolute',
+      position: 'relative',
       left: '0px',
       width: '100%',
       minHeight: '100vh',

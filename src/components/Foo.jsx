@@ -72,18 +72,6 @@ const Foo = ()=>{
         
     );
 }
-/*<Grid sx={{paddingTop:'5%',minWidth:'20%',maxWidth:'100%'}}
-        container
-        direction="column"
-        justifyContent="center"
-        alignItems="center">
-         <img src='./logo.png' height='40px'></img>
-         <Typography sx={{marginTop:'20px', color:'#ffffff'}} >Virtual Islamic/ Digital Banking and payment platforms to asset management</Typography>
-        <Box sx={{marginTop:'20px', display:'flex' ,gap:'30px'}}>
-        <img src='./fb.png' alt='fb' height='20px' width20px />
-         <img src='./li.png' alt='fb' height='20px' width='20px' />
-         <img src='./yt.png' alt='fb' height='20px' width='20px' />
-                 </Box>
-                 </Grid>  */
+
 
 export default Foo;
