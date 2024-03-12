@@ -25,7 +25,6 @@ export const text =(additionalStyles = {}) => ({
     left:'25%',
     fontWeight: '750',
     width: 'max-content',
-    letterSpacing:'1px',
     ...additionalStyles,
   });
 

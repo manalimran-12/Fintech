@@ -11,13 +11,13 @@ import { NewsLetter } from '@/components/NewsLetter';
 import Image from 'next/image';
 
 export const BlogSection = () => {
-  const Blogs = H1({});
+  const Blogs = H1({fontFamily: 'Rounded Elegance'});
   const isSmallScreen = useMediaQuery("(max-width:600px)");
   const isSmallScreen1 = useMediaQuery("(min-width: 600px) and (max-width: 1000px)");
-  const Headings = text({  top: '-1.6em', fontSize:isSmallScreen?'20px':'30px'});
+  const Headings = text({  top: '-1.6em', fontSize:isSmallScreen?'20px':'30px',fontFamily:'Montserrat'});
   const Readmore = button({marginLeft: isSmallScreen?'12%' :'43%'});
-  const H2yellow = text({ color: '#D8B150', fontSize:isSmallScreen?'20px':'30px',position: 'absolute', left:isSmallScreen? '0em': '6.8em',top: isSmallScreen? '1em':'0em' });
-  const smalltxt = text({ left:'7.5%', fontSize: '14px',width:'60%', fontWeight: '360', top: isSmallScreen?'-4em':'-5em', letterSpacing: '-0.5px',marginTop:'45px'});
+  const H2yellow = text({ color: '#D8B150', fontSize:isSmallScreen?'20px':'30px',fontFamily:'Montserrat',position: 'absolute', left:isSmallScreen? '0em': '5.5em',top: isSmallScreen? '1em':'0em' });
+  const smalltxt = text({ left:'7.5%',fontFamily:'Raleway', fontSize: '14px',width:'60%', fontWeight: '500', top: isSmallScreen?'-4em':'-5em', marginTop:'45px'});
   const cardData = [
     { imageUrl: './card1.png', title: 'Lorem ipsum dolor sit amet', Desc: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt...' },
     { imageUrl: './card2.png', title: 'Lorem ipsum dolor sit amet', Desc: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt...' },
@@ -63,8 +63,8 @@ export const BlogSection = () => {
       </Grid>
 
       <button style={Readmore}>
-        <Typography sx={{ fontWeight: '500', top: '-8%', position: 'relative', fontSize: '16px', display: 'inline' }}>Read All Blogs</Typography>
-        <Image width={12} height={50} style={{ position: 'relative', top: '2px' }} src='/arrow.png' alt="Arrow Icon" />
+        <Typography sx={{ fontWeight: '500', top: '-5%', position: 'relative', fontSize: '16px', display: 'inline' }}>Read All Blogs</Typography>
+        <Image width={25} height={25} style={{ position: 'relative', top: '4px' }} src='/arrow.png' alt="Arrow Icon" />
       </button>
       <NewsLetter />
       <Foo />
