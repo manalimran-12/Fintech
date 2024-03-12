@@ -52,7 +52,7 @@ const Cards1 = () => {
           }}
         >
           <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <Image src={card.imageSrc} width={40} height={40} style={{ marginTop: isMdScreen ? '0px' : '12px', marginBottom: '10px' }} />
+            <Image src={card.imageSrc} alt='cards' width={40} height={40} style={{ marginTop: isMdScreen ? '0px' : '12px', marginBottom: '10px' }} />
             <Typography variant="h6" sx={{ fontStyle: 'Montserrat', fontSize: isSmScreen ? '15px' : (isMdScreen ? '14px' : '18.65px'), fontWeight: isSmScreen ? '500' : '700', lineHeight: isMdScreen ? '15px' : '22.73px', textAlign: 'center', color: '#FFFFFF' }}>{card.title}</Typography>
             <Typography variant="body1" sx={{ fontStyle: 'Raleway', fontSize: isSmScreen ? '10px' : (isMdScreen ? "11px" : '15px'), fontWeight: isSmScreen ? '50' : '100', lineHeight: '20px', textAlign: 'center', marginTop: isMdScreen ? '14px' : '18px', color: 'white' }}>{card.description}</Typography>
           </CardContent>

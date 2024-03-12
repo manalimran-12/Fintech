@@ -35,7 +35,7 @@ const Services = () => {
                     <Typography variant="h4" sx={{ fontFamily: 'Rounded Elegance', fontStyle: 'normal', color: 'white', fontWeight: 2, fontSize: isSmScreen? '12px': '27px', margin: 'auto', paddingLeft: isSmScreen? '50px': (isMdScreen? '170px': "300px") , lineHeight:'0px'}}>
                         Our Service
                     </Typography>
-                    <Image src='/line 1.png' width={isSmScreen? 59: 130} height={4} style={{ paddingTop: '0px' , marginLeft: isSmScreen? '50px': (isMdScreen? '170px': "300px")}} />
+                    <Image src='/line 1.png' alt='' width={isSmScreen? 59: 130} height={4} style={{ paddingTop: '0px' , marginLeft: isSmScreen? '50px': (isMdScreen? '170px': "300px")}} />
                     <Typography variant="h5" sx={{ fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight:isSmScreen? '100':  '700', fontSize: isSmScreen? '14px':(isMdScreen? '30px':'40px'), color: '#D8B150', textTransform: 'capitalize', margin: 'auto', paddingLeft: isSmScreen? '0px': (isMdScreen? '40px': "100px") }}>
                         <span style={{ color: 'white' }}>Our</span> cutting edge solutions <span style={{ color: 'white' }}>for</span>
                     </Typography>
@@ -135,9 +135,9 @@ const Services = () => {
                         Book Your Consultation
                     </Button>
 
-                    <Image src="/Rectangle 25.png" width={isSmScreen? 80: (isMdScreen? (isIpadProScreen? 150 : 150 ) : 320)} height={isSmScreen? 180 : 360} style={{ marginLeft:isSmScreen? '10px': (isMdScreen? (isIpadProScreen? '20px' : '20px') :'45px') }} />
-                    <Image src="/VectorS.png" width={isSmScreen? 90:(isMdScreen? (isIpadProScreen? 130 : 130 ) : 270)} height={isSmScreen? 90:(isMdScreen? (isIpadProScreen? 140 : 140 ) : 250)} style={{ marginLeft:isSmScreen? '160px' : (isMdScreen? (isIpadProScreen? '480px' : '400px'): '566px'), position: 'absolute', marginTop:isSmScreen? '90px': (isMdScreen? (isIpadProScreen? '210px' : '158px'):"110px" )}} />
-                    <Image src="/VectorS2.png" width={isSmScreen? 35: (isMdScreen? (isIpadProScreen? 50 : 50 ):120)} height={isSmScreen? 25:(isMdScreen? (isIpadProScreen? 50: 50 ): 90)} style={{ position: 'absolute', marginTop:isSmScreen? '148px':(isMdScreen? (isIpadProScreen? '300px': '247px') :'270px'), marginLeft: isSmScreen? '210px':(isMdScreen? (isIpadProScreen? '555px' : '480px') :'715px')}} />
+                    <Image src="/Rectangle 25.png" alt='shape' width={isSmScreen? 80: (isMdScreen? (isIpadProScreen? 150 : 150 ) : 320)} height={isSmScreen? 180 : 360} style={{ marginLeft:isSmScreen? '10px': (isMdScreen? (isIpadProScreen? '20px' : '20px') :'45px') }} />
+                    <Image src="/VectorS.png" alt='shape1' width={isSmScreen? 90:(isMdScreen? (isIpadProScreen? 130 : 130 ) : 270)} height={isSmScreen? 90:(isMdScreen? (isIpadProScreen? 140 : 140 ) : 250)} style={{ marginLeft:isSmScreen? '160px' : (isMdScreen? (isIpadProScreen? '480px' : '400px'): '566px'), position: 'absolute', marginTop:isSmScreen? '90px': (isMdScreen? (isIpadProScreen? '210px' : '158px'):"110px" )}} />
+                    <Image src="/VectorS2.png" alt='shape2' width={isSmScreen? 35: (isMdScreen? (isIpadProScreen? 50 : 50 ):120)} height={isSmScreen? 25:(isMdScreen? (isIpadProScreen? 50: 50 ): 90)} style={{ position: 'absolute', marginTop:isSmScreen? '148px':(isMdScreen? (isIpadProScreen? '300px': '247px') :'270px'), marginLeft: isSmScreen? '210px':(isMdScreen? (isIpadProScreen? '555px' : '480px') :'715px')}} />
                 </Box>
 
 

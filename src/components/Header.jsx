@@ -100,7 +100,7 @@ const Home = () => {
           <Typography variant="h4" sx={contentData.title}>
             Virtual Islamic Banking
           </Typography>
-          <Image src='/line 1.png' width={isSmScreen ? 153.1 : (isMdScreen ? 200 : 263)} height={4} style={{ paddingTop: '0px' }} />
+          <Image src='/line 1.png' alt='line'width={isSmScreen ? 153.1 : (isMdScreen ? 200 : 263)} height={4} style={{ paddingTop: '0px' }} />
           <Typography variant="h5" sx={contentData.subTitle}>
             Transforming Finance
           </Typography>
@@ -119,7 +119,7 @@ const Home = () => {
             </Button>
           </Box>
         </Box>
-        <Image src="/Vector.png" width={isSmScreen ? 90 : 240} height={isSmScreen ? 35 : 100} style={{ marginTop: isSmScreen ? '10px' : '15px' }} />
+        <Image src="/Vector.png" alt='vector' width={isSmScreen ? 90 : 240} height={isSmScreen ? 35 : 100} style={{ marginTop: isSmScreen ? '10px' : '15px' }} />
         <Box sx={{
           justifyContent: 'right',
           alignItems: 'right',
