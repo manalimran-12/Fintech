@@ -2,7 +2,8 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import {H1,text} from '../styling';
+import { H1, text } from '../styling';
+import Image from 'next/image';
 export const Cards = ({ ImageUrl, Title, Description }) => {
   const tech = text({
     fontSize: '1.1em',
@@ -17,7 +18,7 @@ export const Cards = ({ ImageUrl, Title, Description }) => {
     top: '10.5em',
     letterSpacing: '0px',
     left: '1.25em',
-    
+
   });
   const smalltxt1 = text({
     fontSize: '0.85em',
@@ -37,7 +38,7 @@ export const Cards = ({ ImageUrl, Title, Description }) => {
           backgroundSize: '33em 22em',
           backgroundPosition: '-9em',
           height: '22em',
-          position:'relative',
+          position: 'relative',
           width: '370px',
           marginTop: '3px',
           borderRadius: '0.6em',
@@ -67,19 +68,23 @@ export const Cards = ({ ImageUrl, Title, Description }) => {
               left: '1.25em',
               top: '16.8em',
               height: '2em',
-              
+
             }}
           >
             <Typography style={buttontxt}>Know More</Typography>
-            <img
+            <Image
+              layout="fixed"
+              width={24}  // Set your desired width in pixels
+              height={24}  // Set your desired height in pixels
               style={{
-                height: '1.5em',
-                width: '1.5em',
                 position: 'relative',
               }}
-              src='./arrow.png'
+              src='/arrow.png'
               alt="arrow"
             />
+
+
+
           </Button>
         </Box>
       </Box>
