@@ -63,8 +63,8 @@ export const BlogSection = () => {
       </Grid>
 
       <button style={Readmore}>
-        <Typography sx={{ fontWeight: '500', top: '-5%', position: 'relative', fontSize: '16px', display: 'inline' }}>Read All Blogs</Typography>
-        <Image width={25} height={25} style={{ position: 'relative', top: '4px' }} src='/arrow.png' alt="Arrow Icon" />
+        <Typography sx={{ fontWeight: '500', top: '-5%',fontFamily:'Montserrat', position: 'relative', fontSize: '16px', display: 'inline' }}>Read All Blogs</Typography>
+        <Image width={25} height={25} style={{ position: 'relative', top: '5px',left:'4px' }} src='/arrow.png' alt="Arrow Icon" />
       </button>
       <NewsLetter />
       <Foo />

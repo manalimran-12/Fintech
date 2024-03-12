@@ -18,6 +18,7 @@ export const Cards = ({ ImageUrl, Title, Description }) => {
     fontSize: isSmallScreen?'1em':'1.25em',
     fontWeight: '500',
     top: '10.5em',
+    fontFamily:'Raleway',
     letterSpacing: '0px',
     left: '1.25em',
 
@@ -25,6 +26,7 @@ export const Cards = ({ ImageUrl, Title, Description }) => {
   const smalltxt1 = text({
     fontSize: isSmallScreen?'0.75em':'0.85em',
     fontWeight: '400',
+    fontFamily:'Raleway',
     top:isSmallScreen?'14em':'17em',
     letterSpacing: '0px',
     left: '1.75em',
@@ -49,7 +51,7 @@ export const Cards = ({ ImageUrl, Title, Description }) => {
       >
         <Box
           sx={{
-            height: '5.6vh',
+            height: '35px',
             width: '85px',
             backgroundColor: '#D8B150',
             borderRadius: '2em',

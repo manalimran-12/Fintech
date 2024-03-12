@@ -12,7 +12,7 @@ export const H1 = (additionalStyles = {}) => ({
     fontWeight: '400',
     borderBottom: '4px solid #D8B150',
     borderRadius:'3px',
-    width:'2.8em',
+    width:'3.5em',
     ...additionalStyles,
   });
 

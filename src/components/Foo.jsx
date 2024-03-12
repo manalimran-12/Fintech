@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 
 const FooterContent = ({ heading, contentList }) => {
-  const Listitemsx = { fontFamily: 'inter,serif', cursor: 'pointer', color: '#ffffff', '&:hover': { color: '#7b1fa2' }, fontSize: '16px' };
+  const Listitemsx = { fontFamily: 'Raleway', cursor: 'pointer', color: '#ffffff', '&:hover': { color: '#7b1fa2' }, fontSize: '16px' };
   return (
     <Grid
       sx={{ paddingTop: '1%', width: '13em' }}
@@ -46,17 +46,17 @@ const Foo = ()=>{
         background="#000000"
         gap='70px'
       >
-        <Grid sx={{ width: '13em' }}
+        <Grid sx={{ width: '17em' }}
           container
           direction="column"
 
           alignItems="left">
           <Box><Image src='/logo.png' height={40} width={40}/></Box>
-          <Box><Typography sx={{ marginTop: '20px', color: '#ffffff', width: '90%' }} >Virtual Islamic/ Digital Banking and payment platforms to asset management</Typography></Box>
+          <Box><Typography sx={{ marginTop: '20px', color: '#ffffff', width: '90%',fontFamily:'Raleway' }} >Virtual Islamic/ Digital Banking and payment platforms to asset management</Typography></Box>
           <Box sx={{ marginTop: '20px', display: 'flex', gap: '30px' }}>
-            <Image src='/fb.png' alt='fb' height={15} width={15} />
-            <Image src='/li.png' alt='li' height={20} width={20} />
-            <Image src='/yt.png' alt='yt' height={20} width={20} />
+            <Image src='/fb.png' alt='fb' height={22} width={17} />
+            <Image src='/li.png' alt='li' height={22} width={22} />
+            <Image src='/yt.png' alt='yt' height={20} width={25} />
 
           </Box>
         </Grid>
@@ -66,7 +66,7 @@ const Foo = ()=>{
       </Grid>
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '3%' }}>
         <Divider sx={{ backgroundColor: '#ffffff', width: '90%', height: '0.4px' }} />
-        <Typography variant="subtitle1" color="white" align="center" sx={{ fontFamily: 'inter,serif', marginTop: '3%' }}>
+        <Typography variant="subtitle1" color="white" align="center" sx={{ fontFamily: 'Poppins', marginTop: '3%' }}>
           Copyright © 2023 Sheikh. All rights reserved
         </Typography>
       </Box>
