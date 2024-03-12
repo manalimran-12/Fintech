@@ -6,11 +6,13 @@ import { Cards } from './Cards';
 import { H1, text,button} from '../styling';
 import { Grid } from '@mui/material';
 import Foo from '@/components/Foo'
+import useMediaQuery  from '@mui/material/useMediaQuery';
 import { NewsLetter } from '@/components/NewsLetter';
 
 export const BlogSection = () => {
   const Blogs = H1({});
-  const isSmallScreen = window.innerWidth <= 600;
+  const isSmallScreen = useMediaQuery("(max-width:600px)");
+  const isSmallScreen1 = useMediaQuery("(min-width: 600px) and (max-width: 1000px)");
   const Headings = text({  top: '-1.6em', fontSize:isSmallScreen?'20px':'30px'});
   const Readmore = button({marginLeft: isSmallScreen?'12%' :'43%'});
   const H2yellow = text({ color: '#D8B150', fontSize:isSmallScreen?'20px':'30px',position: 'absolute', left:isSmallScreen? '0em': '6.8em',top: isSmallScreen? '1em':'0em' });
@@ -32,7 +34,7 @@ export const BlogSection = () => {
       minHeight: '100vh',
       background: '#272727',
       display: 'flex',
-      top:'110%',
+      top:isSmallScreen?'85%':(isSmallScreen1?'65%':'110%'),
       flexDirection: 'column',
       paddingTop: '10em',
     }}

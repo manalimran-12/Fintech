@@ -12,7 +12,7 @@ const Services = () => {
             <Box sx={{
                 position: 'absolute',
                 width: '100%',
-                height: isSmScreen? '250vh': (isMdScreen? '220vh':'200vh'),
+                height: isSmScreen? '250vh': (isMdScreen? '220vh':'180vh'),
                 justifyContent: 'center',
                 alignItems: 'center',
                 top: isSmScreen? '28%':(isMdScreen? '27%':'50%'),

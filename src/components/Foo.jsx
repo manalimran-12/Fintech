@@ -3,6 +3,7 @@ import {Box,Typography,Grid,Divider} from '@mui/material';
 
 
 const FooterContent = ({ heading, contentList }) => {
+    
     const Listitemsx ={fontFamily:'inter,serif', cursor:'pointer', color:'#ffffff', '&:hover': {color:'#7b1fa2'},fontSize: '16px' };
   return (
     <Grid
@@ -28,7 +29,7 @@ const FooterContent = ({ heading, contentList }) => {
 };
 
 const Foo = ()=>{
-    
+    const isSmallScreen = window.innerWidth <= 600;
     const productsHeading = 'Products';
     const productsList = ['Virtual Islamic Banking', 'Shariah MarketPlace', 'Islamic Edtech', 'Product Advisory'];
     const quickLinks ='Quick Links';
@@ -63,8 +64,8 @@ const Foo = ()=>{
                             <FooterContent heading={contactUs} contentList={contactuslist} />
                         </Grid>
                           <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '3%' }}>
-                              <Divider sx={{ backgroundColor: '#ffffff', width: '90%', height: '0.4px' }} />
-                              <Typography variant="subtitle1" color="white" align="center" sx={{ fontFamily: 'inter,serif', marginTop: '3%' }}>
+                              <Divider sx={{ backgroundColor: '#ffffff', width: isSmallScreen?'80%':'90%', height: '0.4px' }} />
+                              <Typography variant="subtitle1" color="#a6a6a6" align="center" sx={{ fontFamily: 'inter,serif', marginTop: '3%', fontSize:isSmallScreen?'12px':'15px' }}>
                                 Copyright © 2023 Sheikh. All rights reserved
                               </Typography>
                             </Box>
