@@ -3,11 +3,12 @@ import * as React from 'react';
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import { Cards } from './Cards';
-import { H1, text,button} from '../styling';
+import { H1, text, button } from '../styling';
 import { Grid } from '@mui/material';
 import Foo from '@/components/Foo'
 import useMediaQuery  from '@mui/material/useMediaQuery';
 import { NewsLetter } from '@/components/NewsLetter';
+import Image from 'next/image';
 
 export const BlogSection = () => {
   const Blogs = H1({});
@@ -40,34 +41,34 @@ export const BlogSection = () => {
     }}
     >
       <Typography style={Blogs}>BLOGS</Typography>
-      <Box sx={{width:'30%'}}>
-      <Typography sx={Headings}>
-        Latest News
-        <Typography sx={H2yellow}>
-          Managing Money Better
+      <Box sx={{ width: '30%' }}>
+        <Typography sx={Headings}>
+          Latest News
+          <Typography sx={H2yellow}>
+            Managing Money Better
+          </Typography>
         </Typography>
-      </Typography>
       </Box>
       <Typography style={smalltxt}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
       </Typography>
       {/* For card Section */}
-      <Grid container sx={{ position: 'relative', display: 'flex',gap:'45px', flexWrap: 'wrap', paddingLeft:'5.6%' }}>
-      {cardData.map((card, index) => (
-        <Grid item xs={10} sm={6} md={4} lg={3} key={index} style={{ marginBottom: '10px', marginRight: '40px' }}>
-        {/* Adjust marginBottom and marginRight as needed */}
-        <Cards ImageUrl={card.imageUrl} Title={card.title} Description={card.Desc} />
+      <Grid container sx={{ position: 'relative', display: 'flex', gap: '45px', flexWrap: 'wrap', paddingLeft: '5.6%' }}>
+        {cardData.map((card, index) => (
+          <Grid item xs={10} sm={6} md={4} lg={3} key={index} style={{ marginBottom: '10px', marginRight: '40px' }}>
+            {/* Adjust marginBottom and marginRight as needed */}
+            <Cards ImageUrl={card.imageUrl} Title={card.title} Description={card.Desc} />
+          </Grid>
+        ))}
       </Grid>
-  ))}
-</Grid>
 
       <button style={Readmore}>
-        <Typography sx={{ fontWeight:'500', top: '-8%', position: 'relative',  fontSize: '16px', display:'inline' }}>Read All Blogs</Typography>
-        <img style={{ height: '50%', width: '12%', position: 'relative',top:'2px' }} src='./arrow.png' alt="Arrow Icon" />
+        <Typography sx={{ fontWeight: '500', top: '-8%', position: 'relative', fontSize: '16px', display: 'inline' }}>Read All Blogs</Typography>
+        <Image width={12} height={50} style={{ position: 'relative', top: '2px' }} src='/arrow.png' alt="Arrow Icon" />
       </button>
-      <NewsLetter/> 
-      <Foo/>
+      <NewsLetter />
+      <Foo />
     </Box>
-    
+
   );
 }

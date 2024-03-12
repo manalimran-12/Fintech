@@ -19,19 +19,19 @@ export const NewsLetter =()=>{
     const inputbtn =button({width:isSmallScreen1?'70px':'30%',left:isSmallScreen1?'20%':'69.1%',position:'absolute',height:'85%',top:isSmallScreen1?'105%':'6.5%'});
   return(
     <Box sx={box1}>
-    <Typography style={sub1}>Newsletter</Typography>
-    <Box>
-      <Typography sx={header} >
-        Keep Updated {' '}<Typography sx={{ ...yheader}} component='span'> About Our Product
-      </Typography>
-      </Typography>
-      <Box sx={input1}>
-        <input style={inputtxt} placeholder='enter your email addres'></input>
-        <button style={inputbtn }>
-        <Typography sx={{ fontWeight:'650', top: '-5%', position: 'relative',  fontSize: '14px', display:'inline' }}>Submit</Typography>
-        </button>
+      <Typography style={sub1}>Newsletter</Typography>
+      <Box>
+        <Typography sx={header} >
+          Keep Updated {' '}<Typography sx={{ ...yheader }} component='span'> About Our Product
+          </Typography>
+        </Typography>
+        <Box sx={input1}>
+          <input style={inputtxt} placeholder='enter your email addres'></input>
+          <button style={inputbtn}>
+            <Typography sx={{ fontWeight: '650', top: '-5%', position: 'relative', fontSize: '14px', display: 'inline' }}>Submit</Typography>
+          </button>
+        </Box>
       </Box>
     </Box>
-  </Box> 
-  ); 
+  );
 }
