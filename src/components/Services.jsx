@@ -136,8 +136,8 @@ const Services = () => {
                     </Button>
 
                     <Image src="/Rectangle 25.png" width={isSmScreen? 80: (isMdScreen? (isIpadProScreen? 150 : 150 ) : 320)} height={isSmScreen? 180 : 360} style={{ marginLeft:isSmScreen? '10px': (isMdScreen? (isIpadProScreen? '20px' : '20px') :'45px') }} />
-                    <Image src="/Vector3.png" width={isSmScreen? 90:(isMdScreen? (isIpadProScreen? 130 : 130 ) : 270)} height={isSmScreen? 90:(isMdScreen? (isIpadProScreen? 140 : 140 ) : 250)} style={{ marginLeft:isSmScreen? '160px' : (isMdScreen? (isIpadProScreen? '480px' : '400px'): '566px'), position: 'absolute', marginTop:isSmScreen? '90px': (isMdScreen? (isIpadProScreen? '210px' : '158px'):"110px" )}} />
-                    <Image src="/Vector2.png" width={isSmScreen? 35: (isMdScreen? (isIpadProScreen? 50 : 50 ):120)} height={isSmScreen? 25:(isMdScreen? (isIpadProScreen? 50: 50 ): 90)} style={{ position: 'absolute', marginTop:isSmScreen? '148px':(isMdScreen? (isIpadProScreen? '300px': '247px') :'270px'), marginLeft: isSmScreen? '210px':(isMdScreen? (isIpadProScreen? '555px' : '480px') :'715px')}} />
+                    <Image src="/VectorS.png" width={isSmScreen? 90:(isMdScreen? (isIpadProScreen? 130 : 130 ) : 270)} height={isSmScreen? 90:(isMdScreen? (isIpadProScreen? 140 : 140 ) : 250)} style={{ marginLeft:isSmScreen? '160px' : (isMdScreen? (isIpadProScreen? '480px' : '400px'): '566px'), position: 'absolute', marginTop:isSmScreen? '90px': (isMdScreen? (isIpadProScreen? '210px' : '158px'):"110px" )}} />
+                    <Image src="/VectorS2.png" width={isSmScreen? 35: (isMdScreen? (isIpadProScreen? 50 : 50 ):120)} height={isSmScreen? 25:(isMdScreen? (isIpadProScreen? 50: 50 ): 90)} style={{ position: 'absolute', marginTop:isSmScreen? '148px':(isMdScreen? (isIpadProScreen? '300px': '247px') :'270px'), marginLeft: isSmScreen? '210px':(isMdScreen? (isIpadProScreen? '555px' : '480px') :'715px')}} />
                 </Box>
 
 
