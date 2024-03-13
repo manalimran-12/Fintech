@@ -30,7 +30,7 @@ export const Cards = ({ ImageUrl, Title, Description }) => {
     left: '1.75em',
     width: '80%',
   });
-  const buttontxt = text({ fontSize: '1.16em', fontWeight: '600', left: '0px',top:isSmallScreen?'-60px':'0px' });
+  const buttontxt = text({ fontSize: '1.16em', fontWeight: '600', left: '0px' });
 
   return (
     <Container sx={{ position: 'relative', top: '-2em' }}>
@@ -68,7 +68,7 @@ export const Cards = ({ ImageUrl, Title, Description }) => {
               background: 'transparent',
               border: 'none',
               left: '1.25em',
-              top: '16.8em',
+              top:isSmallScreen?'13em':'16.8em',
               height: '2em',
 
             }}
