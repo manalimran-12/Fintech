@@ -4,9 +4,10 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import { H1, text } from '../styling';
 import Image from 'next/image';
+import { useMediaQuery } from '@mui/material/useMediaQuery';
 export const Cards = ({ ImageUrl, Title, Description }) => {
   
-  const isSmallScreen = window.innerWidth <= 600;
+  const isSmallScreen = useMediaQuery("(max-width:600px)");
   const tech = text({
     fontSize: '1.1em',
     left: '1em',

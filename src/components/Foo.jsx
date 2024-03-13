@@ -1,5 +1,6 @@
 import { List } from '@mui/icons-material';
 import { Box, Typography, Grid, Divider } from '@mui/material';
+import { useMediaQuery } from '@mui/material/useMediaQuery';
 import Image from 'next/image';
 
 
@@ -29,7 +30,7 @@ const FooterContent = ({ heading, contentList }) => {
 };
 
 const Foo = ()=>{
-    const isSmallScreen = window.innerWidth <= 600;
+    const isSmallScreen = useMediaQuery("(max-width: 600px)");
     const productsHeading = 'Products';
     const productsList = ['Virtual Islamic Banking', 'Shariah MarketPlace', 'Islamic Edtech', 'Product Advisory'];
     const quickLinks ='Quick Links';
@@ -51,7 +52,7 @@ const Foo = ()=>{
           direction="column"
 
           alignItems="left">
-          <Box><Image src='/logo.png' height={40} width={40}/></Box>
+          <Box><Image src='/logo.png' height={40} width={40} alt='logo'/></Box>
           <Box><Typography sx={{ marginTop: '20px', color: '#ffffff', width: '90%',fontFamily:'Raleway' }} >Virtual Islamic/ Digital Banking and payment platforms to asset management</Typography></Box>
           <Box sx={{ marginTop: '20px', display: 'flex', gap: '30px' }}>
             <Image src='/fb.png' alt='fb' height={22} width={17} />

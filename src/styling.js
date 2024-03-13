@@ -1,6 +1,7 @@
 'use client'
 import { Margin } from '@mui/icons-material';
 import { styled } from '@mui/system';
+import { useMediaQuery } from '@mui/material/useMediaQuery';
 export const H1 = (additionalStyles = {}) => ({
     fontFamily: 'Roboto,sans-serif',
     color: '#ffffff',
