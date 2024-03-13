@@ -41,7 +41,6 @@ const Foo = ()=>{
     <Box sx={{ background: '#1f1f1f' }}>
       <Grid sx={{ paddingTop: '5%', width: '100%', paddingLeft: '5%' }}
         container
-        direction="rows"
         justifyContent="center"
         background="#000000"
         gap='70px'
@@ -65,7 +64,7 @@ const Foo = ()=>{
         <FooterContent heading={contactUs} contentList={contactuslist} />
       </Grid>
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '3%' }}>
-        <Divider sx={{ backgroundColor: '#ffffff', width: '90%', height: '0.4px' }} />
+        <Divider sx={{ backgroundColor: '#ffffff', width: isSmallScreen?'80%':'90%', height: '0.4px' }} />
         <Typography variant="subtitle1" color="white" align="center" sx={{ fontFamily: 'Poppins', marginTop: '3%' }}>
           Copyright © 2023 Sheikh. All rights reserved
         </Typography>

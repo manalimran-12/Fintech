@@ -58,11 +58,11 @@ export const Cards = ({ ImageUrl, Title, Description }) => {
             left: isSmallScreen?'200px':'250px',
           }}
         >
-          <Typography style={tech}>Tech</Typography>
+          <Typography sx={tech}>Tech</Typography>
         </Box>
         <Box position='absolute'>
-          <Typography style={smalltxt}>{Title}</Typography>
-          <Typography style={smalltxt1}>{Description}</Typography>
+          <Typography sx={smalltxt}>{Title}</Typography>
+          <Typography sx={smalltxt1}>{Description}</Typography>
           <Button
             sx={{
               background: 'transparent',
@@ -73,12 +73,11 @@ export const Cards = ({ ImageUrl, Title, Description }) => {
 
             }}
           >
-            <Typography style={buttontxt}>Know More</Typography>
+            <Typography sx={buttontxt}>Know More</Typography>
             <Image
-              layout="fixed"
               width={24}  // Set your desired width in pixels
               height={24}  // Set your desired height in pixels
-              style={{
+              sx={{
                 position: 'relative',
                 top:isSmallScreen?'-60px':'0px' 
               }}

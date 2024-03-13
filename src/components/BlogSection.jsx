@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Cards } from './Cards';
 import { H1, text, button } from '../styling';
 import Foo from '@/components/Foo'
-import { useMediaQuery, Box, Typography,Grid } from '@mui/material';
+import { useMediaQuery, Box, Typography,Grid,Button } from '@mui/material';
 import { NewsLetter } from '@/components/NewsLetter';
 import Image from 'next/image';
 
@@ -32,12 +32,12 @@ export const BlogSection = () => {
       minHeight: '100vh',
       background: '#272727',
       display: 'flex',
-      top:isSmallScreen?'85%':(isSmallScreen1?'65%':'110%'),
+      top:isSmallScreen?'87%':(isSmallScreen1?'110%':'85%'),
       flexDirection: 'column',
-      paddingTop: '10em',
+      paddingTop: '6em',
     }}
     >
-      <Typography style={Blogs}>BLOGS</Typography>
+      <Typography sx={Blogs}>BLOGS</Typography>
       <Box sx={{ width: '30%' }}>
         <Typography sx={Headings}>
           Latest News
@@ -46,23 +46,23 @@ export const BlogSection = () => {
           </Typography>
         </Typography>
       </Box>
-      <Typography style={smalltxt}>
+      <Typography sx={smalltxt}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
       </Typography>
       {/* For card Section */}
       <Grid container sx={{ position: 'relative', display: 'flex', gap: '45px', flexWrap: 'wrap', paddingLeft: '5.6%' }}>
         {cardData.map((card, index) => (
-          <Grid item xs={10} sm={6} md={4} lg={3} key={index} style={{ marginBottom: '10px', marginRight: '40px' }}>
+          <Grid item xs={10} sm={6} md={4} lg={3} key={index} sx={{ marginBottom: '10px', marginRight: '40px' }}>
             {/* Adjust marginBottom and marginRight as needed */}
             <Cards ImageUrl={card.imageUrl} Title={card.title} Description={card.Desc} />
           </Grid>
         ))}
       </Grid>
 
-      <button style={Readmore}>
-        <Typography sx={{ fontWeight: '500', top: '-5%',fontFamily:'Montserrat', position: 'relative', fontSize: '16px', display: 'inline' }}>Read All Blogs</Typography>
-        <Image width={25} height={25} style={{ position: 'relative', top: '5px',left:'4px' }} src='/arrow.png' alt="Arrow Icon" />
-      </button>
+      <Button sx={Readmore}>
+        <Typography sx={{ fontWeight: '500',fontFamily:'Montserrat', position: 'relative', fontSize: '16px', display: 'inline' }}>Read All Blogs</Typography>
+        <Image width={25} height={25} sx={{ position: 'relative', top: '5px',left:'4px' }} src='/arrow.png' alt="Arrow Icon" />
+      </Button>
       <NewsLetter />
       <Foo />
     </Box>

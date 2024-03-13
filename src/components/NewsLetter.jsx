@@ -1,5 +1,5 @@
 import { H1, text, box, input, button } from '../styling';
-import { useMediaQuery, Box, Typography, Input } from '@mui/material';
+import { useMediaQuery, Box, Typography, Input,Button } from '@mui/material';
 export const NewsLetter = () => {
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
   const isSmallScreen1 = useMediaQuery("(max-width: 900px)");
@@ -20,17 +20,17 @@ export const NewsLetter = () => {
   const inputbtn = button({ width: isSmallScreen1 ? '70px' : '30%', left: isSmallScreen1 ? '20%' : '69.1%', position: 'absolute', height: '85%', top: isSmallScreen1 ? '105%' : '6.5%' });
   return (
     <Box sx={box1}>
-      <Typography style={sub1}>Newsletter</Typography>
+      <Typography sx={sub1}>Newsletter</Typography>
       <Box>
         <Typography sx={header} >
           Keep Updated {' '}<Typography sx={{ ...yheader }} component='span'> About Our Product
           </Typography>
         </Typography>
         <Box sx={input1}>
-          <input style={inputtxt} placeholder='enter your email addres'></input>
-          <button style={inputbtn}>
+          <Input sx={inputtxt} placeholder='enter your email addres'></Input>
+          <Button sx={inputbtn}>
             <Typography sx={{ fontWeight: '650', top: '-5%', position: 'relative', fontSize: '14px', display: 'inline' }}>Submit</Typography>
-          </button>
+          </Button>
         </Box>
       </Box>
     </Box>
