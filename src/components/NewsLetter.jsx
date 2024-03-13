@@ -1,12 +1,8 @@
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography'
-import Input from '@mui/material/Input';
 import { H1, text, box, input, button } from '../styling';
-import { useMediaQuery } from '@mui/material/useMediaQuery';
+import { useMediaQuery, Box, Typography, Input } from '@mui/material';
 export const NewsLetter = () => {
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
-  const isSmallScreen1 = useMediaQuery("(min-width: 600px) and (max-width: 1000px)");
-  const isMediumScreen = useMediaQuery("(max-width: 900px)");
+  const isSmallScreen1 = useMediaQuery("(max-width: 900px)");
   const sub1 = H1({ top: '34px', left: '8%', position: "absolute", width: '4.5em', fontFamily: 'Rounded Elegance' });
   const header = text({ position: 'absolute', fontFamily: 'Montserrat', top: '30%', left: '2.6em', fontSize: isSmallScreen1 ? '25px' : '35px', fontWeight: '500', width: '40%' });
   const box1 = box({

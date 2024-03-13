@@ -1,6 +1,5 @@
 import { List } from '@mui/icons-material';
-import { Box, Typography, Grid, Divider } from '@mui/material';
-import { useMediaQuery } from '@mui/material/useMediaQuery';
+import { Box, Typography, Grid, Divider, useMediaQuery } from '@mui/material';
 import Image from 'next/image';
 
 
