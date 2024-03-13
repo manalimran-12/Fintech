@@ -23,9 +23,9 @@ export const NewsLetter = () => {
       <Typography sx={sub1}>Newsletter</Typography>
       <Box>
         <Typography sx={header} >
-          Keep Updated {' '}<Typography sx={{ ...yheader }} component='span'> About Our Product
-          </Typography>
+          Keep Updated <span style={{color:'#D8B150'}}>About Our Product</span>
         </Typography>
+        
         <Box sx={input1}>
           <Input sx={inputtxt} placeholder='enter your email address'></Input>
           <Button sx={inputbtn}>

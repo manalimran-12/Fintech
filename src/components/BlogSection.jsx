@@ -40,11 +40,9 @@ export const BlogSection = () => {
       <Typography sx={Blogs}>BLOGS</Typography>
       <Box sx={{ width: '30%' }}>
         <Typography sx={Headings}>
-          Latest News
-          <Typography sx={H2yellow}>
-            Managing Money Better
-          </Typography>
+          Latest News <span style={{ color: '#D8B150' }}> Managing Money Better</span>
         </Typography>
+        
       </Box>
       <Typography sx={smalltxt}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
