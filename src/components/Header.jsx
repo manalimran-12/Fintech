@@ -114,7 +114,7 @@ const Home = () => {
             <Button variant='text' sx={contentData.getStartedButton}>
               Get Started
             </Button>
-            <Button variant='text' endIcon={<Image src='/playCircle.png' width={24} height={24} />} alt='playCircle' sx={contentData.demoButton}>
+            <Button variant='text' endIcon={<Image src='/playCircle.png' width={24} height={24} alt='playCircle'/>}  sx={contentData.demoButton}>
               See Live Demo
             </Button>
           </Box>
