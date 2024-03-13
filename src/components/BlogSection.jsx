@@ -32,7 +32,7 @@ export const BlogSection = () => {
       minHeight: '100vh',
       background: '#272727',
       display: 'flex',
-      top: isSmallScreen? '94.5%':(isSmallScreen1? '67%':'110%'),
+      top: isSmallScreen? '95%':(isSmallScreen1? '67%':'110%'),
       flexDirection: 'column',
       paddingTop: '6em',
     }}
