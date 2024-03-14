@@ -1,6 +1,7 @@
 'use client'
 import { Margin } from '@mui/icons-material';
 import { styled } from '@mui/system';
+import { useMediaQuery } from '@mui/material/useMediaQuery';
 export const H1 = (additionalStyles = {}) => ({
     fontFamily: 'Roboto,sans-serif',
     color: '#ffffff',
@@ -12,7 +13,7 @@ export const H1 = (additionalStyles = {}) => ({
     fontWeight: '400',
     borderBottom: '4px solid #D8B150',
     borderRadius:'3px',
-    width:'2.8em',
+    width:'3.5em',
     ...additionalStyles,
   });
 
@@ -25,7 +26,6 @@ export const text =(additionalStyles = {}) => ({
     left:'25%',
     fontWeight: '750',
     width: 'max-content',
-    letterSpacing:'1px',
     ...additionalStyles,
   });
 
@@ -53,13 +53,12 @@ export const button =(additionalStyles={})=>({
   ...additionalStyles
 })
 
-export const input =(addistionStyles={})=>({
+export const input =(additionalStyles={})=>({
   width:'35%',
-  height:'22%',
   top:'30%',
   right:'9%',
   borderRadius:'60px',
   position:'absolute',
-  background: '#444444'
-
+  background: '#444444',
+  ...additionalStyles
 })
