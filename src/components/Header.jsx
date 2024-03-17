@@ -1,5 +1,5 @@
 "use client"
-
+import Investment from '@/components/Investment';
 import { Box, Typography, Button, useMediaQuery, createTheme } from '@mui/material';
 import Navbar from "@/components/Navbar";
 import Image from 'next/image';
@@ -144,6 +144,7 @@ const Home = () => {
         </Box>
       </Box>
       <Services />
+      <Investment/>
       <BlogSection/>
     </Box>
   );

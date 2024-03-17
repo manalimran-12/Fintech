@@ -32,7 +32,6 @@ const Cards1 = () => {
     <Box sx={{
       width: '1558px',
       height: '368px',
-      // left: 'calc(50% - 1558px/2)',
       top: '3596px',
       display: isSmScreen ? 'block' : 'flex',
       flexDirection: isSmScreen ? 'column' : 'row',

@@ -1,20 +1,18 @@
 'use client';
 import * as React from 'react';
 import { Cards } from './Cards';
-import { H1, text, button } from '../styling';
+import { H1, text, button, heading } from '../styling';
 import Foo from '@/components/Foo'
 import { useMediaQuery, Box, Typography,Grid,Button } from '@mui/material';
 import { NewsLetter } from '@/components/NewsLetter';
-import Image from 'next/image';
-
+import EastIcon from '@mui/icons-material/East';
 export const BlogSection = () => {
-  const Blogs = H1({fontFamily: 'Rounded Elegance'});
+  const Blogs = H1();
   const isSmallScreen = useMediaQuery("(max-width:600px)");
   const isSmallScreen1 = useMediaQuery("(max-width: 900px)");
-  const Headings = text({  top: '-1.6em', fontSize:isSmallScreen?'20px':'30px',fontFamily:'Montserrat'});
+  const Headings = heading({  top: '-1.6em', fontSize:isSmallScreen?'20px':'30px',fontFamily:'Montserrat'});
   const Readmore = button({marginLeft: isSmallScreen?'12%' :'43%'});
-  const H2yellow = text({ color: '#D8B150', fontSize:isSmallScreen?'20px':'30px',fontFamily:'Montserrat',position: 'absolute', left:isSmallScreen? '0em': '5.5em',top: isSmallScreen? '1em':'0em' });
-  const smalltxt = text({ left:'7.5%',fontFamily:'Raleway', fontSize: '14px',width:'60%', fontWeight: '500', top: isSmallScreen?'-4em':'-5em', marginTop:'45px'});
+  const smalltxt = text({ left:'7.5%', fontSize: '14px',width:'60%', fontWeight: '500', top: isSmallScreen?'-4em':'-5em', marginTop:'45px'});
   const cardData = [
     { imageUrl: './card1.png', title: 'Lorem ipsum dolor sit amet', Desc: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt...' },
     { imageUrl: './card2.png', title: 'Lorem ipsum dolor sit amet', Desc: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt...' },
@@ -24,15 +22,13 @@ export const BlogSection = () => {
   return (
     <Box
     sx={{
-      
       overflowX: 'auto',
       position: 'relative',
       left: '0px',
       width: '100%',
       minHeight: '100vh',
       background: '#272727',
-      display: 'flex',
-      top: isSmallScreen? '83%':(isSmallScreen1? '67%':'110%'),
+      top: isSmallScreen? '83%':(isSmallScreen1? '67%':'114%'),
       flexDirection: 'column',
       paddingTop: '6em',
     }}
@@ -56,11 +52,7 @@ export const BlogSection = () => {
           </Grid>
         ))}
       </Grid>
-
-      <Button sx={Readmore}>
-        <Typography sx={{ fontWeight: '500',fontFamily:'Montserrat', position: 'relative', fontSize: '16px', display: 'inline' }}>Read All Blogs</Typography>
-        <Image width={25} height={25} sx={{ position: 'relative', top: '5px',left:'4px' }} src='/arrow.png' alt="Arrow Icon" />
-      </Button>
+      <Button sx={Readmore} endIcon={<EastIcon/>}><Typography>Read more</Typography></Button>
       <NewsLetter />
       <Foo />
     </Box>
