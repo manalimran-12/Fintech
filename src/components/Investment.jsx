@@ -13,8 +13,8 @@ const Bullet = styled('span')({
   marginRight: '8px', 
   color:'#ffffff',
 });
-const StyledList = styled(List)(({ isSmallScreen, isMedScreen }) => ({
-  top: isSmallScreen ? '0px':  '18%',
+const StyledList = styled(List)(({ isSmallScreen, isMdScreen }) => ({
+  top: isSmallScreen ? '0px':  (isMdScreen? (isIpadProScreen? '25%' : '20%' ) :'18%'),
   left:isSmallScreen ? '-150px':'45px',
   width:isSmallScreen ? '100%':'50%'
 }));
@@ -41,7 +41,9 @@ const CustomBulletList = ({ words }) => {
 const Investment = () => {
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
     const isMedScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
-    const shapesbg = elementsbg({top:  isSmallScreen? '110%': isMedScreen?  '160%' :'148%'});
+    const isMdScreen = useMediaQuery("(min-width: 600px) and (max-width: 1024px)");
+    const isIpadProScreen = useMediaQuery("(min-width: 900px) and (max-width: 1024px)");
+    const shapesbg = elementsbg({top:  isSmallScreen? '110%': (isMdScreen?(isIpadProScreen? '67%' :  '70%' ):'148%')});
     const I_heading = H1({ width: '115px', top:'20%'});
     const I_subheading = heading({ top: '20%', width: '55%', left: '7.5%'});
     const smalltxt = text({  width:'70%',top:'21%',left:'8%'});
