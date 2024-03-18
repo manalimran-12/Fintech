@@ -16,7 +16,7 @@ const Services = () => {
                 height: isSmScreen? '300vh': (isMdScreen? '220vh':'180vh'),
                 justifyContent: 'center',
                 alignItems: 'center',
-                top: isSmScreen? '28%':(isMdScreen? '27%':'50%'),
+                top: isSmScreen? (isS8Screen? '43%': '36%'):(isMdScreen? (isIpadProScreen? '37%': '40%'):'85%'),
                 backgroundColor: '#272727',
                 overflow: 'hidden',
                 
@@ -29,14 +29,14 @@ const Services = () => {
                         alignItems: 'center',
                         paddingLeft: isSmScreen? (isS8Screen? '80px': '120px') : (isMdScreen? '160px':  '300px'),
                         marginLeft: isMdScreen? "25px" : '',
-                        marginTop: isSmScreen? '4px': '10px',
+                        marginTop: isSmScreen? '6px': '25px',
                         marginLeft: isIpadProScreen? '90px': '',
                     }}
                 >
-                    <Typography variant="h4" sx={{ fontFamily: 'Rounded Elegance', fontStyle: 'normal', color: 'white', fontWeight: 2, fontSize: isSmScreen? '12px': '27px', margin: 'auto', paddingLeft: isSmScreen? '50px': (isMdScreen? '170px': "300px") , lineHeight:'0px'}}>
+                    <Typography variant="h4" sx={{ fontFamily: 'Rounded Elegance', fontStyle: 'normal', color: 'white', fontWeight: 2, fontSize: isSmScreen? '15px': '27px', margin: 'auto', paddingLeft: isSmScreen? '50px': (isMdScreen? '170px': "300px") , lineHeight:'0px'}}>
                         Our Service
                     </Typography>
-                    <Image src='/Line 1.png' alt='' width={isSmScreen? 59: 130} height={4} style={{ paddingTop: '0px' , marginLeft: isSmScreen? '50px': (isMdScreen? '170px': "300px")}} />
+                    <Image src='/Line 1.png' alt='' width={isSmScreen? 74: 130} height={4} style={{ paddingTop: '0px' , marginLeft: isSmScreen? '50px': (isMdScreen? '170px': "300px")}} />
                     <Typography variant="h5" sx={{ fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight:isSmScreen? '100':  '700', fontSize: isSmScreen? '14px':(isMdScreen? '30px':'40px'), color: '#D8B150', textTransform: 'capitalize', margin: 'auto', paddingLeft: isSmScreen? '0px': (isMdScreen? '40px': "100px") }}>
                         <span style={{ color: 'white' }}>Our</span> cutting edge solutions <span style={{ color: 'white' }}>for</span>
                     </Typography>

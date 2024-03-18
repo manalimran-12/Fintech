@@ -1,11 +1,10 @@
 "use client"
-
+// import {Suspense} from 'react'
 import { Box, Typography, Button, useMediaQuery, createTheme } from '@mui/material';
 import Navbar from "@/components/Navbar";
 import Image from 'next/image';
-import Services from "@/components/Services"
-import { BlogSection } from './BlogSection';
-
+import PhoneMod from '@/components/PhoneMod';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 const Home = () => {
   const theme = createTheme({
     breakpoints: {
@@ -28,15 +27,16 @@ const Home = () => {
     box: {
       position: 'absolute',
       width: '100%',
-      height: isSmScreen ? '120vh' : '150vh',
+      height: isSmScreen ? '120vh' : '126vh',
       background: 'linear-gradient(180deg, #351D5B 0%, #272727 53.33%)',
       overflow: 'hidden',
     },
     innerBox: {
       width: '55%',
       marginLeft: isSmScreen ? '20px' : (isMdScreen ? '35px' : '90px'),
-      marginTop: isSmScreen ? '20px' : '110px',
+      marginTop: isSmScreen ? '20px' : '190px',
       marginBottom: '10px',
+      maxWidth: isSmScreen ? '170px' : (isMdScreen? (isIpadProScreen? '450px': '550px'): '800px')
     },
     title: {
       fontFamily: 'Rounded Elegance',
@@ -56,18 +56,19 @@ const Home = () => {
     description: {
       fontFamily: 'Raleway',
       fontStyle: 'normal',
-      fontSize: isSmScreen ? '10px' : (isMdScreen ? '10px' : '15px'),
+      fontSize: isSmScreen ? '8px' : (isMdScreen ? '10px' : '18px'),
       color: '#FFFFFF',
-      lineHeight: '20px',
+      lineHeight: '15px',
       letterSpacing: '0.04rem',
       marginTop: '21px',
+      lineHeight: isSmScreen ? '15px' : (isMdScreen ? '20px' : '26.16px'),
     },
     getStartedButton: {
       fontFamily: 'Montserrat',
       fontSize: isSmScreen ? '12px' : '20px',
       color: 'white',
       backgroundColor: '#D8B150',
-      width: '150px',
+      width: '155px',
       height: isSmScreen ? '30px' : '49.19px',
       borderRadius: '9837.85px',
       textTransform: 'capitalize',
@@ -93,7 +94,7 @@ const Home = () => {
   };
 
   return (
-    <Box sx={{ width: '100%', height: '280vh', position: 'absolute'}}>
+    <Box sx={{ width: '100%', height: '280vh', position: 'absolute' }}>
       <Box sx={contentData.box}>
         <Navbar />
         <Box sx={contentData.innerBox}>
@@ -111,15 +112,15 @@ const Home = () => {
             From Virtual Islamic/ Digital Banking and payment platforms to asset management, our FinTech products encompass a wide spectrum of offerings that are reshaping the financial landscape.
           </Typography>
           <Box sx={{ display: 'flex', flexDirection: isSmScreen ? 'column' : 'row', gap: isSmScreen ? '10px' : '20px', marginTop: isSmScreen ? '18px' : '35px' }}>
-            <Button variant='text' sx={contentData.getStartedButton}>
+            <Button variant='text' sx={contentData.getStartedButton} endIcon={<ArrowForwardIcon />}>
               Get Started
             </Button>
-            <Button variant='text' endIcon={<Image src='/playCircle.png' width={24} height={24} alt='playCircle'/>}  sx={contentData.demoButton}>
+            <Button variant='text' endIcon={<Image src='/playCircle.png' width={24} height={24} alt='playCircle' />} sx={contentData.demoButton}>
               See Live Demo
             </Button>
           </Box>
         </Box>
-        <Image src="/Vector.png" alt='vector' width={isSmScreen ? 90 : 240} height={isSmScreen ? 35 : 100} sx={{ marginTop: isSmScreen ? '10px' : '15px' }} />
+        <Image src="/Vector.png" alt='vector' width={isSmScreen ? 90 : 240} height={isSmScreen ? 35 : 100} sx={{ marginTop: isSmScreen ? '10px' : '50px' }} />
         <Box sx={{
           justifyContent: 'right',
           alignItems: 'right',
@@ -128,23 +129,24 @@ const Home = () => {
             style={{
               ...contentData.gradientBox,
               ...{
-                width: isSmScreen ? '60px' : (isMdScreen ? '150px' : '265.8px'),
-                height: isSmScreen ? '100px' : (isMdScreen ? '280px' : '419.19px'),
-                left: isSmScreen ? '220px' : (isMdScreen ? (isIpadProScreen ? '600px' : '540px') : 'calc(70% - 132.9px)'),
-                top: isSmScreen ? '130px' : '156.45px',
+                width: isSmScreen ? '130px' : (isMdScreen ? (isIpadProScreen? '230px': '220px' ): '300.8px'),
+                height: isSmScreen ? '230px' : (isMdScreen ? (isIpadProScreen? '350px': '330px') : '450.19px'),
+                left: isSmScreen ? '200px' : (isMdScreen ? (isIpadProScreen ? '550px' : '470px') : 'calc(70% - 132.9px)'),
+                top: isSmScreen ? '130px' : '145.45px',
               },
             }}
           />
           <div
             style={{
               ...contentData.gradientBox,
-              ...{ width: isSmScreen ? '14px' : (isMdScreen ? '30px' : '2.5vw'), height: isSmScreen ? '7vh' : (isMdScreen ? '10vh' : '30vh'), left: isSmScreen ? '300px' : (isMdScreen ? (isIpadProScreen ? '800px' : '710px') : '1160px'), top: isSmScreen ? '148px' : (isMdScreen ? '18vh' : '50vh') },
+              ...{ width: isSmScreen ? '18px' : (isMdScreen ? '30px' : '2.5vw'), height: isSmScreen ? '15vh' : (isMdScreen ? (isIpadProScreen? '11vh': '13vh' ) : '30vh'), left: isSmScreen ? '340px' : (isMdScreen ? (isIpadProScreen ? '800px' : '720px') : '1160px'), top: isSmScreen ? '155px' : (isMdScreen ? (isIpadProScreen? '18vh': '19vh' ): '50vh') },
             }}
           />
+          <Box sx={{width:isSmScreen? '70%' : (isMdScreen? (isIpadProScreen? '40%' : '40%' ): '55%') , height:isSmScreen?'250px':(isMdScreen? (isIpadProScreen? '400px':'400px' ):'550px'), marginTop:isSmScreen?'-360px': (isMdScreen? (isIpadProScreen? '-500px': '-500px'):'-555px'), marginLeft: isSmScreen? '185px': (isMdScreen? (isIpadProScreen? '550px': '530px'): '750px')}}>
+            <PhoneMod/>
+          </Box>
         </Box>
       </Box>
-      <Services />
-      <BlogSection/>
     </Box>
   );
 };

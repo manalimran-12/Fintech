@@ -11,6 +11,10 @@ export const BlogSection = () => {
   const Blogs = H1({fontFamily: 'Rounded Elegance'});
   const isSmallScreen = useMediaQuery("(max-width:600px)");
   const isSmallScreen1 = useMediaQuery("(max-width: 900px)");
+  const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
+  const isSmScreen = useMediaQuery("(max-width:600px)");
+  const isMdScreen = useMediaQuery("(min-width: 600px) and (max-width: 1024px)");
+  const isIpadProScreen = useMediaQuery("(min-width: 900px) and (max-width: 1024px)");
   const Headings = text({  top: '-1.6em', fontSize:isSmallScreen?'20px':'30px',fontFamily:'Montserrat'});
   const Readmore = button({marginLeft: isSmallScreen?'12%' :'43%'});
   const H2yellow = text({ color: '#D8B150', fontSize:isSmallScreen?'20px':'30px',fontFamily:'Montserrat',position: 'absolute', left:isSmallScreen? '0em': '5.5em',top: isSmallScreen? '1em':'0em' });
@@ -32,7 +36,7 @@ export const BlogSection = () => {
       minHeight: '100vh',
       background: '#272727',
       display: 'flex',
-      top: isSmallScreen? '96%':(isSmallScreen1? '67%':'110%'),
+      top: isSmScreen? ( isS8Screen? '110%' : '96%'):(isMdScreen? (isIpadProScreen? '70%' : '70%' ):'145%'),
       flexDirection: 'column',
       paddingTop: '6em',
     }}
