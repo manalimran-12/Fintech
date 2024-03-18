@@ -7,15 +7,16 @@ const Services = () => {
     const isSmScreen = useMediaQuery("(max-width:600px)");
     const isMdScreen = useMediaQuery("(min-width: 600px) and (max-width: 1024px)");
     const isIpadProScreen = useMediaQuery("(min-width: 900px) and (max-width: 1024px)");
+    const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
     return (
         <>
             <Box sx={{
                 position: 'absolute',
                 width: '100%',
-                height: isSmScreen? '250vh': (isMdScreen? '220vh':'180vh'),
+                height: isSmScreen? '300vh': (isMdScreen? '220vh':'180vh'),
                 justifyContent: 'center',
                 alignItems: 'center',
-                top: isSmScreen? '28%':(isMdScreen? '27%':'50%'),
+                top: isSmScreen? (isS8Screen? '43%': '36%'):(isMdScreen? (isIpadProScreen? '37%': '40%'):'85%'),
                 backgroundColor: '#272727',
                 overflow: 'hidden',
                 
@@ -26,16 +27,16 @@ const Services = () => {
                         height: '100px',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        paddingLeft: isSmScreen? '80px': (isMdScreen? '160px':  '300px'),
+                        paddingLeft: isSmScreen? (isS8Screen? '80px': '120px') : (isMdScreen? '160px':  '300px'),
                         marginLeft: isMdScreen? "25px" : '',
-                        marginTop: isSmScreen? '4px': '10px',
+                        marginTop: isSmScreen? '6px': '25px',
                         marginLeft: isIpadProScreen? '90px': '',
                     }}
                 >
-                    <Typography variant="h4" sx={{ fontFamily: 'Rounded Elegance', fontStyle: 'normal', color: 'white', fontWeight: 2, fontSize: isSmScreen? '12px': '27px', margin: 'auto', paddingLeft: isSmScreen? '50px': (isMdScreen? '170px': "300px") , lineHeight:'0px'}}>
+                    <Typography variant="h4" sx={{ fontFamily: 'Rounded Elegance', fontStyle: 'normal', color: 'white', fontWeight: 2, fontSize: isSmScreen? '15px': '27px', margin: 'auto', paddingLeft: isSmScreen? '50px': (isMdScreen? '170px': "300px") , lineHeight:'0px'}}>
                         Our Service
                     </Typography>
-                    <Image src='/line 1.png' alt='' width={isSmScreen? 59: 130} height={4} style={{ paddingTop: '0px' , marginLeft: isSmScreen? '50px': (isMdScreen? '170px': "300px")}} />
+                    <Image src='/Line 1.png' alt='' width={isSmScreen? 74: 130} height={4} style={{ paddingTop: '0px' , marginLeft: isSmScreen? '50px': (isMdScreen? '170px': "300px")}} />
                     <Typography variant="h5" sx={{ fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight:isSmScreen? '100':  '700', fontSize: isSmScreen? '14px':(isMdScreen? '30px':'40px'), color: '#D8B150', textTransform: 'capitalize', margin: 'auto', paddingLeft: isSmScreen? '0px': (isMdScreen? '40px': "100px") }}>
                         <span style={{ color: 'white' }}>Our</span> cutting edge solutions <span style={{ color: 'white' }}>for</span>
                     </Typography>
@@ -56,7 +57,7 @@ const Services = () => {
                         height: '52px',
                         position: 'absolute',
                         marginTop: isSmScreen? '600px' : (isMdScreen?'0px': '10px'),
-                        marginLeft: isSmScreen ? '80px' : (isMdScreen ? (isIpadProScreen ? '420px' : '310px') : '580px'),
+                        marginLeft: isSmScreen ? (isS8Screen? '80px': '110px' ): (isMdScreen ? (isIpadProScreen ? '420px' : '310px') : '580px'),
                         marginRight: '110px',
                         borderRadius: '12024.34px',
                         textTransform: 'capitalize',
@@ -70,7 +71,7 @@ const Services = () => {
                 <Box sx={{
                     width: isSmScreen? '340px': (isMdScreen? (isIpadProScreen? '780px': '700px' ): '1200px'),
                     height: isSmScreen? '180px': (isMdScreen? (isIpadProScreen? '350px' : '300px') :'361px'),
-                    marginLeft: isSmScreen? '10px': (isMdScreen? (isIpadProScreen? '100px': '50px') :'67px'),
+                    marginLeft: isSmScreen? (isS8Screen? '10px': '35px'): (isMdScreen? (isIpadProScreen? '100px': '50px') :'67px'),
                     marginTop: isSmScreen? '700px' : '150px',
                     backgroundColor: '#302148',
                     borderRadius: '61.6px',

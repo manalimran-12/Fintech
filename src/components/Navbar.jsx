@@ -19,9 +19,9 @@ const Navbar = () => {
     },
   });
   const isSmScreen = useMediaQuery(theme.breakpoints.down('sm'));
-  const isMdScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const isMdScreen = useMediaQuery("(min-width: 600px) and (max-width: 1024px)");
   const isLgScreen = useMediaQuery(theme.breakpoints.down('lg'))
-  const isIpadPro = isMdScreen && !isLgScreen;
+  const isIpadProScreen = useMediaQuery("(min-width: 1024px) and (max-width: 1024px)");
 
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
@@ -37,8 +37,10 @@ const Navbar = () => {
     { label: 'Blogs', link: '#' },
     { label: 'Podcast', link: '#' },
     { label: 'About us', link: '#' },
-    { label: isSmScreen?  'Contact' : (isIpadPro? 'Contact' : ''), link: '#'}
   ];
+  if (!isIpadProScreen) {
+    menuItems.push({ label: isSmScreen ? 'Contact' : (isMdScreen ? 'Contact' : ''), link: '#' });
+  }
 
   return (
     <Box component="section" sx={{ width: '100%', height: '100px', background: 'transparent', display: 'flex', position: 'relative' }}>
@@ -48,7 +50,7 @@ const Navbar = () => {
         width={isSmScreen ? 33 : 53}
         height={isSmScreen ? 35 : 55}
         style={{
-          marginLeft: isSmScreen ? '26px' : (isMdScreen ? '50px' : '80px'),
+          marginLeft: isSmScreen ? '26px' : (isMdScreen ? (isIpadProScreen? '30px': '50px') : '80px'),
           marginTop: isSmScreen ? '30px' : '30px'
         }}
       />

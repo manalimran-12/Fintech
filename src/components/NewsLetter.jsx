@@ -11,6 +11,7 @@ export const NewsLetter = () => {
     backgroundSize: '330px 180px, 300px 300px,120px 37px, cover ',
     backgroundPosition: '50px 100%, 650px 0px,200px 100%'
   });
+  const yheader = text({ color: '#D8B150', fontSize: isSmallScreen?'18px':(isSmallScreen1 ? '25px' : '35px'), fontWeight: '500', left: '0px', fontFamily: 'Montserrat' });
   const input1 = input({ height: isSmallScreen ? '45px' : '50px', top:isSmallScreen?'63%':'30%', left:isSmallScreen?'18%':'50%',width:isSmallScreen?'60%':(isSmallScreen1?'40%':'30%'),marginLeft:'10px' });
   const inputtxt = text({
     fontWeight: '100px', fontSize: '14px', top:isSmallScreen?'15%': '19%', left: '8%',
