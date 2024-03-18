@@ -6,12 +6,12 @@ import { elementsbg, H1, heading, text, button } from '@/styling';
 import EastIcon from '@mui/icons-material/East';
 const Products=()=>{
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
-    const isMedScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
     const isSmScreen = useMediaQuery("(max-width:600px)");
     const isMdScreen = useMediaQuery("(min-width: 600px) and (max-width: 1024px)");
+    const isMedScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
     const isIpadProScreen = useMediaQuery("(min-width: 900px) and (max-width: 1024px)");
     const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
-    const shapebg=elementsbg({height:'100vh', display:'flex',
+    const shapebg=elementsbg({height:'100vh', display:'flex',top: isSmallScreen ? (isS8Screen ? '30%' : '25%') : (isMedScreen ? (isIpadProScreen ? '39%' : '45%') : '86%'),
     backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 43 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.25' d='M41.3202 25.9081L3.26431 1.43119L1.09466 46.627L41.3202 25.9081Z' stroke='white' stroke-width='1.37494'/%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 49 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle opacity='0.25' cx='24.0615' cy='24.0615' r='23.374' transform='matrix(-1 0 0 1 48.8175 0.980713)' stroke='white' stroke-width='1.37494'/%3E%3C/svg%3E"),
     url('data:image/svg+xml,<svg width="40" height="42" viewBox="0 0 49 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.25" d="M47.0806 41.041L24.4566 1.85517L1.83269 41.041H47.0806Z" stroke="white" stroke-width="1.37494"/></svg>'),
