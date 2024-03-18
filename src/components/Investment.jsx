@@ -41,7 +41,7 @@ const CustomBulletList = ({ words }) => {
 const Investment = () => {
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
     const isMedScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
-    const shapesbg = elementsbg({top:'114%'});
+    const shapesbg = elementsbg({top:  isSmallScreen? '110%': isMedScreen?  '160%' :'148%'});
     const I_heading = H1({ width: '115px', top:'20%'});
     const I_subheading = heading({ top: '20%', width: '55%', left: '7.5%'});
     const smalltxt = text({  width:'70%',top:'21%',left:'8%'});

@@ -7,7 +7,7 @@ import EastIcon from '@mui/icons-material/East';
 const Products=()=>{
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
     const isMedScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
-    const shapebg=elementsbg({height:'100vh', display:'flex',
+    const shapebg=elementsbg({height:'100vh', display:'flex', top: isSmallScreen? '160%':isMedScreen?'83%' :'86%',
     backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 43 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.25' d='M41.3202 25.9081L3.26431 1.43119L1.09466 46.627L41.3202 25.9081Z' stroke='white' stroke-width='1.37494'/%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 49 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle opacity='0.25' cx='24.0615' cy='24.0615' r='23.374' transform='matrix(-1 0 0 1 48.8175 0.980713)' stroke='white' stroke-width='1.37494'/%3E%3C/svg%3E"),
     url('data:image/svg+xml,<svg width="40" height="42" viewBox="0 0 49 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.25" d="M47.0806 41.041L24.4566 1.85517L1.83269 41.041H47.0806Z" stroke="white" stroke-width="1.37494"/></svg>'),
@@ -20,8 +20,8 @@ const Products=()=>{
     url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 49 50" fill="none" xmlns="http://www.w3.org/2000/svg"><circle opacity="0.25" cx="24.4312" cy="24.9565" r="23.374" stroke="white" stroke-width="1.37494"/></svg>'),
     url('data:image/svg+xml,<svg width="537" height="800" viewBox="0 0 737 1130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M368.5 0H737L368.5 1130H0L368.5 0Z" fill="%23543881"/></svg>')`,});
     const I_heading = H1({ width: '90px', top:'8vw', fontSize: 'clamp(1rem, 1.7vw, 2rem);', });
-    const I_subheading = heading({ top: '8.4vw', width:isSmallScreen?'90%': '75%', left: '7.5%',border:'2px solid #ffffff'});
-    const smalltxt = text({  width:isSmallScreen?'90%':'70%',top:'9.5vw',left:'7.5%',border:'2px solid #ffffff'});
+    const I_subheading = heading({ top: '8.4vw', width:isSmallScreen?'90%': '75%', left: '7.5%'});
+    const smalltxt = text({  width:isSmallScreen?'90%':'70%',top:'9.5vw',left:'7.5%'});
     const Readmore = button({top:'12vw',left:'8%',width:isSmallScreen ? '120px' :  '170px',height:isSmallScreen? '30px' :'45px',textTransform: 'none'});
     const cards =[
         {
@@ -52,36 +52,36 @@ const Products=()=>{
     ]
     return(
         <Box sx={shapebg}>
-            <Box sx={{border:'2px solid #ffffff',width:'50%', display:'flex',direction:'row',gap:'10px',flexWrap: 'wrap',paddingLeft:'130px',paddingTop:'50px'}}>
+            <Box sx={{width:'50%', display:'flex', flexDirection: 'row', flexWrap: 'wrap', rowGap: isSmallScreen ? '2px' : '0px', columnGap: isSmallScreen ? '8px' : '8px', paddingLeft:isSmallScreen?'2vw':'13vw',paddingTop:'4vw'}}>
             {cards.map((card, index) => (
             <Card
                 key={index}
                 sx={{
-                width:  '35%',
-                height: isSmallScreen?'14vw':isMedScreen?'15vw':'18vw',
+                    
+                width: isSmallScreen?'18.5vw':isMedScreen?'17vw':'13vw',
+                height: isSmallScreen?'36vw':isMedScreen?'22vw':'18vw',
                 backgroundColor: index === 1 ? '#4d3672' : '#313131',
                 backgroundImage: index === 1 ? `url(${card.backgroundImage1}), url(${card.backgroundImage2})` : 'none',
                 backgroundSize: index === 1 ? '60% 100%' : 'auto',
                 backgroundPosition: index === 1 ? 'left, right' : 'auto',
                 backgroundRepeat: 'no-repeat',
-                boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.1)',
                 marginTop: index === 1 || index === 3 ? '-22px':'0px'
                 /*marginLeft: index === 1 || index === 3 ? (isSmallScreen ? '55%' : (isMedScreen ? '60%' : '320px')) : (isSmallScreen ? '20%' : (isMedScreen ? '25%' : '120px')),
                 marginTop: index === 1 || index === 3 ? (isSmallScreen ? '-45%' : (isMedScreen ? '-50%' : '-280px')) : (isSmallScreen ? '7%' : (isMedScreen ? '10%' : '65px')),
                 */
                 }}
             >
-            <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'left' }}>
+            <CardContent sx={{display: 'flex', flexDirection: 'column', alignItems: 'left', paddingBottom: '10px'}}>
                 <Image src={card.imageSrc} alt='cards' width={40} height={40} style={{ marginTop: isMedScreen ? '0px' : '12px', marginBottom: '10px' }} />
-                <Typography variant="h6" sx={{ width:'85%', fontStyle: 'Raleway', fontSize: isSmallScreen? '1.6vw' : (isMedScreen ? '1.4vw' : '1.2vw'), fontWeight: isSmallScreen? '400' : '400', lineHeight: isMedScreen ? '15px' : '18px',  color: '#FFFFFF' }}>{card.title}</Typography>
-                <Typography variant="body1" sx={{border:'2px solid #ffffff', fontStyle: 'Raleway', fontSize: isSmallScreen? '1vw' : (isMedScreen ? "0.9vw" : '0.8vw'), fontWeight: isSmallScreen? '50' : '100', lineHeight: '13px',  marginTop: isMedScreen ? '7px' : '7px', color: 'white' }}>{card.description}</Typography>
-                <Button  sx={{color: '#D8B150', height:'20px',width:'120px',left:'0px',marginTop:'11px' ,border:'2px solid #ffffff'}} endIcon={<EastIcon/>}><Typography sx={{textTransform:'none',color:'#D8B150',fontSize:'12px',marginLeft:'-25px'}}>Know more</Typography></Button>
+                <Typography variant="h6" sx={{ width:isSmallScreen?'95%':isMedScreen?'90%':'85%', fontStyle: 'Raleway', fontSize: isSmallScreen? '1.3vw' : (isMedScreen ? '1.2vw' : '1.2vw'), fontWeight: isSmallScreen? '400' : '400', lineHeight: isMedScreen ? '15px' : '18px',  color: '#FFFFFF' }}>{card.title}</Typography>
+                <Typography variant="body1" sx={{ fontStyle: 'Raleway', fontSize: isSmallScreen? '1vw' : (isMedScreen ? "0.9vw" : '0.8vw'), fontWeight: isSmallScreen? '50' : '100', lineHeight: '13px',  marginTop: isMedScreen ? '7px' : '7px', color: 'white' }}>{card.description}</Typography>
+                <Button  sx={{color: '#D8B150', height:'20px',width:'120px',left:'0px',marginTop:'11px' }} endIcon={<EastIcon/>}><Typography sx={{textTransform:'none',color:'#D8B150',fontSize:'12px',marginLeft:'-25px'}}>Know more</Typography></Button>
             </CardContent>
         </Card>
 ))}
 
             </Box>
-            <Box sx={{border:'2px solid #ffffff',width:'50%'}}>
+            <Box sx={{width:'50%'}}>
             <Typography sx={I_heading}>
                     Products
                 </Typography>

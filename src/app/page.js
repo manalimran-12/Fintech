@@ -3,8 +3,8 @@ import Header from "@/components/Header";
 import Services from "@/components/Services";
 import AboutUs from '@/components/AboutUs';
 import { BlogSection } from "@/components/BlogSection";
-// import {Investment} from "@/components/Investment";
-// import {Products} from "@/components/Products";
+import Investment from "@/components/Investment";
+import Products from "@/components/Products";
 import { Box } from '@mui/material';
 
 export default function Home() {
@@ -13,9 +13,9 @@ export default function Home() {
       <Box sx={{ width: '100%', height: '280vh', position: 'absolute' }}>
         <Header />
         <AboutUs />
-        {/* <Products/> */}
+        <Products/>
         <Services />
-        {/* <Investment/> */}
+        <Investment/> 
         <BlogSection />
       </Box>
     </RootLayout>
