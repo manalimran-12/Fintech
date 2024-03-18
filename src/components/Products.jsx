@@ -7,6 +7,10 @@ import EastIcon from '@mui/icons-material/East';
 const Products = () => {
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
     const isMedScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
+    const isSmScreen = useMediaQuery("(max-width:600px)");
+    const isMdScreen = useMediaQuery("(min-width: 600px) and (max-width: 1024px)");
+    const isIpadProScreen = useMediaQuery("(min-width: 900px) and (max-width: 1024px)");
+    const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
     const shapebg=elementsbg({height:'100vh', display:'flex',
     backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 43 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.25' d='M41.3202 25.9081L3.26431 1.43119L1.09466 46.627L41.3202 25.9081Z' stroke='white' stroke-width='1.37494'/%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 49 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle opacity='0.25' cx='24.0615' cy='24.0615' r='23.374' transform='matrix(-1 0 0 1 48.8175 0.980713)' stroke='white' stroke-width='1.37494'/%3E%3C/svg%3E"),
@@ -20,8 +24,8 @@ const Products = () => {
     url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 49 50" fill="none" xmlns="http://www.w3.org/2000/svg"><circle opacity="0.25" cx="24.4312" cy="24.9565" r="23.374" stroke="white" stroke-width="1.37494"/></svg>'),
     url('data:image/svg+xml,<svg width="537" height="800" viewBox="0 0 737 1130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M368.5 0H737L368.5 1130H0L368.5 0Z" fill="%23543881"/></svg>')`,});
     const I_heading = H1({ width: '90px', top:'8vw', fontSize: 'clamp(1rem, 1.7vw, 2rem);', });
-    const I_subheading = heading({ top: '8.4vw', width:isSmallScreen?'90%': '75%', left: '7.5%',border:'2px solid #ffffff'});
-    const smalltxt = text({  width:isSmallScreen?'90%':'70%',top:'9.5vw',left:'7.5%',border:'2px solid #ffffff'});
+    const I_subheading = heading({ top: '8.4vw', width:isSmallScreen?'90%': '75%', left: '7.5%'});
+    const smalltxt = text({  width:isSmallScreen?'90%':'70%',top:'9.5vw',left:'7.5%'});
     const Readmore = button({top:'12vw',left:'8%',width:isSmallScreen ? '120px' :  '170px',height:isSmallScreen? '30px' :'45px',textTransform: 'none'});
     const cards =[
         {
@@ -52,13 +56,13 @@ const Products = () => {
     ]
     return(
         <Box sx={shapebg}>
-            <Box sx={{border:'2px solid #ffffff',width:'50%', display:'flex',direction:'row',gap:'10px',flexWrap: 'wrap',paddingLeft:'130px',paddingTop:'50px'}}>
+            <Box sx={{width:'50%', display:'flex',direction:'row',gap:'10px',flexWrap: 'wrap',paddingLeft:'130px',paddingTop:'50px'}}>
             {cards.map((card, index) => (
             <Card
                 key={index}
                 sx={{
-                width:  '35%',
-                height: isSmallScreen?'14vw':isMedScreen?'15vw':'18vw',
+                width: isSmScreen? (isS8Screen? '200%' : '150%') : isMdScreen? '45%' :'35%',
+                height: isSmScreen?'40vw':isMdScreen?'25vw':'18vw',
                 backgroundColor: index === 1 ? '#4d3672' : '#313131',
                 backgroundImage: index === 1 ? `url(${card.backgroundImage1}), url(${card.backgroundImage2})` : 'none',
                 backgroundSize: index === 1 ? '60% 100%' : 'auto',
@@ -72,16 +76,16 @@ const Products = () => {
                 }}
             >
             <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'left' }}>
-                <Image src={card.imageSrc} alt='cards' width={40} height={40} style={{ marginTop: isMedScreen ? '0px' : '12px', marginBottom: '10px' }} />
-                <Typography variant="h6" sx={{ width:'85%', fontStyle: 'Raleway', fontSize: isSmallScreen? '1.6vw' : (isMedScreen ? '1.4vw' : '1.2vw'), fontWeight: isSmallScreen? '400' : '400', lineHeight: isMedScreen ? '15px' : '18px',  color: '#FFFFFF' }}>{card.title}</Typography>
-                <Typography variant="body1" sx={{border:'2px solid #ffffff', fontStyle: 'Raleway', fontSize: isSmallScreen? '1vw' : (isMedScreen ? "0.9vw" : '0.8vw'), fontWeight: isSmallScreen? '50' : '100', lineHeight: '13px',  marginTop: isMedScreen ? '7px' : '7px', color: 'white' }}>{card.description}</Typography>
-                <Button  sx={{color: '#D8B150', height:'20px',width:'120px',left:'0px',marginTop:'11px' ,border:'2px solid #ffffff'}} endIcon={<EastIcon/>}><Typography sx={{textTransform:'none',color:'#D8B150',fontSize:'12px',marginLeft:'-25px'}}>Know more</Typography></Button>
+                <Image src={card.imageSrc} alt='cards' width={isSmScreen? (isS8Screen? 20 :20  ) : (isMdScreen? (isIpadProScreen? 30 : 30 ) : 40)} height={isSmScreen? (isS8Screen? 20 :20  ) : (isMdScreen? (isIpadProScreen? 30 : 30 ) :40)} style={{ marginTop: isMedScreen ? '0px' : '12px', marginBottom: '10px' }} />
+                <Typography variant="h6" sx={{ width:'85%', fontStyle: 'Raleway', fontSize: isSmallScreen? '1.6vw' : (isMedScreen ? '1.4vw' : '1.2vw'), fontWeight: isSmallScreen? '400' : '400', lineHeight: isSmScreen? '10px' :isMedScreen ? '15px' : '18px',  color: '#FFFFFF' }}>{card.title}</Typography>
+                <Typography variant="body1" sx={{ fontStyle: 'Raleway', fontSize: isSmallScreen? '1vw' : (isMedScreen ? "0.9vw" : '0.8vw'), fontWeight: isSmallScreen? '50' : '100', lineHeight: isSmScreen? '8px' : '13px',  marginTop: isMedScreen ? '7px' : '7px', color: 'white' }}>{card.description}</Typography>
+                <Button  sx={{color: '#D8B150', height:'20px',width:'120px',left:isSmScreen? '-12px': '0px',marginTop:isSmScreen? '6px' : '11px'}} endIcon={<EastIcon/>}><Typography sx={{textTransform:'none',color:'#D8B150',fontSize:'12px',marginLeft:'-25px'}}>Know more</Typography></Button>
             </CardContent>
         </Card>
 ))}
 
             </Box>
-            <Box sx={{border:'2px solid #ffffff',width:'50%'}}>
+            <Box sx={{width:'50%'}}>
             <Typography sx={I_heading}>
                     Products
                 </Typography>
