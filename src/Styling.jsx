@@ -1,10 +1,8 @@
 "use cilent"
-import { useMediaQuery } from '@mui/material';
+// import { useMediaQuery } from '@mui/material';
 
 export const H1 = (additionalStyles = {}) => {
-  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
-  const isMedScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
-
+  
   const h1Styles = {
     fontFamily: "Rounded Elegance, sans-serif",
     color: '#ffffff',
@@ -12,7 +10,7 @@ export const H1 = (additionalStyles = {}) => {
     left: '7.5%',
     top: '-2.5em',
     fontStyle: 'normal',
-    fontSize: isSmallScreen ? '11px' : (isMedScreen ? '14px' : '20px'),
+    fontSize:  '20px',
     fontWeight: '400',
     borderBottom: '4px solid #D8B150',
     borderRadius: '3px',
@@ -24,13 +22,13 @@ export const H1 = (additionalStyles = {}) => {
 };
 
 export const heading = (additionalStyles = {}) => {
-  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
-  const isMedScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
+  // const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+  // const isMedScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
 
   const headingStyles = {
     fontFamily: 'Montserrat, sans-serif',
     color: '#ffffff',
-    fontSize: isSmallScreen ? '14px' : (isMedScreen ? '16px' : '28px'),
+    fontSize: '28px',
     fontWeight: '750',
     position: 'relative',
     width: 'max-content',
@@ -42,15 +40,15 @@ export const heading = (additionalStyles = {}) => {
 };
 
 export const text = (additionalStyles = {}) => {
-  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
-  const isMedScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
+  // const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+  // const isMedScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
 
   const textStyles = {
     fontFamily: "Raleway, sans-serif",
     color: '#ffffff',
     position: 'relative',
     fontStyle: 'normal',
-    fontSize: isSmallScreen ? '11px' : (isMedScreen ? '12px' : '13px'),
+    fontSize: '13px', //isSmallScreen ? '11px' : (isMedScreen ? '12px' : 
     left: '25%',
     fontWeight: '500',
     width: 'max-content',
