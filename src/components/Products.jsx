@@ -24,8 +24,8 @@ const Products=()=>{
     url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 49 50" fill="none" xmlns="http://www.w3.org/2000/svg"><circle opacity="0.25" cx="24.4312" cy="24.9565" r="23.374" stroke="white" stroke-width="1.37494"/></svg>'),
     url('data:image/svg+xml,<svg width="537" height="800" viewBox="0 0 737 1130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M368.5 0H737L368.5 1130H0L368.5 0Z" fill="%23543881"/></svg>')`,});
     const I_heading = H1({ width: '90px', top:'8vw', fontSize: 'clamp(1rem, 1.7vw, 2rem);', });
-    const I_subheading = heading({ top: '8.4vw', width:isSmallScreen?'90%': '75%', left: '7.5%'});
-    const smalltxt = text({  width:isSmallScreen?'90%':'70%',top:'9.5vw',left:'7.5%'});
+    const I_subheading = heading({fontSize: isSmallScreen ? '14px' : (isMedScreen ? '16px' : '28px'), top: '8.4vw', width:isSmallScreen?'90%': '75%', left: '7.5%'});
+    const smalltxt = text({ fontSize: isSmallScreen ? '11px' : (isMedScreen ? '12px' : '13px'), width:isSmallScreen?'90%':'70%',top:'9.5vw',left:'7.5%'});
     const Readmore = button({top:'12vw',left:'8%',width:isSmallScreen ? '120px' :  '170px',height:isSmallScreen? '30px' :'45px',textTransform: 'none'});
     const cards =[
         {
@@ -56,13 +56,13 @@ const Products=()=>{
     ]
     return(
         <Box sx={shapebg}>
-            <Box sx={{width:'50%' , height: '50px', display:'flex',direction:'row',gap:'3px',flexWrap: 'wrap',paddingLeft:isSmScreen?'20px':'130px',paddingTop:'50px'}}>
+            <Box sx={{width:'50%' , height: '50px', display:'flex',direction:'row',gap:'3px',flexWrap: 'wrap',paddingLeft:isSmScreen?'20px':'130px',paddingTop:isSmallScreen?'35px':'50px'}}>
             {cards.map((card, index) => (
             <Card
                 key={index}
                 sx={{
-                width: isSmScreen? (isS8Screen? '40%' : '40%') : isMdScreen? '45%' :'35%',
-                height: isSmScreen?'34vw':isMdScreen?'25vw':'18vw',
+                width: isSmScreen? (isS8Screen? '48%' : '40%') : isMdScreen? '45%' :'35%',
+                height: isSmScreen?'36vw':isMdScreen?'25vw':'18vw',
                 backgroundColor: index === 1 ? '#4d3672' : '#313131',
                 backgroundImage: index === 1 ? `url(${card.backgroundImage1}), url(${card.backgroundImage2})` : 'none',
                 backgroundSize: index === 1 ? '60% 100%' : 'auto',
@@ -76,9 +76,9 @@ const Products=()=>{
             >
             <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'left' }}>
                 <Image src={card.imageSrc} alt='cards' width={isSmScreen? (isS8Screen? 20 :20  ) : (isMdScreen? (isIpadProScreen? 30 : 30 ) : 40)} height={isSmScreen? (isS8Screen? 20 :20  ) : (isMdScreen? (isIpadProScreen? 30 : 30 ) :40)} style={{ marginTop: isMedScreen ? '0px' : '12px', marginBottom: '10px' }} />
-                <Typography variant="h6" sx={{ width:'85%', fontStyle: 'Raleway', fontSize: isSmallScreen? '1.6vw' : (isMedScreen ? '1.4vw' : '1.2vw'), fontWeight: isSmallScreen? '400' : '400', lineHeight: isSmScreen? '10px' :isMedScreen ? '15px' : '18px',  color: '#FFFFFF' }}>{card.title}</Typography>
-                <Typography variant="body1" sx={{ fontStyle: 'Raleway', fontSize: isSmallScreen? '1vw' : (isMedScreen ? "0.9vw" : '0.8vw'), fontWeight: isSmallScreen? '50' : '100', lineHeight: isSmScreen? '8px' : '13px',  marginTop: isMedScreen ? '7px' : '7px', color: 'white' }}>{card.description}</Typography>
-                <Button  sx={{color: '#D8B150', height:isSmallScreen?'10px':'20px',width:isSmallScreen?'70px':'120px',left:isSmScreen? '-12px': '0px',marginTop:isSmScreen? '6px' : '11px'}} endIcon={<EastIcon sx={{ fontSize: isSmallScreen ? '6px' : '24px' }} />}><Typography sx={{textTransform:'none',color:'#D8B150',fontSize:isSmallScreen?'9px':'12px',marginLeft:'-20px'}}>Know more</Typography></Button>
+                <Typography variant="h6" sx={{ width:isSmallScreen?'98%':'85%', fontStyle: 'Raleway', fontSize: isSmallScreen? '1.6vw' : (isMedScreen ? '1.4vw' : '1.2vw'), fontWeight: isSmallScreen? '400' : '400', lineHeight: isSmScreen? '10px' :isMedScreen ? '15px' : '18px',  color: '#FFFFFF' }}>{card.title}</Typography>
+                <Typography variant="body1" sx={{ fontStyle: 'Raleway', fontSize: isSmallScreen? '1vw' : (isMedScreen ? "0.9vw" : '0.8vw'), fontWeight: isSmallScreen? '50' : '100', lineHeight: isSmScreen? '8px' : '13px',  marginTop:isSmallScreen?'2px': isMedScreen ? '6px' : '7px', color: 'white' }}>{card.description}</Typography>
+                <Button  sx={{color: '#D8B150', height:isSmallScreen?'10px':'20px',width:isSmallScreen?'70px':'120px',left:isSmScreen? '-5px': '0px',marginTop:isSmScreen? '6px' : '11px'}} endIcon={<EastIcon sx={{ height: isSmallScreen ? '10px' : '22px',marginLeft:'-10px' }} />}><Typography sx={{textTransform:'none',color:'#D8B150',fontSize:isSmallScreen?'9px':'12px',marginLeft:'-20px'}}>Know more</Typography></Button>
             </CardContent>
         </Card>
 ))}
@@ -95,7 +95,7 @@ const Products=()=>{
                 We have complete and very easy solution for Virtual Islamic / Digital Banking and different 
                 fintech products for Islamic banking including deposit and asset side for all requirements of clients.
                 </Typography>
-                <Button sx={Readmore} endIcon={<EastIcon/>}><Typography sx={{fontSize: isSmallScreen?'10px':'16px'}}>All Products</Typography></Button>
+                <Button sx={Readmore} endIcon={<EastIcon />}><Typography sx={{fontSize: isSmallScreen?'10px':'16px'}}>All Products</Typography></Button>
             </Box>
         </Box>
     );

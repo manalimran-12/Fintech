@@ -16,7 +16,7 @@ const Services = () => {
                 height: isSmScreen? '1700px': (isMdScreen? (isIpadProScreen? '80vh' : '100vh'):'180vh'),
                 justifyContent: 'center',
                 alignItems: 'center',
-                top: isSmScreen? (isS8Screen? '60%': '50%'):(isMdScreen? (isIpadProScreen? '58%': '60.5%'):'121%'),
+                top: isSmScreen? (isS8Screen? '60%': '50%'):(isMdScreen? (isIpadProScreen? '58%': '62%'):'121%'),
                 backgroundColor: '#272727',
                 overflow: 'hidden',
                 
@@ -29,11 +29,11 @@ const Services = () => {
                         alignItems: 'center',
                         paddingLeft: isSmScreen? (isS8Screen? '80px': '120px') : (isMdScreen? '160px':  '300px'),
                         marginLeft: isMdScreen? "25px" : '',
-                        marginTop: isSmScreen? (isS8Screen? '20px' : '6px'): (isMdScreen? (isIpadProScreen? '40px' : '40px'): '35px'),
+                        marginTop: isSmScreen? (isS8Screen? '35px' : '30px'): (isMdScreen? (isIpadProScreen? '40px' : '40px'): '35px'),
                         marginLeft: isIpadProScreen? '90px': '',
                     }}
                 >
-                    <Typography variant="h4" sx={{ fontFamily: 'Rounded Elegance', fontStyle: 'normal', color: 'white', fontWeight: 2, fontSize: isSmScreen? '15px': '27px', margin: 'auto', paddingLeft: isSmScreen? '50px': (isMdScreen? '170px': "300px") , lineHeight:'0px'}}>
+                    <Typography variant="h4" sx={{ fontFamily: 'Rounded Elegance', fontStyle: 'normal', color: 'white', fontWeight: 2, fontSize: isSmScreen? '15px': '27px', margin:'auto', paddingLeft: isSmScreen? '50px': (isMdScreen? '170px': "300px") , lineHeight:'0px'}}>
                         Our Service
                     </Typography>
                     <Image src='/Line 1.png' alt='' width={isSmScreen? 74: 130} height={4} style={{ paddingTop: '0px' , marginLeft: isSmScreen? '50px': (isMdScreen? '170px': "300px")}} />
@@ -56,7 +56,7 @@ const Services = () => {
                         width: '188px',
                         height: '52px',
                         position: 'absolute',
-                        marginTop: isSmScreen? '600px' : (isMdScreen?'0px': '10px'),
+                        marginTop: isSmScreen? '570px' : (isMdScreen?'0px': '10px'),
                         marginLeft: isSmScreen ? (isS8Screen? '80px': '110px' ): (isMdScreen ? (isIpadProScreen ? '420px' : '310px') : '580px'),
                         marginRight: '110px',
                         borderRadius: '12024.34px',
@@ -72,7 +72,7 @@ const Services = () => {
                     width: isSmScreen? '340px': (isMdScreen? (isIpadProScreen? '780px': '700px' ): '1200px'),
                     height: isSmScreen? '180px': (isMdScreen? (isIpadProScreen? '350px' : '300px') :'361px'),
                     marginLeft: isSmScreen? (isS8Screen? '10px': '35px'): (isMdScreen? (isIpadProScreen? '100px': '50px') :'67px'),
-                    marginTop: isSmScreen? '700px' : '150px',
+                    marginTop: isSmScreen?  '660px': '150px',
                     backgroundColor: '#302148',
                     borderRadius: '61.6px',
                     position: 'relative',
