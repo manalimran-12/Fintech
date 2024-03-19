@@ -49,7 +49,8 @@ const Investment = () => {
     const isIpadProScreen = useMediaQuery("(min-width: 900px) and (max-width: 1024px)");
     const isSm1Screen = useMediaQuery("(max-width: 428px) and (max-height: 926px)");;
     const shapesbg = elementsbg({
-    top: isSmallScreen ?'73.5%': isS8Screen ? '100%' :isMdScreen ? '70%':isIpadProScreen ? '65%' : isSm1Screen ? '79%' : '148%'
+    top: isSmallScreen ? (isS8Screen ? '100%' : '73.5%') : (isMdScreen ? (isIpadProScreen ? '70%' : '65%') : '148%')
+    /**top: isSmallScreen ?'73.5%': isS8Screen ? '100%' :isMdScreen ? '70%':isIpadProScreen ? '65%' : isSm1Screen ? '79%' : '148%' */
     });
     
     const I_heading = H1({ width: '115px', top:'20%',fontSize:isSmallScreen ? '11px' : (isMedScreen ? '14px' : '20px')});
