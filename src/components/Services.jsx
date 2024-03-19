@@ -16,7 +16,7 @@ const Services = () => {
                 height: isSmScreen? '1700px': (isMdScreen? (isIpadProScreen? '80vh' : '100vh'):'180vh'),
                 justifyContent: 'center',
                 alignItems: 'center',
-                top: isSmScreen? (isS8Screen? '60%': '50%'):(isMdScreen? (isIpadProScreen? '58%': '60.5%'):'121%'),
+                top: isSmScreen? (isS8Screen? '60%': '50%'):(isMdScreen? (isIpadProScreen? '58%': '62%'):'121%'),
                 backgroundColor: '#272727',
                 overflow: 'hidden',
                 
