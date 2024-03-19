@@ -56,9 +56,9 @@ const AboutUs = () => {
             </Button>
             <Image src='/Frame.png' width={isSmScreen? (isS8Screen? 50: 50 ): (isMdScreen? (isIpadProScreen? 120: 120):120)} height={isSmScreen? (isS8Screen? 50: 50 ): (isMdScreen? (isIpadProScreen? 120: 120):120)} alt='' style={{ position: 'absolute', left:isSmScreen? (isS8Screen? '300px': '300px'): (isMdScreen? (isIpadProScreen? '450px' : '330px') :'630px'), top:isSmScreen? (isS8Screen? '100px': '100px'): (isMdScreen? (isIpadProScreen? '370px': '370px'): '390px') }} />
             <Box sx={{ position: 'absolute', width: isSmScreen ? '155px' : (isMdScreen ? (isIpadProScreen ? '450px' : '400px') : '550px'), height: isSmScreen ? '145px' : (isMdScreen ? '370px' : '420px'), backgroundColor: '#302148', marginLeft: isSmScreen ? (isS8Screen ? '196px' : '247px') : (isMdScreen ? (isIpadProScreen ? '500px' : '370px') : '700px'), marginTop: '80px', borderRadius: '66px 0px 66px 66px' }}>
-                <Image src='/VectorA1.png' width={isSmScreen ? (isS8Screen ? 100 : 100) : (isMdScreen ? (isIpadProScreen ? 300 : 300) : 380)} height={isSmScreen ? (isS8Screen ? 90 : 90) : (isMdScreen ? (isIpadProScreen ? 300 : 280) : 325)} alt='' style={{ marginLeft: isSmScreen ? (isS8Screen ? '35px' : '35px') : (isMdScreen ? (isIpadProScreen ? '146px' : '100px') : '170px'), marginTop: isSmScreen ? (isS8Screen ? '50px' : '50px') : (isMdScreen ? (isIpadProScreen ? '69px' : '87px') : '95px') }} />
-                <Image src='/VectorA2.png' width={isSmScreen ? (isS8Screen ? 38 : 38) : (isMdScreen ? (isIpadProScreen ? 120 : 120) : 145)} height={isSmScreen ? (isS8Screen ? 40 : 40) : (isMdScreen ? (isIpadProScreen ? 125 : 125) : 145)} alt='' style={{ position: 'absolute', left: isSmScreen ? (isS8Screen ? '80px' : '80px') : (isMdScreen ? (isIpadProScreen ? '280px' : '230px') : '340px'), top: isSmScreen ? (isS8Screen ? '100px' : '100px') : (isMdScreen ? (isIpadProScreen ? '247px' : '247px') : '275px') }} />
-                <Image src='/logo.png' width={isSmScreen ? (isS8Screen ? 30 : 30) : (isMdScreen ? (isIpadProScreen ? 80 : 80) : 110)} height={isSmScreen ? (isS8Screen ? 30 : 30) : (isMdScreen ? (isIpadProScreen ? 80 : 80) : 110)} alt='' style={{ position: 'absolute', left: isSmScreen ? (isS8Screen ? '60px' : '60px') : (isMdScreen ? (isIpadProScreen ? '200px' : '180px') : '240px'), top: isSmScreen ? (isS8Screen ? '63px' : '62px') : (isMdScreen ? (isIpadProScreen ? '133px' : '138px') : '150px') }} />
+                <Image src='/VectorA1.png' alt='vector1' width={isSmScreen ? (isS8Screen ? 100 : 100) : (isMdScreen ? (isIpadProScreen ? 300 : 300) : 380)} height={isSmScreen ? (isS8Screen ? 90 : 90) : (isMdScreen ? (isIpadProScreen ? 300 : 280) : 325)} alt='' style={{ marginLeft: isSmScreen ? (isS8Screen ? '35px' : '35px') : (isMdScreen ? (isIpadProScreen ? '146px' : '100px') : '170px'), marginTop: isSmScreen ? (isS8Screen ? '50px' : '50px') : (isMdScreen ? (isIpadProScreen ? '69px' : '87px') : '95px') }} />
+                <Image src='/VectorA2.png' alt='vector1' width={isSmScreen ? (isS8Screen ? 38 : 38) : (isMdScreen ? (isIpadProScreen ? 120 : 120) : 145)} height={isSmScreen ? (isS8Screen ? 40 : 40) : (isMdScreen ? (isIpadProScreen ? 125 : 125) : 145)} alt='' style={{ position: 'absolute', left: isSmScreen ? (isS8Screen ? '80px' : '80px') : (isMdScreen ? (isIpadProScreen ? '280px' : '230px') : '340px'), top: isSmScreen ? (isS8Screen ? '100px' : '100px') : (isMdScreen ? (isIpadProScreen ? '247px' : '247px') : '275px') }} />
+                <Image src='/logo.png' alt='vector1' width={isSmScreen ? (isS8Screen ? 30 : 30) : (isMdScreen ? (isIpadProScreen ? 80 : 80) : 110)} height={isSmScreen ? (isS8Screen ? 30 : 30) : (isMdScreen ? (isIpadProScreen ? 80 : 80) : 110)} alt='' style={{ position: 'absolute', left: isSmScreen ? (isS8Screen ? '60px' : '60px') : (isMdScreen ? (isIpadProScreen ? '200px' : '180px') : '240px'), top: isSmScreen ? (isS8Screen ? '63px' : '62px') : (isMdScreen ? (isIpadProScreen ? '133px' : '138px') : '150px') }} />
             </Box>
             <Box
             sx={{
@@ -89,21 +89,21 @@ const AboutUs = () => {
               gap: '20px',
             }}
           >
-            <Image src="/foree-sahulat 1.png" width={isSmScreen ? 30 : 80} height={isSmScreen ? 10 : 25} />
-            <Image src="/tawakal bazaar.png" width={isSmScreen ? 30 : 80} height={isSmScreen ? 10 : 25} />
-            <Image src="/kistPay.png" width={isSmScreen ? 30 : 80} height={isSmScreen ? 10 : 25} />
+            <Image src="/foree-sahulat 1.png" alt='logo' width={isSmScreen ? 30 : 80} height={isSmScreen ? 10 : 25} />
+            <Image src="/tawakal bazaar.png" alt='logo' width={isSmScreen ? 30 : 80} height={isSmScreen ? 10 : 25} />
+            <Image src="/kistPay.png" alt='logo' width={isSmScreen ? 30 : 80} height={isSmScreen ? 10 : 25} />
             {!isSmScreen && (
               <>
-                <Image src="/Abhi.png" width={80} height={25} />
-                <Image src="/creditBook.png" width={80} height={25} />
-                <Image src="/Fina.png" width={80} height={25} />
+                <Image src="/Abhi.png" alt='logo' width={80} height={25} />
+                <Image src="/creditBook.png" alt='logo' width={80} height={25} />
+                <Image src="/Fina.png"  alt='logo' width={80} height={25} />
               </>
             )}
             {isSmScreen && (
               <>
-                <Image src="/Abhi.png" width={30} height={10} />
-                <Image src="/creditBook.png" width={30} height={10} />
-                <Image src="/Fina.png" width={30} height={10} />
+                <Image src="/Abhi.png"  alt='logo' width={30} height={10} />
+                <Image src="/creditBook.png" alt='logo' width={30} height={10} />
+                <Image src="/Fina.png" alt='logo' width={30} height={10} />
               </>
             )}
           </Box>;
