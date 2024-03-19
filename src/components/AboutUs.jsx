@@ -10,7 +10,7 @@ const AboutUs = () => {
     const isIpadProScreen = useMediaQuery("(min-width: 900px) and (max-width: 1024px)");
     const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
     return (
-        <Box sx={{ width: '100%', backgroundColor: '#272727', overflow: 'hidden', height: '115vh', display: 'flex', position: 'absolute', top: isSmScreen ? (isS8Screen ? '30%' : '25%') : (isMdScreen ? (isIpadProScreen ? '39%' : '45%') : '45%') }}>
+        <Box sx={{ width: '100%', backgroundColor: '#272727', overflow: 'hidden', height: '115vh', display: 'flex', position: 'absolute', top: isSmScreen ? (isS8Screen ? '22%' : '22%') : (isMdScreen ? (isIpadProScreen ? '39%' : '45%') : '45%') }}>
             <Box sx={{ width: isSmScreen ? '50%' : '39%', height: '200px', margin: 'auto', marginTop: isSmScreen ? '20%' : (isMdScreen ? (isIpadProScreen ? '20%' : '20%') : '80px'), marginLeft: isSmScreen ? '25px' : (isMdScreen ? (isIpadProScreen ? '50px' : '50px') : '100px') }}>
                 <Typography variant='h4' sx={{ fontFamily: 'Rounded Elegance', fontStyle: 'normal', color: 'white', fontWeight: 2, fontSize: isSmScreen ? (isS8Screen ? '15px' : '15px') : (isMdScreen ? (isIpadProScreen ? '27px' : '27px') : '27px'), lineHeight: '0px' }}>
                     About Us

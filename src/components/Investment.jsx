@@ -13,17 +13,18 @@ const Bullet = styled('span')({
   marginRight: '8px', 
   color:'#ffffff',
 });
-const StyledList = styled(List)(({ isSmallScreen, isMedScreen }) => ({
-  top: isSmallScreen ? '0px':  '18%',
-  left:isSmallScreen ? '-150px':'45px',
+const StyledList = styled(List)(({ isSmallScreen, isMedScreen, isIpadProScreen }) => ({
+  top: isSmallScreen ?  '2%':isIpadProScreen?'20%':  '18%',
+  left:isSmallScreen ? '-160px':'45px',
   width:isSmallScreen ? '100%':'50%'
 }));
 
 const CustomBulletList = ({ words }) => {
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
         const isMedScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
+        const isIpadProScreen = useMediaQuery("(min-width: 900px) and (max-width: 1024px)");
   return (
-    <StyledList isSmallScreen={isSmallScreen} isMedScreen={isMedScreen}>
+    <StyledList isSmallScreen={isSmallScreen} isMedScreen={isMedScreen} isIpadProScreen={isIpadProScreen}>
           {words.map((word, index) => (
             <ListItem sx={{marginBottom:'-10px', }} key={index}>
               <Bullet />
@@ -41,28 +42,30 @@ const CustomBulletList = ({ words }) => {
 const Investment = () => {
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
     const isMedScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
-    const shapesbg = elementsbg({top:  isSmallScreen? '110%': isMedScreen?  '160%' :'148%'});
+    const isIpadProScreen = useMediaQuery("(min-width: 900px) and (max-width: 1024px)");
+    const shapesbg = elementsbg({top:  isSmallScreen? '92%': isMedScreen?  '160%' :'148%'});
     const I_heading = H1({ width: '115px', top:'20%'});
     const I_subheading = heading({ top: '20%', width: '55%', left: '7.5%'});
     const smalltxt = text({  width:'70%',top:'21%',left:'8%'});
-    const Readmore = button({textTransform: 'none', top:isSmallScreen ? '-5%':isMedScreen?'10%' :  '18%',left:isSmallScreen ? '0px' :isMedScreen?'-50%' :   '50px',width:isSmallScreen ? '140px' :  '180px'});
+    const Readmore = button({textTransform: 'none', top:isSmallScreen ? '5%':isMedScreen?'8%' :  '18%',left:isSmallScreen ? '10px' :isMedScreen?'-50%' :   '50px',width:isSmallScreen ? '140px' :  '180px',height:isSmallScreen?'40px':'60px'});
     const words = ["Current","Saving","Fixed Deposit","Sukuk"]; // Your array of words
     return (
         <Box sx={shapesbg}>
             <Box sx={{
+                
                 height: '100vh',
-                width: '40%', 
+                width: '35%', 
                 marginRight:'60px',
                 left:isSmallScreen?'-10%':'20%',
-                height:'100vh'
+                height:'100vh',
             }}>
                 <Image
                     width={isSmallScreen ? 170 : (isMedScreen? 200 : 380)} 
                     height={isSmallScreen ? 160 : (isMedScreen? 210 : 380)}
                     style={{
                         position: 'absolute',
-                        top:  '10%',
-                        left: '13%',
+                        top: '8vw',
+                        left: isSmallScreen?'5%': isMedScreen?'8%' :isIpadProScreen?'2%':'13%',
                     }}
                     src="/Ellipse1.png"
                     alt="Ellipse"
@@ -72,8 +75,8 @@ const Investment = () => {
                     height={isSmallScreen ? 200 : (isMedScreen? 260 : 480)} 
                     style={{
                         position: 'absolute',
-                        top:'5%',
-                        left: '8%',
+                        top:'5vw',
+                        left:isSmallScreen?'2%':isMedScreen?'5%':isIpadProScreen?'2%': '8%',
                     }}
                     src="/cellphone.png"
                     alt="cellphone"
@@ -83,14 +86,14 @@ const Investment = () => {
                     height={isSmallScreen ? 60 : (isMedScreen? 70 : 160)}
                     style={{
                         position: 'absolute',
-                        top:  isSmallScreen?'180px':(isMedScreen? '260px' : '380px'),
-                        left:isSmallScreen?'150px':(isMedScreen? '210px' :  '380px'),
+                        top:  isSmallScreen?'180px':(isMedScreen? '240px' : '430px'),
+                        left:isSmallScreen?'100px':(isMedScreen? '170px':isIpadProScreen?'150px' :  '380px'),
                     }}
                     src="/graph1.png"
                     alt="/graph.png"
                 />
             </Box>
-            <Box sx={{ position: 'absolute', top:  isSmallScreen?'-10%':(isMedScreen? '-50px' : '0%'), left:isSmallScreen?'250px':(isMedScreen? '300px' : '600px'), width: '50%', height: '100vh'}}>
+            <Box sx={{ position: 'absolute', top:  isSmallScreen?'-100px':(isMedScreen? '-60px' : '0%'), left:isSmallScreen?'200px':(isMedScreen? '300px':isIpadProScreen?'500px' : '600px'), width: '50%', height: '100vh'}}>
                 <Typography sx={I_heading}>
                     Investments
                 </Typography>
