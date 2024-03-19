@@ -24,8 +24,8 @@ const Products=()=>{
     url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 49 50" fill="none" xmlns="http://www.w3.org/2000/svg"><circle opacity="0.25" cx="24.4312" cy="24.9565" r="23.374" stroke="white" stroke-width="1.37494"/></svg>'),
     url('data:image/svg+xml,<svg width="537" height="800" viewBox="0 0 737 1130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M368.5 0H737L368.5 1130H0L368.5 0Z" fill="%23543881"/></svg>')`,});
     const I_heading = H1({ width: '90px', top:'8vw', fontSize: 'clamp(1rem, 1.7vw, 2rem);', });
-    const I_subheading = heading({ top: '8.4vw', width:isSmallScreen?'90%': '75%', left: '7.5%'});
-    const smalltxt = text({  width:isSmallScreen?'90%':'70%',top:'9.5vw',left:'7.5%'});
+    const I_subheading = heading({fontSize: isSmallScreen ? '14px' : (isMedScreen ? '16px' : '28px'), top: '8.4vw', width:isSmallScreen?'90%': '75%', left: '7.5%'});
+    const smalltxt = text({ fontSize: isSmallScreen ? '11px' : (isMedScreen ? '12px' : '13px'), width:isSmallScreen?'90%':'70%',top:'9.5vw',left:'7.5%'});
     const Readmore = button({top:'12vw',left:'8%',width:isSmallScreen ? '120px' :  '170px',height:isSmallScreen? '30px' :'45px',textTransform: 'none'});
     const cards =[
         {

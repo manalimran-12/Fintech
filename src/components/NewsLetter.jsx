@@ -4,8 +4,9 @@ import { useMediaQuery, Box, Typography, Input,Button } from '@mui/material';
 export const NewsLetter = () => {
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
   const isSmallScreen1 = useMediaQuery("(max-width: 900px)");
+  const isMedScreen = useMediaQuery("(min-width: 600px) and (max-width: 1024px)");
   const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
-  const sub1 = H1({ top: '34px', left: '8%', position: "absolute", width: '4.5em', fontFamily: 'Rounded Elegance' });
+  const sub1 = H1({ top: '34px', left: '8%', position: "absolute", width: '4.5em', fontFamily: 'Rounded Elegance',fontSize:isSmallScreen ? '11px' : (isMedScreen ? '14px' : '20px') });
   const header = text({ position: 'absolute', fontFamily: 'Montserrat', top: '30%', left:isSmallScreen? (isS8Screen? '2em' : '2em') : '2.6em', fontSize: isSmallScreen?'15px':(isSmallScreen1 ? '25px' : '35px'), fontWeight: '500', width: '41%' });
   const box1 = box({
     height: isSmallScreen1 ? '15rem' : '13rem',

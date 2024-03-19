@@ -49,19 +49,13 @@ const Investment = () => {
     const isIpadProScreen = useMediaQuery("(min-width: 900px) and (max-width: 1024px)");
     const isSm1Screen = useMediaQuery("(max-width: 428px) and (max-height: 926px)");;
     const shapesbg = elementsbg({
-        top: isSmallScreen ? (isS8Screen ? '100%' : '73.5%') : (
-            isMdScreen ? (
-                isIpadProScreen ? '65%' : (
-                    isSm1Screen ? '79%' : '148%'
-                )
-            ) : '148%'
-        )
+    top: isSmallScreen ?'73.5%': isS8Screen ? '100%' :isMdScreen ? '70%':isIpadProScreen ? '65%' : isSm1Screen ? '79%' : '148%'
     });
     
-    const I_heading = H1({ width: '115px', top:'20%'});
-    const I_subheading = heading({ top: '20%', width: '55%', left: '7.5%'});
+    const I_heading = H1({ width: '115px', top:'20%',fontSize:isSmallScreen ? '11px' : (isMedScreen ? '14px' : '20px')});
+    const I_subheading = heading({fontSize: isSmallScreen ? '14px' : (isMedScreen ? '16px' : '28px'), top: '20%', width: '55%', left: '7.5%'});
     
-    const smalltxt = text({  width:'70%',top:'21%',left:'8%'});
+    const smalltxt = text({  width:'70%',top:'21%',left:'8%',fontSize: isSmallScreen ? '11px' : (isMedScreen ? '12px' : '13px')});
     const Readmore = button({textTransform: 'none', top:isSmallScreen ? '5%':isMedScreen?'8%' :  '18%',left:isSmallScreen ? '-50px' :isMedScreen?'-50%' :   '50px',width:isSmallScreen ? '140px' :  '180px',height:isSmallScreen?'40px':'60px'});
     const words = ["Current","Saving","Fixed Deposit","Sukuk"]; // Your array of words
     return (
