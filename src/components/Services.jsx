@@ -29,7 +29,7 @@ const Services = () => {
                         alignItems: 'center',
                         paddingLeft: isSmScreen? (isS8Screen? '80px': '120px') : (isMdScreen? '160px':  '300px'),
                         marginLeft: isMdScreen? "25px" : '',
-                        marginTop: isSmScreen? '6px': (isMdScreen? (isIpadProScreen? '40px' : '40px'): '25px'),
+                        marginTop: isSmScreen? (isS8Screen? '20px' : '6px'): (isMdScreen? (isIpadProScreen? '40px' : '40px'): '25px'),
                         marginLeft: isIpadProScreen? '90px': '',
                     }}
                 >

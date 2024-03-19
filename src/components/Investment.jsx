@@ -41,12 +41,23 @@ const CustomBulletList = ({ words }) => {
 
 
 const Investment = () => {
-    const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+    // const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+    const isSmallScreen = useMediaQuery("(max-width:600px)");
     const isMedScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
     const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
     const isMdScreen = useMediaQuery("(min-width: 600px) and (max-width: 1024px)");
     const isIpadProScreen = useMediaQuery("(min-width: 900px) and (max-width: 1024px)");
-    const shapesbg = elementsbg({top:  isSmallScreen ? (isS8Screen ? '100%' : '71%') :(isMdScreen?(isIpadProScreen? '69%' :  '73%' ):'148%')});
+    const isSm1Screen = useMediaQuery("(max-width: 428px) and (max-height: 926px)");;
+    const shapesbg = elementsbg({
+        top: isSmallScreen ? (isS8Screen ? '100%' : '73.5%') : (
+            isMdScreen ? (
+                isIpadProScreen ? '65%' : (
+                    isSm1Screen ? '79%' : '148%'
+                )
+            ) : '148%'
+        )
+    });
+    
     const I_heading = H1({ width: '115px', top:'20%'});
     const I_subheading = heading({ top: '20%', width: '55%', left: '7.5%'});
     

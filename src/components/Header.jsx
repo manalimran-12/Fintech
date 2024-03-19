@@ -34,7 +34,7 @@ const Home = () => {
     innerBox: {
       width: '55%',
       marginLeft: isSmScreen ? '20px' : (isMdScreen ? '35px' : '90px'),
-      marginTop: isSmScreen ? '20px' : '190px',
+      marginTop: isSmScreen ? '20px' : '120px',
       marginBottom: '10px',
       maxWidth: isSmScreen ? '170px' : (isMdScreen? (isIpadProScreen? '450px': '550px'): '800px')
     },
