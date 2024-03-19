@@ -1,5 +1,5 @@
 "use client"
-import { H1, text, box, input, button } from '../styling';
+import { H1, text, box, input, button } from '../Styling';
 import { useMediaQuery, Box, Typography, Input,Button } from '@mui/material';
 export const NewsLetter = () => {
   const isSmallScreen = useMediaQuery("(max-width: 600px)");

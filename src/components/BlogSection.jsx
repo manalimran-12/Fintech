@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { Cards } from './Cards';
-import { H1, text, button } from '../styling';
+import { H1, text, button } from '../Styling';
 import Foo from '@/components/Foo'
 import { useMediaQuery, Box, Typography,Grid,Button } from '@mui/material';
 import { NewsLetter } from '@/components/NewsLetter';

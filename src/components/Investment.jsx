@@ -2,7 +2,7 @@
 import { useMediaQuery, Box, Typography, Grid, Button,  List, ListItem, ListItemText} from '@mui/material';
 import { styled } from '@mui/system';
 import Image from 'next/image';
-import { elementsbg, H1, heading, text, button } from '@/styling';
+import { elementsbg, H1, heading, text, button } from '@/Styling';
 import EastIcon from '@mui/icons-material/East';
 const Bullet = styled('span')({
   display: 'inline-block',

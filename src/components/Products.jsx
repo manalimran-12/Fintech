@@ -2,7 +2,7 @@
 import { useMediaQuery, Box, Typography, Grid, Button, Card, List, ListItem, ListItemText, CardContent} from '@mui/material';
 import { styled } from '@mui/system';
 import Image from 'next/image';
-import { elementsbg, H1, heading, text, button } from '@/styling';
+import { elementsbg, H1, heading, text, button } from '@/Styling';
 import EastIcon from '@mui/icons-material/East';
 const Products=()=>{
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));

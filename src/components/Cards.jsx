@@ -1,5 +1,5 @@
 
-import { H1, text } from '../styling';
+import { H1, text } from '../Styling';
 import Image from 'next/image';
 import { useMediaQuery, Box, Typography, Container,Button } from '@mui/material';
 export const Cards = ({ ImageUrl, Title, Description }) => {
