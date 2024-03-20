@@ -29,7 +29,7 @@ const Services = () => {
                         alignItems: 'center',
                         paddingLeft: isSmScreen? (isS8Screen? '80px': '120px') : (isMdScreen? '160px':  '300px'),
                         marginLeft: isMdScreen? "25px" : '',
-                        marginTop: isSmScreen? (isS8Screen? '35px' : '30px'): (isMdScreen? (isIpadProScreen? '40px' : '40px'): '35px'),
+                        marginTop: isSmScreen? (isS8Screen? '35px' : '40px'): (isMdScreen? (isIpadProScreen? '70px' : '70px'): '45px'),
                         marginLeft: isIpadProScreen? '90px': '',
                     }}
                 >
@@ -56,7 +56,7 @@ const Services = () => {
                         width: '188px',
                         height: '52px',
                         position: 'absolute',
-                        marginTop: isSmScreen? '570px' : (isMdScreen?'0px': '10px'),
+                        marginTop: isSmScreen? '570px' : (isMdScreen?'-60px': '10px'),
                         marginLeft: isSmScreen ? (isS8Screen? '80px': '110px' ): (isMdScreen ? (isIpadProScreen ? '420px' : '310px') : '580px'),
                         marginRight: '110px',
                         borderRadius: '12024.34px',
@@ -72,7 +72,7 @@ const Services = () => {
                     width: isSmScreen? '340px': (isMdScreen? (isIpadProScreen? '780px': '700px' ): '1200px'),
                     height: isSmScreen? '180px': (isMdScreen? (isIpadProScreen? '350px' : '300px') :'361px'),
                     marginLeft: isSmScreen? (isS8Screen? '10px': '35px'): (isMdScreen? (isIpadProScreen? '100px': '50px') :'67px'),
-                    marginTop: isSmScreen?  '660px': '150px',
+                    marginTop: isSmScreen?  '660px':(isMdScreen? (isIpadProScreen? '80px': '60px'):'120px'),
                     backgroundColor: '#302148',
                     borderRadius: '61.6px',
                     position: 'relative',
