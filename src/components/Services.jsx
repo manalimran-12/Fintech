@@ -8,6 +8,7 @@ const Services = () => {
     const isMdScreen = useMediaQuery("(min-width: 600px) and (max-width: 1024px)");
     const isIpadProScreen = useMediaQuery("(min-width: 900px) and (max-width: 1024px)");
     const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
+    const isLgScreen = useMediaQuery("(min-width: 1500px) and (max-width: 3000px)");
     return (
         <>
             <Box sx={{
@@ -16,7 +17,8 @@ const Services = () => {
                 height: isSmScreen? '1700px': (isMdScreen? (isIpadProScreen? '80vh' : '100vh'):'180vh'),
                 justifyContent: 'center',
                 alignItems: 'center',
-                top: isSmScreen? (isS8Screen? '60%': '50%'):(isMdScreen? (isIpadProScreen? '58%': '62%'):'121%'),
+                paddingLeft:isLgScreen?'600px':'',
+                top: isSmScreen? (isS8Screen? '60%': '50%'):(isMdScreen? (isIpadProScreen? '58%': '62%'):(isLgScreen?'150%':'121%')),
                 backgroundColor: '#272727',
                 overflow: 'hidden',
                 
