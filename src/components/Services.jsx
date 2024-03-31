@@ -14,11 +14,11 @@ const Services = () => {
             <Box sx={{
                 position: 'absolute',
                 width: '100%',
-                height: isSmScreen? '1700px': (isMdScreen? (isIpadProScreen? '80vh' : '100vh'):'180vh'),
+                height: isSmScreen? '1700px': (isMdScreen? (isIpadProScreen? '80vh' : '100vh'):'1800px'),
                 justifyContent: 'center',
                 alignItems: 'center',
-                paddingLeft:isLgScreen?'600px':'',
-                top: isSmScreen? (isS8Screen? '60%': '50%'):(isMdScreen? (isIpadProScreen? '58%': '62%'):(isLgScreen?'150%':'121%')),
+                paddingLeft:isLgScreen?'16vw':'',
+                top: isSmScreen? (isS8Screen? '12in': '50%'):(isMdScreen? (isIpadProScreen? '58%': '62%'):(isLgScreen?'165%':'121%')),
                 backgroundColor: '#272727',
                 overflow: 'hidden',
                 

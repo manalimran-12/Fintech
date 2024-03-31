@@ -12,7 +12,7 @@ const Products=()=>{
     const isIpadProScreen = useMediaQuery("(min-width: 900px) and (max-width: 1024px)");
     const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
     const isLgScreen = useMediaQuery("(min-width: 1500px) and (max-width: 3000px)");
-    const shapebg=elementsbg({height:isMdScreen? '60vh': isLgScreen?'180vh': '100vh', display:'flex',top: isSmallScreen ? (isS8Screen ? '44%' : '35%') : (isMdScreen? (isIpadProScreen? '38%' : '14in' ) : '86%'),
+    const shapebg=elementsbg({height:isMdScreen? '60vh': isLgScreen?'1200px': '100vh', display:'flex',top: isSmallScreen ? (isS8Screen ? '8.5in' : '35%') : (isMdScreen? (isIpadProScreen? '38%' : '14in' ) : '86%'),
     backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 43 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.25' d='M41.3202 25.9081L3.26431 1.43119L1.09466 46.627L41.3202 25.9081Z' stroke='white' stroke-width='1.37494'/%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 49 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle opacity='0.25' cx='24.0615' cy='24.0615' r='23.374' transform='matrix(-1 0 0 1 48.8175 0.980713)' stroke='white' stroke-width='1.37494'/%3E%3C/svg%3E"),
     url('data:image/svg+xml,<svg width="40" height="42" viewBox="0 0 49 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.25" d="M47.0806 41.041L24.4566 1.85517L1.83269 41.041H47.0806Z" stroke="white" stroke-width="1.37494"/></svg>'),
@@ -63,7 +63,7 @@ const Products=()=>{
                 key={index}
                 sx={{
                 width: isSmScreen? (isS8Screen? '48%' : '40%') : isMdScreen? '45%' :'35%',
-                height: isSmScreen?'36vw':isMdScreen?'25vw':'18vw',
+                height: isSmScreen?'36vw':isMdScreen?'25vw':isLgScreen?'480px':'20vw',
                 backgroundColor: index === 1 ? '#4d3672' : '#313131',
                 backgroundImage: index === 1 ? `url(${card.backgroundImage1}), url(${card.backgroundImage2})` : 'none',
                 backgroundSize: index === 1 ? '60% 100%' : 'auto',

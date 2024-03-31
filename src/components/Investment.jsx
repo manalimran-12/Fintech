@@ -51,7 +51,7 @@ const Investment = () => {
     const isSm1Screen = useMediaQuery("(max-width: 428px) and (max-height: 926px)");;
     const isLgScreen = useMediaQuery("(min-width: 1500px) and (max-width: 3000px)");
     const shapesbg = elementsbg({
-    top: isSmallScreen ? (isS8Screen ? '100%' : '73.5%') : (isMdScreen ? (isIpadProScreen ? '65%' : '75%') : '148%')
+    top: isSmallScreen ? (isS8Screen ? '20in' : '73.5%') : (isMdScreen ? (isIpadProScreen ? '65%' : '75%') : '160%')
     /**top: isSmallScreen ?'73.5%': isS8Screen ? '100%' :isMdScreen ? '70%':isIpadProScreen ? '65%' : isSm1Screen ? '79%' : '148%' */
     });
     
@@ -64,9 +64,8 @@ const Investment = () => {
         <Box sx={shapesbg}>
             <Box sx={{
                 
-                height:isSmallScreen?'71vh': isLgScreen?'110vh':'100vh',
+                height:isSmallScreen?'71vh': isLgScreen?'800px':'100vh',
                 width: '30%', 
-                marginRight:'60px',
                 left:isSmallScreen?'-10%':'20%',
             }}>
                 <Image
@@ -103,7 +102,7 @@ const Investment = () => {
                     alt="/graph.png"
                 />
             </Box>
-            <Box sx={{ position: 'absolute', top:  isSmallScreen?'-90px':(isMedScreen? '-60px' : '0%'), left:isSmallScreen?'180px':(isMedScreen? '300px':isIpadProScreen?'500px' : isLgScreen?'1000px':'600px'), width: '50%', height:isSmallScreen?'80vh': '100vh'}}>
+            <Box sx={{ position: 'absolute', top:  isSmallScreen?'-90px':(isMedScreen? '-60px' : '0%'), left:isSmallScreen?'180px':(isMedScreen? '300px':isIpadProScreen?'500px' : isLgScreen?'40%':'600px'), width: '50%', height:isSmallScreen?'80vh': '100vh'}}>
                 <Typography sx={I_heading}>
                     Investments
                 </Typography>
