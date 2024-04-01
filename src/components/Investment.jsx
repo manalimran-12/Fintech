@@ -14,7 +14,7 @@ const Bullet = styled('span')({
   color:'#ffffff',
 });
 const StyledList = styled(List)(({ isSmScreen, isMdScreen, isIpadProScreen }) => ({
-  top: isSmScreen ? '2%':  (isMdScreen ? (isIpadProScreen ? '20%' : '20%') :'18%'),
+  top: isSmScreen ? '2%':  (isMdScreen ? (isIpadProScreen ? '21%' : '20%') :'20%'),
   left:isSmScreen ? '-150px':'10%',
   width:isSmScreen ? '100%':'50%',
   
@@ -59,7 +59,7 @@ const Investment = () => {
         const isIpadProScreen = useMediaQuery("(min-width: 1024px) and (max-width: 1024px)");
         const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
     const shapesbg = elementsbg({
-    top: isSmScreen ? (isS8Screen ? '20in' : '73.5%') : (isMdScreen ? (isIpadProScreen ? '65%' : '75%') : '160%')
+    top: isSmScreen ? (isS8Screen ? '23in' : '24in') : (isMdScreen ?'15in': '26in')
     /**top: isSmScreen ?'73.5%': isS8Screen ? '100%' :isMdScreen ? '70%':isIpadProScreen ? '65%' : isSm1Screen ? '79%' : '148%' */
     });
     
@@ -72,7 +72,7 @@ const Investment = () => {
         <Box sx={shapesbg}>
             <Box sx={{
                 
-                height:isSmScreen?'71vh': isLgScreen?'800px':'100vh',
+                height:isSmScreen?'71vh':isMdScreen?'700px': isLgScreen?'700px':'700px',
                 width: '30%', 
                 left:isSmScreen?'-10%':'20%',
             }}>
@@ -110,7 +110,7 @@ const Investment = () => {
                     alt="/graph.png"
                 />
             </Box>
-            <Box sx={{ position: 'absolute', top:  isSmScreen?'-90px':(isMdScreen? '-60px' : '0%'), left:isSmScreen?'180px':(isMdScreen? '300px':isIpadProScreen?'500px' : isLgScreen?'40%':'600px'), width: '50%', height:isSmScreen?'80vh': '100vh'}}>
+            <Box sx={{ position: 'absolute', top:  isSmScreen?'-90px':(isMdScreen? '-60px' : '0%'), left:isSmScreen?'180px':(isMdScreen? '300px':isIpadProScreen?'500px' : isLgScreen?'40%':'600px'), width: '50%', height:isSmScreen?'80vh':isMdScreen?'700px': '400px'}}>
                 <Typography sx={I_heading}>
                     Investments
                 </Typography>

@@ -47,7 +47,7 @@ export const BlogSection = () => {
       minHeight: '100vh',
       background: '#272727',
       display: 'flex',
-      top: isSmScreen? ( isS8Screen? '20in' : '70%'):(isMdScreen? (isIpadProScreen? '55%' : '60%' ):'148%'),
+      top: isSmScreen? ( isS8Screen? '23in' : '23in'):(isMdScreen? '14in':'25in'),
       flexDirection: 'column',
       paddingTop: '6em',
     }}

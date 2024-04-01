@@ -19,18 +19,18 @@ const Services = () => {
         const isSmScreen = useMediaQuery(theme.breakpoints.down('sm'));
         const isMdScreen = useMediaQuery(theme.breakpoints.down('md'));
         const isLgScreen = useMediaQuery(theme.breakpoints.down('lg'));
-        const isIpadProScreen = useMediaQuery("(min-width: 1024px) and (max-width: 1024px)");
+        const isXlScreen = useMediaQuery(theme.breakpoints.down('xl'));
         const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
     return (
         <>
             <Box sx={{
                 position: 'absolute',
                 width: '100%',
-                height: isSmScreen? '1700px': (isMdScreen? (isIpadProScreen? '80vh' : '100vh'):'1800px'),
+                height: isSmScreen? '1700px':isMdScreen?'100vh':'1800px',
                 justifyContent: 'center',
                 alignItems: 'center',
-                paddingLeft:isLgScreen?'16vw':'',
-                top: isSmScreen? (isS8Screen? '12in': '50%'):(isMdScreen? (isIpadProScreen? '58%': '62%'):(isLgScreen?'165%':'121%')),
+                paddingLeft:isLgScreen?'8%':isMdScreen?'0px':isSmScreen?'0px':'0px',
+                top: isSmScreen? (isS8Screen? '12in': '50%'):(isMdScreen? '22in':(isLgScreen?'25in':isXlScreen?'22in':'21.5in')),
                 backgroundColor: '#272727',
                 overflow: 'hidden',
                 
@@ -43,8 +43,7 @@ const Services = () => {
                         alignItems: 'center',
                         paddingLeft: isSmScreen? (isS8Screen? '80px': '120px') : (isMdScreen? '160px':  '300px'),
                         marginLeft: isMdScreen? "25px" : '',
-                        marginTop: isSmScreen? (isS8Screen? '35px' : '40px'): (isMdScreen? (isIpadProScreen? '70px' : '70px'): '45px'),
-                        marginLeft: isIpadProScreen? '90px': '',
+                        marginTop: isSmScreen? (isS8Screen? '35px' : '40px'): (isMdScreen? '70px': '45px'),
                     }}
                 >
                     <Typography variant="h4" sx={{ fontFamily: 'Rounded Elegance', fontStyle: 'normal', color: 'white', fontWeight: 2, fontSize: isSmScreen? '15px': '27px', margin:'auto', paddingLeft: isSmScreen? '50px': (isMdScreen? '170px': "300px") , lineHeight:'0px'}}>
@@ -71,7 +70,7 @@ const Services = () => {
                         height: '52px',
                         position: 'absolute',
                         marginTop: isSmScreen? '570px' : (isMdScreen?'-60px': '10px'),
-                        marginLeft: isSmScreen ? (isS8Screen? '80px': '110px' ): (isMdScreen ? (isIpadProScreen ? '420px' : '310px') : '580px'),
+                        marginLeft: isSmScreen ? (isS8Screen? '80px': '110px' ): isMdScreen? '310px' : '580px',
                         marginRight: '110px',
                         borderRadius: '12024.34px',
                         textTransform: 'capitalize',
@@ -83,10 +82,10 @@ const Services = () => {
                     All Services
                 </Button>
                 <Box sx={{
-                    width: isSmScreen? '340px': (isMdScreen? (isIpadProScreen? '780px': '700px' ): '1200px'),
-                    height: isSmScreen? '180px': (isMdScreen? (isIpadProScreen? '350px' : '300px') :'361px'),
-                    marginLeft: isSmScreen? (isS8Screen? '10px': '35px'): (isMdScreen? (isIpadProScreen? '100px': '50px') :'67px'),
-                    marginTop: isSmScreen?  '660px':(isMdScreen? (isIpadProScreen? '80px': '60px'):'120px'),
+                    width: isSmScreen? '340px': (isMdScreen? '700px': '1200px'),
+                    height: isSmScreen? '180px': (isMdScreen? '300px' :'361px'),
+                    marginLeft: isSmScreen? (isS8Screen? '10px': '35px'): (isMdScreen?'50px' :'67px'),
+                    marginTop: isSmScreen?  '660px':(isMdScreen?'60px':'120px'),
                     backgroundColor: '#302148',
                     borderRadius: '61.6px',
                     position: 'relative',
@@ -96,10 +95,10 @@ const Services = () => {
                         fontFamily: 'Montserrat',
                         fontStyle: 'normal',
                         fontWeight: '700',
-                        fontSize: isSmScreen? '14px' : (isMdScreen? (isIpadProScreen? '25px': '25px'):'40px'),
+                        fontSize: isSmScreen? '14px' : (isMdScreen?'25px':'40px'),
                         position: 'absolute',
                         top: '25%',
-                        marginLeft: isSmScreen? '40px' : (isMdScreen? (isIpadProScreen? '150px' : '100px') :'220px'),
+                        marginLeft: isSmScreen? '40px' : (isMdScreen?'100px':'220px'),
                         color: '#D8B150',
                         textTransform: 'capitalize'
                     }}>
@@ -109,20 +108,20 @@ const Services = () => {
                     <Typography sx={{
                         fontFamily: 'Montserrat',
                         fontStyle: 'normal',
-                        fontSize: isSmScreen? '7px': (isMdScreen? (isIpadProScreen? '15px': '15px'):'15px'),
+                        fontSize: isSmScreen? '7px': (isMdScreen?'15px':'15px'),
                         position: 'absolute',
                         top: '45%',
-                        marginLeft: isSmScreen? '70px' : (isMdScreen? (isIpadProScreen? '160px': '150px'):'370px'),
+                        marginLeft: isSmScreen? '70px' : (isMdScreen? '150px':'370px'),
                         color: 'white',
                         maxWidth: isSmScreen? '250px': '500px',
                     }}>Work with Greensfin, more than a fintech company, currently on a mission</Typography>
                     <Typography sx={{
                         fontFamily: 'Montserrat',
                         fontStyle: 'normal',
-                        fontSize: isSmScreen? '7px': (isMdScreen? (isIpadProScreen? '15px': '15px'):'15px'),
+                        fontSize: isSmScreen? '7px': (isMdScreen? '15px':'15px'),
                         position: 'absolute',
                         top: '50%',
-                        marginLeft: isSmScreen? '110px': (isMdScreen? (isIpadProScreen? '240px': '190px'):'450px'),
+                        marginLeft: isSmScreen? '110px': (isMdScreen? '240px':'450px'),
                         color: 'white',
                         maxWidth: isSmScreen? '300px': '600px',
                     }}>to transform the global business infrastructure.</Typography>
@@ -137,8 +136,8 @@ const Services = () => {
                             width:isSmScreen? '140px': '280px',
                             height: isSmScreen? '40px': '52px',
                             position: 'absolute',
-                            marginTop: isSmScreen? '110px': (isMdScreen? (isIpadProScreen? '220px': '190px' ):'250px'),
-                            marginLeft: isSmScreen? '100px': (isMdScreen? (isIpadProScreen? '260px': '210px'):'460px'),
+                            marginTop: isSmScreen? '110px': (isMdScreen? '190px':'250px'),
+                            marginLeft: isSmScreen? '100px': (isMdScreen?'210px':'460px'),
                             marginRight: '110px',
                             borderRadius: '12024.34px',
                             textTransform: 'capitalize',
@@ -150,9 +149,9 @@ const Services = () => {
                         Book Your Consultation
                     </Button>
 
-                    <Image src="/Rectangle 25.png" alt='shape' width={isSmScreen? 80: (isMdScreen? (isIpadProScreen? 150 : 150 ) : 320)} height={isSmScreen? 180 : 360} style={{ marginLeft:isSmScreen? '10px': (isMdScreen? (isIpadProScreen? '20px' : '20px') :'45px') }} />
-                    <Image src="/VectorS.png" alt='shape1' width={isSmScreen? 90:(isMdScreen? (isIpadProScreen? 130 : 130 ) : 270)} height={isSmScreen? 90:(isMdScreen? (isIpadProScreen? 140 : 140 ) : 250)} style={{ marginLeft:isSmScreen? '160px' : (isMdScreen? (isIpadProScreen? '480px' : '400px'): '566px'), position: 'absolute', marginTop:isSmScreen? '90px': (isMdScreen? (isIpadProScreen? '210px' : '158px'):"110px" )}} />
-                    <Image src="/VectorS2.png" alt='shape2' width={isSmScreen? 35: (isMdScreen? (isIpadProScreen? 50 : 50 ):120)} height={isSmScreen? 25:(isMdScreen? (isIpadProScreen? 50: 50 ): 90)} style={{ position: 'absolute', marginTop:isSmScreen? '148px':(isMdScreen? (isIpadProScreen? '300px': '247px') :'270px'), marginLeft: isSmScreen? '210px':(isMdScreen? (isIpadProScreen? '555px' : '480px') :'715px')}} />
+                    <Image src="/Rectangle 25.png" alt='shape' width={isSmScreen? 80: (isMdScreen? 150 : 320)} height={isSmScreen? 180 : 360} style={{ marginLeft:isSmScreen? '10px': isMdScreen?'20px' :'45px' }} />
+                    <Image src="/VectorS.png" alt='shape1' width={isSmScreen? 90:(isMdScreen? 130 : 270)} height={isSmScreen? 90:(isMdScreen? 40 : 250)} style={{ marginLeft:isSmScreen? '160px' : (isMdScreen? '400px': '566px'), position: 'absolute', marginTop:isSmScreen? '90px': (isMdScreen?'158px':"110px" )}} />
+                    <Image src="/VectorS2.png" alt='shape2' width={isSmScreen? 35: (isMdScreen? 130:120)} height={isSmScreen? 25:(isMdScreen? 50: 90)} style={{ position: 'absolute', marginTop:isSmScreen? '148px':(isMdScreen? '247px' :'270px'), marginLeft: isSmScreen? '210px':(isMdScreen? '480px':'715px')}} />
                 </Box>
 
 

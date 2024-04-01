@@ -10,9 +10,9 @@ const AboutUs = () => {
       values: {
         xs: 0,
         sm: 500,
-        md: 1024,
-        lg: 1280,
-        xl: 1920,
+        md: 1025,
+        lg: 1281,
+        xl: 2600,
       },
     },
   });
@@ -20,10 +20,11 @@ const AboutUs = () => {
     const isSmScreen = useMediaQuery(theme.breakpoints.down('sm'));
     const isMdScreen = useMediaQuery(theme.breakpoints.down('md'));
     const isLgScreen = useMediaQuery(theme.breakpoints.down('lg'));
+    const isXlScreen = useMediaQuery(theme.breakpoints.down('xl'));
     const isIpadProScreen = useMediaQuery("(min-width: 1024px) and (max-width: 1024px)");
     const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
     return (
-        <Box sx={{ width: '100%', backgroundColor: '#272727', overflow: 'hidden', height: '115vh', display: 'flex', position: 'absolute', top: isSmScreen ? (isS8Screen ? '4.7in' : '19%') : (isMdScreen ? (isIpadProScreen ? '20%' : '20%') : '45%') }}>
+        <Box sx={{ width: '100%', backgroundColor: '#272727', overflow: 'hidden', height: '900px', display: 'flex', position: 'absolute', top: isSmScreen ? (isS8Screen ? '4.7in' : '7in') : (isMdScreen ? '6in': isXlScreen?'6.5in': '8in') }}>
             <Box sx={{ width: isSmScreen ? '50%' : '39%', height: '200px', margin: 'auto', marginTop: isSmScreen ? '20%' : (isMdScreen ? (isIpadProScreen ? '20%' : '20%') : '80px'), marginLeft: isSmScreen ? '22px' : (isMdScreen ? (isIpadProScreen ? '50px' : '50px') : '100px') }}>
                 <Typography variant='h4' sx={{ fontFamily: 'Rounded Elegance', fontStyle: 'normal', color: 'white', fontWeight: 2, fontSize: isSmScreen ? (isS8Screen ? '15px' : '15px') : (isMdScreen ? (isIpadProScreen ? '27px' : '27px') : '27px'), lineHeight: '0px' }}>
                     About Us
