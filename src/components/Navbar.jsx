@@ -18,10 +18,12 @@ const Navbar = () => {
       },
     },
   });
-  const isSmScreen = useMediaQuery(theme.breakpoints.down('sm'));
-  const isMdScreen = useMediaQuery("(min-width: 600px) and (max-width: 1024px)");
-  const isLgScreen = useMediaQuery(theme.breakpoints.down('lg'))
-  const isIpadProScreen = useMediaQuery("(min-width: 1024px) and (max-width: 1024px)");
+
+    const isSmScreen = useMediaQuery(theme.breakpoints.down('sm'));
+    const isMdScreen = useMediaQuery(theme.breakpoints.down('md'));
+    const isLgScreen = useMediaQuery(theme.breakpoints.down('lg'));
+    const isIpadProScreen = useMediaQuery("(min-width: 1024px) and (max-width: 1024px)");
+    const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
 
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 

@@ -1,18 +1,28 @@
 'use client'
-import { useMediaQuery, Box, Typography, Grid, Button, Card, List, ListItem, ListItemText, CardContent} from '@mui/material';
+import { useMediaQuery, Box, Typography, Grid, Button, Card, List, ListItem, ListItemText, CardContent,createTheme } from '@mui/material';
 import { styled } from '@mui/system';
 import Image from 'next/image';
 import { elementsbg, H1, heading, text, button } from '@/Styling';
 import EastIcon from '@mui/icons-material/East';
 const Products=()=>{
-    const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
-    const isSmScreen = useMediaQuery("(max-width:600px)");
-    const isMdScreen = useMediaQuery("(min-width: 600px) and (max-width: 1024px)");
-    const isMedScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
-    const isIpadProScreen = useMediaQuery("(min-width: 900px) and (max-width: 1024px)");
-    const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
-    const isLgScreen = useMediaQuery("(min-width: 1500px) and (max-width: 3000px)");
-    const shapebg=elementsbg({height:isMdScreen? '60vh': isLgScreen?'1200px': '100vh', display:'flex',top: isSmallScreen ? (isS8Screen ? '8.5in' : '35%') : (isMdScreen? (isIpadProScreen? '38%' : '14in' ) : '86%'),
+    const theme = createTheme({
+        breakpoints: {
+          values: {
+            xs: 0,
+            sm: 500,
+            md: 1024,
+            lg: 1280,
+            xl: 1920,
+          },
+        },
+      });
+    
+        const isSmScreen = useMediaQuery(theme.breakpoints.down('sm'));
+        const isMdScreen = useMediaQuery(theme.breakpoints.down('md'));
+        const isLgScreen = useMediaQuery(theme.breakpoints.down('lg'));
+        const isIpadProScreen = useMediaQuery("(min-width: 1024px) and (max-width: 1024px)");
+        const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
+    const shapebg=elementsbg({height:isMdScreen? '60vh': isLgScreen?'1200px': '100vh', display:'flex',top: isSmScreen ? (isS8Screen ? '8.5in' : '35%') : (isMdScreen? (isIpadProScreen? '38%' : '14in' ) : '86%'),
     backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 43 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.25' d='M41.3202 25.9081L3.26431 1.43119L1.09466 46.627L41.3202 25.9081Z' stroke='white' stroke-width='1.37494'/%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 49 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle opacity='0.25' cx='24.0615' cy='24.0615' r='23.374' transform='matrix(-1 0 0 1 48.8175 0.980713)' stroke='white' stroke-width='1.37494'/%3E%3C/svg%3E"),
     url('data:image/svg+xml,<svg width="40" height="42" viewBox="0 0 49 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.25" d="M47.0806 41.041L24.4566 1.85517L1.83269 41.041H47.0806Z" stroke="white" stroke-width="1.37494"/></svg>'),
@@ -25,9 +35,9 @@ const Products=()=>{
     url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 49 50" fill="none" xmlns="http://www.w3.org/2000/svg"><circle opacity="0.25" cx="24.4312" cy="24.9565" r="23.374" stroke="white" stroke-width="1.37494"/></svg>'),
     url('data:image/svg+xml,<svg width="537" height="800" viewBox="0 0 737 1130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M368.5 0H737L368.5 1130H0L368.5 0Z" fill="%23543881"/></svg>')`,});
     const I_heading = H1({ width: '90px', top:'8vw', fontSize: 'clamp(1rem, 1.7vw, 2rem);', });
-    const I_subheading = heading({fontSize: isSmallScreen ? '14px' : (isMedScreen ? '16px' : '28px'), top: '8.4vw', width:isSmallScreen?'90%': '75%', left: '7.5%'});
-    const smalltxt = text({ fontSize: isSmallScreen ? '11px' : (isMedScreen ? '12px' : '13px'), width:isSmallScreen?'90%':'70%',top:'9.5vw',left:'7.5%'});
-    const Readmore = button({top:'12vw',left:'8%',width:isSmallScreen ? '120px' :  '170px',height:isSmallScreen? '30px' :'45px',textTransform: 'none'});
+    const I_subheading = heading({fontSize: isSmScreen ? '14px' : (isMdScreen ? '16px' : '28px'), top: '8.4vw', width:isSmScreen?'90%': '75%', left: '7.5%'});
+    const smalltxt = text({ fontSize: isSmScreen ? '11px' : (isMdScreen ? '12px' : '13px'), width:isSmScreen?'90%':'70%',top:'9.5vw',left:'7.5%'});
+    const Readmore = button({top:'12vw',left:'8%',width:isSmScreen ? '120px' :  '170px',height:isSmScreen? '30px' :'45px',textTransform: 'none'});
     const cards =[
         {
             imageSrc:'/mobile.png',
@@ -57,7 +67,7 @@ const Products=()=>{
     ]
     return(
         <Box sx={shapebg}>
-            <Box sx={{width:'50%' , height: '50px', display:'flex',direction:'row',gap:'3px',flexWrap: 'wrap',paddingLeft:isSmScreen?'20px':'130px',paddingTop:isSmallScreen?'35px':'50px'}}>
+            <Box sx={{width:'50%' , height: '50px', display:'flex',direction:'row',gap:'3px',flexWrap: 'wrap',paddingLeft:isSmScreen?'20px':'130px',paddingTop:isSmScreen?'35px':'50px'}}>
             {cards.map((card, index) => (
             <Card
                 key={index}
@@ -70,16 +80,16 @@ const Products=()=>{
                 backgroundPosition: index === 1 ? 'left, right' : 'auto',
                 backgroundRepeat: 'no-repeat',
                 marginTop: index === 1 || index === 3 ? '-22px':'0px'
-                /*marginLeft: index === 1 || index === 3 ? (isSmallScreen ? '55%' : (isMedScreen ? '60%' : '320px')) : (isSmallScreen ? '20%' : (isMedScreen ? '25%' : '120px')),
-                marginTop: index === 1 || index === 3 ? (isSmallScreen ? '-45%' : (isMedScreen ? '-50%' : '-280px')) : (isSmallScreen ? '7%' : (isMedScreen ? '10%' : '65px')),
+                /*marginLeft: index === 1 || index === 3 ? (isSmScreen ? '55%' : (isMdScreen ? '60%' : '320px')) : (isSmScreen ? '20%' : (isMdScreen ? '25%' : '120px')),
+                marginTop: index === 1 || index === 3 ? (isSmScreen ? '-45%' : (isMdScreen ? '-50%' : '-280px')) : (isSmScreen ? '7%' : (isMdScreen ? '10%' : '65px')),
                 */
                 }}
             >
             <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'left' }}>
-                <Image src={card.imageSrc} alt='cards' width={isSmScreen? (isS8Screen? 20 :20  ) : (isMdScreen? (isIpadProScreen? 30 : 30 ) :(isLgScreen? 80 :40))} height={isSmScreen? (isS8Screen? 20 :20  ) : (isMdScreen? (isIpadProScreen? 30 : 30 )  :(isLgScreen? 80 :40))} style={{ marginTop: isMedScreen ? '0px' : '12px', marginBottom: '10px' }} />
-                <Typography variant="h6" sx={{ width:isSmallScreen?'98%':'85%', fontStyle: 'Raleway', fontSize: isSmallScreen? '1.6vw' : (isMedScreen ? '1.4vw' : '1.2vw'), fontWeight: isSmallScreen? '400' : '400', lineHeight: isSmScreen? '10px' :isMedScreen ? '15px' : isLgScreen?'30px':'18px',  color: '#FFFFFF' }}>{card.title}</Typography>
-                <Typography variant="body1" sx={{width:isLgScreen?'50%':'100%', fontStyle: 'Raleway', fontSize: isSmallScreen? '1vw' : (isMedScreen ? "0.9vw" : '0.8vw'), fontWeight: isSmallScreen? '50' : '100', lineHeight: isSmScreen? '8px' : isLgScreen?'30px': '13px',  marginTop:isSmallScreen?'2px': isMedScreen ? '6px' : '7px', color: 'white' }}>{card.description}</Typography>
-                <Button  sx={{color: '#D8B150', height:isSmallScreen?'10px':isLgScreen?'60px':'20px',width:isSmallScreen?'70px':isLgScreen?'160px':'120px',left:isSmScreen? '-5px': '0px',marginTop:isSmScreen? '6px' : '11px'}} endIcon={<EastIcon sx={{ height: isSmallScreen ? '10px' :isLgScreen?'50px': '22px',marginLeft:'-10px' }} />}><Typography sx={{textTransform:'none',color:'#D8B150',fontSize:isSmallScreen?'9px':isLgScreen?'25px':'12px',marginLeft:'-20px'}}>Know more</Typography></Button>
+                <Image src={card.imageSrc} alt='cards' width={isSmScreen? (isS8Screen? 20 :20  ) : (isMdScreen? (isIpadProScreen? 30 : 30 ) :(isLgScreen? 80 :40))} height={isSmScreen? (isS8Screen? 20 :20  ) : (isMdScreen? (isIpadProScreen? 30 : 30 )  :(isLgScreen? 80 :40))} style={{ marginTop: isMdScreen ? '0px' : '12px', marginBottom: '10px' }} />
+                <Typography variant="h6" sx={{ width:isSmScreen?'98%':'85%', fontStyle: 'Raleway', fontSize: isSmScreen? '1.6vw' : (isMdScreen ? '1.4vw' : '1.2vw'), fontWeight: isSmScreen? '400' : '400', lineHeight: isSmScreen? '10px' :isMdScreen ? '15px' : isLgScreen?'30px':'18px',  color: '#FFFFFF' }}>{card.title}</Typography>
+                <Typography variant="body1" sx={{width:isLgScreen?'50%':'100%', fontStyle: 'Raleway', fontSize: isSmScreen? '1vw' : (isMdScreen ? "0.9vw" : '0.8vw'), fontWeight: isSmScreen? '50' : '100', lineHeight: isSmScreen? '8px' : isLgScreen?'30px': '13px',  marginTop:isSmScreen?'2px': isMdScreen ? '6px' : '7px', color: 'white' }}>{card.description}</Typography>
+                <Button  sx={{color: '#D8B150', height:isSmScreen?'10px':isLgScreen?'60px':'20px',width:isSmScreen?'70px':isLgScreen?'160px':'120px',left:isSmScreen? '-5px': '0px',marginTop:isSmScreen? '6px' : '11px'}} endIcon={<EastIcon sx={{ height: isSmScreen ? '10px' :isLgScreen?'50px': '22px',marginLeft:'-10px' }} />}><Typography sx={{textTransform:'none',color:'#D8B150',fontSize:isSmScreen?'9px':isLgScreen?'25px':'12px',marginLeft:'-20px'}}>Know more</Typography></Button>
             </CardContent>
         </Card>
 ))}
@@ -96,7 +106,7 @@ const Products=()=>{
                 We have complete and very easy solution for Virtual Islamic / Digital Banking and different 
                 fintech products for Islamic banking including deposit and asset side for all requirements of clients.
                 </Typography>
-                <Button sx={Readmore} endIcon={<EastIcon />}><Typography sx={{fontSize: isSmallScreen?'10px':'16px'}}>All Products</Typography></Button>
+                <Button sx={Readmore} endIcon={<EastIcon />}><Typography sx={{fontSize: isSmScreen?'10px':'16px'}}>All Products</Typography></Button>
             </Box>
         </Box>
     );

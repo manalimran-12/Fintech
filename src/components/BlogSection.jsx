@@ -3,22 +3,33 @@ import * as React from 'react';
 import { Cards } from './Cards';
 import { H1, text, button } from '../Styling';
 import Foo from '@/components/Foo'
-import { useMediaQuery, Box, Typography,Grid,Button } from '@mui/material';
+import { useMediaQuery, Box, Typography,Grid,Button,createTheme  } from '@mui/material';
 import { NewsLetter } from '@/components/NewsLetter';
 import Image from 'next/image';
 
 export const BlogSection = () => {
-  const isSmallScreen = useMediaQuery("(max-width:600px)");
-  const isSmallScreen1 = useMediaQuery("(max-width: 900px)");
-  const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
-  const isSmScreen = useMediaQuery("(max-width:600px)");
-  const isMedScreen = useMediaQuery("(min-width: 600px) and (max-width: 1024px)");
-  const isIpadProScreen = useMediaQuery("(min-width: 900px) and (max-width: 1024px)");
-  const Blogs = H1({fontFamily: 'Rounded Elegance',fontSize:isSmallScreen ? '11px' : (isMedScreen ? '14px' : '20px')});
-  const Headings = text({  top: '-1.6em', fontSize:isSmallScreen?'20px':'30px',fontFamily:'Montserrat'});
-  const Readmore = button({marginLeft: isSmallScreen?'12%' :'43%'});
-  const H2yellow = text({ color: '#D8B150', fontSize:isSmallScreen?'20px':'30px',fontFamily:'Montserrat',position: 'absolute', left:isSmallScreen? '0em': '5.5em',top: isSmallScreen? '1em':'0em' });
-  const smalltxt = text({ left:'7.5%',fontFamily:'Raleway', fontSize: isSmallScreen ? '11px' : (isMedScreen ? '12px' : '13px'),width:'60%', fontWeight: '500', top: isSmallScreen?'-4em':'-5em', marginTop:'45px'});
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 500,
+        md: 1024,
+        lg: 1280,
+        xl: 1920,
+      },
+    },
+  });
+
+    const isSmScreen = useMediaQuery(theme.breakpoints.down('sm'));
+    const isMdScreen = useMediaQuery(theme.breakpoints.down('md'));
+    const isLgScreen = useMediaQuery(theme.breakpoints.down('lg'));
+    const isIpadProScreen = useMediaQuery("(min-width: 1024px) and (max-width: 1024px)");
+    const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
+  const Blogs = H1({fontFamily: 'Rounded Elegance',fontSize:isSmScreen ? '11px' : (isMdScreen ? '14px' : '20px')});
+  const Headings = text({  top: '-1.6em', fontSize:isSmScreen?'20px':'30px',fontFamily:'Montserrat'});
+  const Readmore = button({marginLeft: isSmScreen?'12%' :'43%'});
+  const H2yellow = text({ color: '#D8B150', fontSize:isSmScreen?'20px':'30px',fontFamily:'Montserrat',position: 'absolute', left:isSmScreen? '0em': '5.5em',top: isSmScreen? '1em':'0em' });
+  const smalltxt = text({ left:'7.5%',fontFamily:'Raleway', fontSize: isSmScreen ? '11px' : (isMdScreen ? '12px' : '13px'),width:'60%', fontWeight: '500', top: isSmScreen?'-4em':'-5em', marginTop:'45px'});
   const cardData = [
     { imageUrl: './card1.png', title: 'Lorem ipsum dolor sit amet', Desc: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt...' },
     { imageUrl: './card2.png', title: 'Lorem ipsum dolor sit amet', Desc: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt...' },
@@ -36,7 +47,7 @@ export const BlogSection = () => {
       minHeight: '100vh',
       background: '#272727',
       display: 'flex',
-      top: isSmScreen? ( isS8Screen? '20in' : '70%'):(isMedScreen? (isIpadProScreen? '55%' : '60%' ):'148%'),
+      top: isSmScreen? ( isS8Screen? '20in' : '70%'):(isMdScreen? (isIpadProScreen? '55%' : '60%' ):'148%'),
       flexDirection: 'column',
       paddingTop: '6em',
     }}

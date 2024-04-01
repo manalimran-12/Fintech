@@ -1,14 +1,26 @@
 "use client"
-import { Box, Button, Typography, useMediaQuery, } from '@mui/material';
+import { Box, Button, Typography, useMediaQuery,createTheme  } from '@mui/material';
 import Cards1 from '@/components/Card';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Image from 'next/image';
 const Services = () => {
-    const isSmScreen = useMediaQuery("(max-width:600px)");
-    const isMdScreen = useMediaQuery("(min-width: 600px) and (max-width: 1024px)");
-    const isIpadProScreen = useMediaQuery("(min-width: 900px) and (max-width: 1024px)");
-    const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
-    const isLgScreen = useMediaQuery("(min-width: 1500px) and (max-width: 3000px)");
+    const theme = createTheme({
+        breakpoints: {
+          values: {
+            xs: 0,
+            sm: 500,
+            md: 1024,
+            lg: 1280,
+            xl: 1920,
+          },
+        },
+      });
+    
+        const isSmScreen = useMediaQuery(theme.breakpoints.down('sm'));
+        const isMdScreen = useMediaQuery(theme.breakpoints.down('md'));
+        const isLgScreen = useMediaQuery(theme.breakpoints.down('lg'));
+        const isIpadProScreen = useMediaQuery("(min-width: 1024px) and (max-width: 1024px)");
+        const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
     return (
         <>
             <Box sx={{
