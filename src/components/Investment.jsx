@@ -59,7 +59,7 @@ const Investment = () => {
         const isIpadProScreen = useMediaQuery("(min-width: 1024px) and (max-width: 1024px)");
         const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
     const shapesbg = elementsbg({
-    top: isSmScreen ? (isS8Screen ? '23in' : '24in') : (isMdScreen ?'15in': '26in')
+    top: isSmScreen ? '22in': (isMdScreen ?'25in': '26in')
     /**top: isSmScreen ?'73.5%': isS8Screen ? '100%' :isMdScreen ? '70%':isIpadProScreen ? '65%' : isSm1Screen ? '79%' : '148%' */
     });
     

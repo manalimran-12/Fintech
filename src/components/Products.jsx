@@ -10,7 +10,7 @@ const Products=()=>{
           values: {
             xs: 0,
             sm: 500,
-            md: 1024,
+            md: 1025,
             lg: 1280,
             xl: 1920,
           },
@@ -20,6 +20,7 @@ const Products=()=>{
         const isSmScreen = useMediaQuery(theme.breakpoints.down('sm'));
         const isMdScreen = useMediaQuery(theme.breakpoints.down('md'));
         const isLgScreen = useMediaQuery(theme.breakpoints.down('lg'));
+        const isXlScreen = useMediaQuery(theme.breakpoints.down('xl'));
         const isIpadProScreen = useMediaQuery("(min-width: 1024px) and (max-width: 1024px)");
         const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
     const shapebg=elementsbg({height:isMdScreen? '500px': isLgScreen?'1200px': '65vw', display:'flex',top: isSmScreen ? (isS8Screen ? '8.5in' : '35%') : (isMdScreen? '15in' : '15in'),
@@ -72,7 +73,7 @@ const Products=()=>{
             <Card
                 key={index}
                 sx={{
-                width: isSmScreen? (isS8Screen? '48%' : '40%') : isMdScreen? '45%' :'45%',
+                width: isSmScreen? '75px' : isMdScreen? '40%' :isLgScreen?'230px':isXlScreen?'290px':'45%',
                 height: isSmScreen?'36vw':isMdScreen?'180px':isLgScreen?'350px':'20vw',
                 backgroundColor: index === 1 ? '#4d3672' : '#313131',
                 backgroundImage: index === 1 ? `url(${card.backgroundImage1}), url(${card.backgroundImage2})` : 'none',
@@ -88,7 +89,7 @@ const Products=()=>{
             <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'left' }}>
                 <Image src={card.imageSrc} alt='cards' width={isSmScreen? (isS8Screen? 20 :20  ) : (isMdScreen? (isIpadProScreen? 30 : 30 ) :(isLgScreen? 80 :40))} height={isSmScreen? (isS8Screen? 20 :20  ) : (isMdScreen? (isIpadProScreen? 30 : 30 )  :(isLgScreen? 80 :40))} style={{ marginTop: isMdScreen ? '0px' : '12px', marginBottom: '10px' }} />
                 <Typography variant="h6" sx={{ width:isSmScreen?'98%':'85%', fontStyle: 'Raleway', fontSize: isSmScreen? '1.6vw' : (isMdScreen ? '1.4vw' : '1.2vw'), fontWeight: isSmScreen? '400' : '400', lineHeight: isSmScreen? '10px' :isMdScreen ? '15px' : isLgScreen?'25px':'18px',  color: '#FFFFFF' }}>{card.title}</Typography>
-                <Typography variant="body1" sx={{width:isSmScreen?'140%':isMdScreen?'110%':isLgScreen?'100%':'90%', fontStyle: 'Raleway', fontSize: isSmScreen? '1vw' : (isMdScreen ? "1.2vw" : '1.3vw'), fontWeight: isSmScreen? '50' : '100', lineHeight: isSmScreen? '8px' :isMdScreen?'11px' :isLgScreen?'18px': '20px',  marginTop:isSmScreen?'2px': isMdScreen ? '6px' : '7px', color: 'white' }}>{card.description}</Typography>
+                <Typography variant="body1" sx={{width:isSmScreen?'140%':isMdScreen?'110%':isLgScreen?'100%':'90%', fontStyle: 'Raleway', fontSize: isSmScreen? '1vw' : (isMdScreen ? "1.2vw" : '1.5vw'), fontWeight: isSmScreen? '50' : '100', lineHeight: isSmScreen? '8px' :isMdScreen?'11px' :isLgScreen?'18px': isXlScreen?'23px':'20px',  marginTop:isSmScreen?'2px': isMdScreen ? '6px' : '7px', color: 'white' }}>{card.description}</Typography>
                 <Button  sx={{color: '#D8B150', height:isSmScreen?'10px':isMdScreen?'16px':isLgScreen?'60px':'20px',width:isSmScreen?'70px':isMdScreen?'80px':isLgScreen?'160px':'120px',left:isSmScreen? '-5px':isMdScreen?'5px':isMdScreen?'-4px': '0px',marginTop:isSmScreen? '6px' :isMdScreen?'0px': '11px'}} endIcon={<EastIcon sx={{ height: isSmScreen ? '10px' :isMdScreen?'12px':isLgScreen?'50px': '20px',marginLeft:'-10px' }} />}><Typography sx={{textTransform:'none',color:'#D8B150',fontSize:isSmScreen?'9px':isMdScreen?'12px':isLgScreen?'25px':'20px',marginLeft:'-20px'}}>Know more</Typography></Button>
             </CardContent>
         </Card>

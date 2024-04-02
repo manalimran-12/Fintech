@@ -24,7 +24,7 @@ const AboutUs = () => {
     const isIpadProScreen = useMediaQuery("(min-width: 1024px) and (max-width: 1024px)");
     const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
     return (
-        <Box sx={{ width: '100%', backgroundColor: '#272727', overflow: 'hidden', height: '900px', display: 'flex', position: 'absolute', top: isSmScreen ? (isS8Screen ? '4.7in' : '7in') : (isMdScreen ? '6in': isXlScreen?'6.5in': '8in') }}>
+        <Box sx={{ width: '100%', backgroundColor: '#272727', overflow: 'hidden', height: '900px', display: 'flex', position: 'absolute', top: isSmScreen ? '4in' : (isMdScreen ? '6in': isXlScreen?'6.5in': '8in') }}>
             <Box sx={{ width: isSmScreen ? '50%' : '39%', height: '200px', margin: 'auto', marginTop: isSmScreen ? '20%' : (isMdScreen ? (isIpadProScreen ? '20%' : '20%') : '80px'), marginLeft: isSmScreen ? '22px' : (isMdScreen ? (isIpadProScreen ? '50px' : '50px') : '100px') }}>
                 <Typography variant='h4' sx={{ fontFamily: 'Rounded Elegance', fontStyle: 'normal', color: 'white', fontWeight: 2, fontSize: isSmScreen ? (isS8Screen ? '15px' : '15px') : (isMdScreen ? (isIpadProScreen ? '27px' : '27px') : '27px'), lineHeight: '0px' }}>
                     About Us
@@ -69,9 +69,9 @@ const AboutUs = () => {
                 Know More
             </Button>
             <Image src='/Frame.png' width={isSmScreen? (isS8Screen? 50: 50 ): (isMdScreen? (isIpadProScreen? 120: 120):120)} height={isSmScreen? (isS8Screen? 50: 50 ): (isMdScreen? (isIpadProScreen? 120: 120):120)} alt='' style={{ position: 'absolute', left:isSmScreen? (isS8Screen? '300px': '300px'): (isMdScreen? (isIpadProScreen? '450px' : '330px') :isLgScreen?'1430px':'630px'), top:isSmScreen? (isS8Screen? '100px': '100px'): (isMdScreen? (isIpadProScreen? '370px': '370px'): '390px') }} />
-            <Box sx={{ position: 'absolute', width: isSmScreen ? '155px' : (isMdScreen ? (isIpadProScreen ? '450px' : '400px') : '550px'), height: isSmScreen ? '145px' : (isMdScreen ? '370px' : '420px'), backgroundColor: '#302148', marginLeft: isSmScreen ? (isS8Screen ? '196px' : '247px') : (isMdScreen ? (isIpadProScreen ? '500px' : '370px') : (isLgScreen ? '1500px' : '700px')), marginTop: '80px', borderRadius: '66px 0px 66px 66px' }}>
+            <Box sx={{ position: 'absolute', width: isSmScreen ? '155px' : (isMdScreen ? (isIpadProScreen ? '450px' : '400px') : '550px'), height: isSmScreen ? '145px' : (isMdScreen ? '370px' : '420px'), backgroundColor: '#302148', marginLeft: isSmScreen ? '200px' : (isMdScreen ? '400px': (isLgScreen ? '1500px' : '700px')), marginTop: '80px', borderRadius: '66px 0px 66px 66px' }}>
                 <Image src='/VectorA1.png' alt='vec1' width={isSmScreen ? (isS8Screen ? 100 : 100) : (isMdScreen ? (isIpadProScreen ? 300 : 300) : 380)} height={isSmScreen ? (isS8Screen ? 90 : 90) : (isMdScreen ? (isIpadProScreen ? 300 : 280) : 325)}  style={{ marginLeft: isSmScreen ? (isS8Screen ? '35px' : '35px') : (isMdScreen ? (isIpadProScreen ? '146px' : '100px') : '170px'), marginTop: isSmScreen ? (isS8Screen ? '50px' : '50px') : (isMdScreen ? (isIpadProScreen ? '69px' : '87px') : '95px') }} />
-                <Image src='/VectorA2.png' alt='vec2' width={isSmScreen ? (isS8Screen ? 38 : 38) : (isMdScreen ? (isIpadProScreen ? 120 : 120) : 145)} height={isSmScreen ? (isS8Screen ? 40 : 40) : (isMdScreen ? (isIpadProScreen ? 125 : 125) : 145)} style={{ position: 'absolute', left: isSmScreen ? (isS8Screen ? '80px' : '80px') : (isMdScreen ? (isIpadProScreen ? '280px' : '230px') : '340px'), top: isSmScreen ? (isS8Screen ? '100px' : '100px') : (isMdScreen ? (isIpadProScreen ? '247px' : '247px') : '275px') }} />
+                <Image src='/VectorA2.png' alt='vec2' width={isSmScreen ? (isS8Screen ? 38 : 38) : (isMdScreen ? (isIpadProScreen ? 120 : 120) : 145)} height={isSmScreen ? (isS8Screen ? 40 : 40) : (isMdScreen ? (isIpadProScreen ? 125 : 125) : 145)} style={{ position: 'absolute', left: isSmScreen ? (isS8Screen ? '80px' : '80px') : (isMdScreen ? '250px' : '340px'), top: isSmScreen ? (isS8Screen ? '100px' : '100px') : (isMdScreen ? (isIpadProScreen ? '247px' : '247px') : '275px') }} />
                 <Image src='/logo.png' alt='vec3' width={isSmScreen ? (isS8Screen ? 30 : 30) : (isMdScreen ? (isIpadProScreen ? 80 : 80) : 110)} height={isSmScreen ? (isS8Screen ? 30 : 30) : (isMdScreen ? (isIpadProScreen ? 80 : 80) : 110)} style={{ position: 'absolute', left: isSmScreen ? (isS8Screen ? '60px' : '60px') : (isMdScreen ? (isIpadProScreen ? '200px' : '180px') : '240px'), top: isSmScreen ? (isS8Screen ? '63px' : '62px') : (isMdScreen ? (isIpadProScreen ? '133px' : '138px') : '150px') }} />
             </Box>
             <Box
@@ -81,24 +81,8 @@ const AboutUs = () => {
               height: '100px',
               justifyContent: 'center',
               alignItems: 'center',
-              marginLeft: isSmScreen
-                ? isS8Screen
-                  ? '8%'
-                  : '15%'
-                : isMdScreen
-                ? isIpadProScreen
-                  ? '15%'
-                  : '5%'
-                : '25%',
-              marginTop: isSmScreen
-                ? isS8Screen
-                  ? '72%'
-                  : '67%'
-                : isMdScreen
-                ? isIpadProScreen
-                  ? '50%'
-                  : '60%'
-                : '38%',
+              marginLeft: isSmScreen?'14%': isMdScreen?'10%': '25%',
+              marginTop: isSmScreen?'70%': isMdScreen?'75%': '38%',
               display: 'flex',
               gap: '20px',
             }}

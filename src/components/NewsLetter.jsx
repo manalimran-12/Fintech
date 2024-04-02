@@ -32,7 +32,7 @@ export const NewsLetter = () => {
     fontWeight: isSmScreen? (isS8Screen? '50px' : '50px'): '100px', fontSize:isSmScreen? (isS8Screen? '12px' : '12px'): '14px', top: '19%', left:isSmScreen? (isS8Screen? '15%' : '15%'): '8%',
     width:isSmScreen? (isS8Screen? '65%' : '65%'): '80%', background: '#444444', border: 'none'
   });
-  const inputbtn = button({ width: isSmScreen?(isS8Screen? '18%': '18%' ):'30%', left:isSmScreen?'10%': isMdScreen ? '30%' : '69.1%', position: 'absolute', height:isSmScreen? (isS8Screen? '60%' : '60%'):'85%', top: isSmScreen?(isMdScreen ? '108%' :'107%' ): '6.5%' });
+  const inputbtn = button({ width: isSmScreen?(isS8Screen? '18%': '18%' ):'30%', left:isSmScreen?'10%': isMdScreen ? '30%' : '69.1%', position: 'absolute', height:isSmScreen? (isS8Screen? '60%' : '60%'):'85%', top: isSmScreen?'50px':isMdScreen?'50px':'4px' });
   return (
     <Box sx={box1}>
       <Typography sx={sub1}>Newsletter</Typography>

@@ -9,7 +9,7 @@ const Services = () => {
           values: {
             xs: 0,
             sm: 500,
-            md: 1024,
+            md: 1025,
             lg: 1280,
             xl: 1920,
           },
@@ -26,11 +26,11 @@ const Services = () => {
             <Box sx={{
                 position: 'absolute',
                 width: '100%',
-                height: isSmScreen? '1700px':isMdScreen?'100vh':'1800px',
+                height: isSmScreen? '1700px':isMdScreen?'1750px':'1800px',
                 justifyContent: 'center',
                 alignItems: 'center',
-                paddingLeft:isLgScreen?'8%':isMdScreen?'0px':isSmScreen?'0px':'0px',
-                top: isSmScreen? (isS8Screen? '12in': '50%'):(isMdScreen? '22in':(isLgScreen?'25in':isXlScreen?'22in':'21.5in')),
+                paddingLeft:isLgScreen?'0%':isMdScreen?'-6px':isSmScreen?'0px':isXlScreen?'5%':'0px',
+                top: isSmScreen? '13in':(isMdScreen? '20in':(isLgScreen?'25in':isXlScreen?'23.5in':'21.5in')),
                 backgroundColor: '#272727',
                 overflow: 'hidden',
                 
