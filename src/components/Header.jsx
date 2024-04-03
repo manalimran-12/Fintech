@@ -13,9 +13,9 @@ const Home = () => {
       values: {
         xs: 0,
         sm: 500,
-        md: 1024,
-        lg: 1280,
-        xl: 1920,
+        md: 1025,
+        lg: 1500,
+        xl: 2600,
       },
     },
   });
@@ -27,9 +27,8 @@ const Home = () => {
 
   const contentData = {
     box: {
-      position: 'absolute',
       width: '100%',
-      height: isSmScreen ? '100vh' : '100vh',
+      height: '800px',
       background: 'linear-gradient(180deg, #351D5B 0%, #272727 53.33%)',
       overflow: 'hidden',
     },
@@ -96,7 +95,7 @@ const Home = () => {
   };
 
   return (
-    <Box sx={{ width: '100%', height: '280vh', position: 'absolute' }}>
+    <Box sx={{ width: '100%', height: '800px', background:'#272727' }}>
       <Box sx={contentData.box}>
         <Navbar />
         <Box sx={contentData.innerBox}>

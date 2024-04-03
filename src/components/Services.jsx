@@ -3,61 +3,66 @@ import { Box, Button, Typography, useMediaQuery,createTheme  } from '@mui/materi
 import Cards1 from '@/components/Card';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Image from 'next/image';
+import { H1} from '@/Styling';
 const Services = () => {
     const theme = createTheme({
         breakpoints: {
-          values: {
-            xs: 0,
-            sm: 500,
-            md: 1025,
-            lg: 1280,
-            xl: 1920,
-          },
+            values: {
+                xs: 0,
+                sm: 500,
+                md: 1025,
+                lg: 1500,
+                xl: 2600,
+              },
         },
       });
-    
+        
         const isSmScreen = useMediaQuery(theme.breakpoints.down('sm'));
         const isMdScreen = useMediaQuery(theme.breakpoints.down('md'));
         const isLgScreen = useMediaQuery(theme.breakpoints.down('lg'));
         const isXlScreen = useMediaQuery(theme.breakpoints.down('xl'));
-        const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
+        const Heading = {fontFamily: "Rounded Elegance, sans-serif",
+        color: '#ffffff',fontStyle: 'normal',fontSize:isMdScreen?'25px': isSmScreen? '16px':isLgScreen?'30px':'35px',
+         width:isSmScreen?'30%':isMdScreen?'25%':isLgScreen?'15%':'12%',
+        fontWeight: '400',borderBottom: '4px solid #D8B150',borderRadius: '3px',
+        marginLeft:isSmScreen?'35%':isMdScreen?'35%':isLgScreen?'45%':'42%'};
     return (
         <>
             <Box sx={{
-                position: 'absolute',
+                
                 width: '100%',
-                height: isSmScreen? '1700px':isMdScreen?'1750px':'1800px',
+                height: isSmScreen? '1500px':isMdScreen?'1100px':'1200px',
                 justifyContent: 'center',
                 alignItems: 'center',
                 paddingLeft:isLgScreen?'0%':isMdScreen?'-6px':isSmScreen?'0px':isXlScreen?'5%':'0px',
-                top: isSmScreen? '13in':(isMdScreen? '20in':(isLgScreen?'25in':isXlScreen?'23.5in':'21.5in')),
+                /*top: isSmScreen? '13in':(isMdScreen? '20in':(isLgScreen?'25in':isXlScreen?'23.5in':'21.5in')),*/
                 backgroundColor: '#272727',
                 overflow: 'hidden',
                 
             }}>
                 <Box
                     sx={{
-                        width:'80%',
+                        width:'100%',
                         height: '100px',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        paddingLeft: isSmScreen? (isS8Screen? '80px': '120px') : (isMdScreen? '160px':  '300px'),
-                        marginLeft: isMdScreen? "25px" : '',
-                        marginTop: isSmScreen? (isS8Screen? '35px' : '40px'): (isMdScreen? '70px': '45px'),
+                        marginTop: isSmScreen? '36px': (isMdScreen? '70px': '45px'),
                     }}
                 >
-                    <Typography variant="h4" sx={{ fontFamily: 'Rounded Elegance', fontStyle: 'normal', color: 'white', fontWeight: 2, fontSize: isSmScreen? '15px': '27px', margin:'auto', paddingLeft: isSmScreen? '50px': (isMdScreen? '170px': "300px") , lineHeight:'0px'}}>
-                        Our Service
-                    </Typography>
-                    <Image src='/Line 1.png' alt='' width={isSmScreen? 74: 130} height={4} style={{ paddingTop: '0px' , marginLeft: isSmScreen? '50px': (isMdScreen? '170px': "300px")}} />
-                    <Typography variant="h5" sx={{ fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight:isSmScreen? '100':  '700', fontSize: isSmScreen? '14px':(isMdScreen? '30px':'40px'), color: '#D8B150', textTransform: 'capitalize', margin: 'auto', paddingLeft: isSmScreen? '0px': (isMdScreen? '40px': "100px") }}>
+                    <Typography textAlign='center' sx={Heading}>Our Services</Typography>
+                    <Typography textAlign='center' variant="h5" sx={{ fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight:isSmScreen? '100':  '700',
+                     fontSize: isSmScreen? '14px':(isMdScreen? '30px':'40px'), marginTop:'10px',
+                     color: '#D8B150', textTransform: 'capitalize' }}>
                         <span style={{ color: 'white' }}>Our</span> cutting edge solutions <span style={{ color: 'white' }}>for</span>
                     </Typography>
-                    <Typography variant="h4" sx={{ fontFamily: 'Rounded Elegance', fontStyle: 'normal', color: 'white', fontWeight: 2, fontSize: isSmScreen? '13px' : (isMdScreen? '32px':'45px'), lineHeight: isSmScreen? '20px':  '40px', marginTop: '10px', margin: 'auto', paddingLeft: isSmScreen? '0px': (isMdScreen? '15px':"100px") }}>
+                    <Typography textAlign='center' variant="h4" sx={{ fontFamily: 'Rounded Elegance', fontStyle: 'normal', color: 'white', fontWeight: 2, fontSize: isSmScreen? '13px' : (isMdScreen? '32px':'45px'), lineHeight: isSmScreen? '20px':  '40px', marginTop: '10px', margin: 'auto'}}>
                         Virtual Islamic & Digital Banking
                     </Typography>
                 </Box>
+                <Box sx={{marginLeft:isMdScreen?'5%':isLgScreen?'0%':isXlScreen?'10%':'0%',
+                            marginTop:'10%'}}>
                 <Cards1 />
+                </Box>
                 <Button
                     endIcon={<ArrowForwardIcon />}
                     variant='text'
@@ -70,7 +75,7 @@ const Services = () => {
                         height: '52px',
                         position: 'absolute',
                         marginTop: isSmScreen? '570px' : (isMdScreen?'-60px': '10px'),
-                        marginLeft: isSmScreen ? (isS8Screen? '80px': '110px' ): isMdScreen? '310px' : '580px',
+                        marginLeft: isSmScreen ? '30%': isMdScreen? '40%' :isXlScreen?'42%': '580px',
                         marginRight: '110px',
                         borderRadius: '12024.34px',
                         textTransform: 'capitalize',
@@ -84,7 +89,7 @@ const Services = () => {
                 <Box sx={{
                     width: isSmScreen? '340px': (isMdScreen? '700px': '1200px'),
                     height: isSmScreen? '180px': (isMdScreen? '300px' :'361px'),
-                    marginLeft: isSmScreen? (isS8Screen? '10px': '35px'): (isMdScreen?'50px' :'67px'),
+                    marginLeft: isSmScreen? '10%': isMdScreen?'12%' :isLgScreen?'5%':'15%',
                     marginTop: isSmScreen?  '660px':(isMdScreen?'60px':'120px'),
                     backgroundColor: '#302148',
                     borderRadius: '61.6px',
@@ -150,7 +155,7 @@ const Services = () => {
                     </Button>
 
                     <Image src="/Rectangle 25.png" alt='shape' width={isSmScreen? 80: (isMdScreen? 150 : 320)} height={isSmScreen? 180 : 360} style={{ marginLeft:isSmScreen? '10px': isMdScreen?'20px' :'45px' }} />
-                    <Image src="/VectorS.png" alt='shape1' width={isSmScreen? 90:(isMdScreen? 130 : 270)} height={isSmScreen? 90:(isMdScreen? 40 : 250)} style={{ marginLeft:isSmScreen? '160px' : (isMdScreen? '400px': '566px'), position: 'absolute', marginTop:isSmScreen? '90px': (isMdScreen?'158px':"110px" )}} />
+                    <Image src="/VectorS.png" alt='shape1' width={isSmScreen? 90:(isMdScreen? 130 : 270)} height={isSmScreen? 90:(isMdScreen? 135 : 250)} style={{ marginLeft:isSmScreen? '160px' : (isMdScreen? '400px': '566px'), position: 'absolute', marginTop:isSmScreen? '90px': (isMdScreen?'165px':"110px" )}} />
                     <Image src="/VectorS2.png" alt='shape2' width={isSmScreen? 35: (isMdScreen? 130:120)} height={isSmScreen? 25:(isMdScreen? 50: 90)} style={{ position: 'absolute', marginTop:isSmScreen? '148px':(isMdScreen? '247px' :'270px'), marginLeft: isSmScreen? '210px':(isMdScreen? '480px':'715px')}} />
                 </Box>
 

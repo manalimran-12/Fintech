@@ -7,9 +7,9 @@ const Cards1 = () => {
       values: {
         xs: 0,
         sm: 500,
-        md: 1024,
-        lg: 1280,
-        xl: 1920,
+        md: 1025,
+        lg: 1500,
+        xl: 2600,
       },
     },
   });
@@ -17,8 +17,6 @@ const Cards1 = () => {
     const isSmScreen = useMediaQuery(theme.breakpoints.down('sm'));
     const isMdScreen = useMediaQuery(theme.breakpoints.down('md'));
     const isLgScreen = useMediaQuery(theme.breakpoints.down('lg'));
-    const isIpadProScreen = useMediaQuery("(min-width: 1024px) and (max-width: 1024px)");
-    const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
 
 
   const cardData = [
@@ -62,8 +60,7 @@ const Cards1 = () => {
             boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.1)',
             borderRadius: '14.4083px',
             marginTop: isSmScreen ? '30px' : '60px',
-            marginLeft: index === 0 ? isSmScreen ? (isS8Screen? '4%': '5.5%') : (isMdScreen? '2.5%': '4%') : isSmScreen ? (isS8Screen? '4%': '5.5%') : (isMdScreen? '1%': '2%'), 
-            marginRight: isIpadProScreen? '75px' : ''
+            marginLeft: index === 0 ? isSmScreen ? '5%' : (isMdScreen? '2.5%': '4%') : isSmScreen ? '4.5%' : (isMdScreen? '1%': '2%'), 
           }}
         >
           <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

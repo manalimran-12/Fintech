@@ -13,9 +13,9 @@ export const BlogSection = () => {
       values: {
         xs: 0,
         sm: 500,
-        md: 1024,
-        lg: 1280,
-        xl: 1920,
+        md: 1025,
+        lg: 1500,
+        xl: 2600,
       },
     },
   });
@@ -23,8 +23,7 @@ export const BlogSection = () => {
     const isSmScreen = useMediaQuery(theme.breakpoints.down('sm'));
     const isMdScreen = useMediaQuery(theme.breakpoints.down('md'));
     const isLgScreen = useMediaQuery(theme.breakpoints.down('lg'));
-    const isIpadProScreen = useMediaQuery("(min-width: 1024px) and (max-width: 1024px)");
-    const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
+    
   const Blogs = H1({fontFamily: 'Rounded Elegance',fontSize:isSmScreen ? '11px' : (isMdScreen ? '14px' : '20px')});
   const Headings = text({  top: '-1.6em', fontSize:isSmScreen?'20px':'30px',fontFamily:'Montserrat'});
   const Readmore = button({marginLeft: isSmScreen?'12%' :'43%'});
@@ -41,13 +40,12 @@ export const BlogSection = () => {
     sx={{
       
       overflowX: 'auto',
-      position: 'relative',
       left: '0px',
       width: '100%',
       minHeight: '100vh',
       background: '#272727',
       display: 'flex',
-      top: isSmScreen? '22in':(isMdScreen? '25in':'25in'),
+      /*top: isSmScreen? '22in':(isMdScreen? '25in':'25in'),*/
       flexDirection: 'column',
       paddingTop: '6em',
     }}

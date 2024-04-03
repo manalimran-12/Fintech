@@ -11,7 +11,7 @@ const AboutUs = () => {
         xs: 0,
         sm: 500,
         md: 1025,
-        lg: 1281,
+        lg: 1500,
         xl: 2600,
       },
     },
@@ -21,16 +21,15 @@ const AboutUs = () => {
     const isMdScreen = useMediaQuery(theme.breakpoints.down('md'));
     const isLgScreen = useMediaQuery(theme.breakpoints.down('lg'));
     const isXlScreen = useMediaQuery(theme.breakpoints.down('xl'));
-    const isIpadProScreen = useMediaQuery("(min-width: 1024px) and (max-width: 1024px)");
-    const isS8Screen = useMediaQuery('(min-width: 360px) and (max-height: 740px)');
     return (
-        <Box sx={{ width: '100%', backgroundColor: '#272727', overflow: 'hidden', height: '900px', display: 'flex', position: 'absolute', top: isSmScreen ? '4in' : (isMdScreen ? '6in': isXlScreen?'6.5in': '8in') }}>
-            <Box sx={{ width: isSmScreen ? '50%' : '39%', height: '200px', margin: 'auto', marginTop: isSmScreen ? '20%' : (isMdScreen ? (isIpadProScreen ? '20%' : '20%') : '80px'), marginLeft: isSmScreen ? '22px' : (isMdScreen ? (isIpadProScreen ? '50px' : '50px') : '100px') }}>
-                <Typography variant='h4' sx={{ fontFamily: 'Rounded Elegance', fontStyle: 'normal', color: 'white', fontWeight: 2, fontSize: isSmScreen ? (isS8Screen ? '15px' : '15px') : (isMdScreen ? (isIpadProScreen ? '27px' : '27px') : '27px'), lineHeight: '0px' }}>
+      <Box sx={{backgroundColor: '#272727',width:'100%'}}> 
+        <Box sx={{ width: '100%', backgroundColor: '#272727', height:isSmScreen?'350px': isMdScreen?'450px':'650px', display: 'flex', justifyContent:'center' }}>
+            <Box sx={{ width: isSmScreen ? '50%' : '39%', height: '200px', margin: '10% 0% 5% 5%'}}>
+                <Typography variant='h4' sx={{ fontFamily: 'Rounded Elegance', fontStyle: 'normal', color: 'white', fontWeight: 2, fontSize: isSmScreen ? '15px' : (isMdScreen ?'27px' : '27px'), lineHeight: '0px' }}>
                     About Us
                 </Typography>
                 <Image src='/Line 1.png' alt='' width={isSmScreen ? 69 : 108} height={3} style={{ paddingTop: '0px' }} />
-                <Typography variant="h5" sx={{ fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight: isSmScreen ? '100' : '700', fontSize: isSmScreen ? '18px' : (isMdScreen ? '29px' : '40px'), color: 'white', textTransform: 'capitalize' }}>
+                <Typography variant="h5" sx={{width:'80%' ,fontFamily: 'Montserrat', fontStyle: 'normal', fontWeight: isSmScreen ? '100' : '700', fontSize: isSmScreen ? '18px' : (isMdScreen ? '29px' : '40px'), color: 'white', textTransform: 'capitalize' }}>
                     We promote emerging <span style={{ color: '#D8B150' }}>digital experiences.</span>
                 </Typography>
                 <Typography
@@ -44,8 +43,7 @@ const AboutUs = () => {
                     }}>
                     We are dedicated to revolutionizing the way you manage your finances by seamlessly integrating cutting-edge technology with the principles of Islamic finance.
                 </Typography>
-            </Box>
-            <Button
+                <Button
                 endIcon={<ArrowForwardIcon />}
                 variant='text'
                 sx={{
@@ -54,11 +52,8 @@ const AboutUs = () => {
                     color: 'white',
                     backgroundColor: '#D8B150',
                     width: isSmScreen ? '150px' : '188px',
-                    height: '52px',
-                    position: 'absolute',
-                    marginTop: isSmScreen ? '230px' : (isMdScreen ? '380px' : '380px'),
-                    marginLeft: isSmScreen ? (isS8Screen ? '20px' : '20px') : (isMdScreen ? (isIpadProScreen ? '50px' : '50px') : '100px'),
-                    marginRight: '110px',
+                    height: isSmScreen ? '30px' : '49.19px',
+                    marginTop:'50px',
                     borderRadius: '12024.34px',
                     textTransform: 'capitalize',
                     '&:hover': {
@@ -68,21 +63,21 @@ const AboutUs = () => {
             >
                 Know More
             </Button>
-            <Image src='/Frame.png' width={isSmScreen? (isS8Screen? 50: 50 ): (isMdScreen? (isIpadProScreen? 120: 120):120)} height={isSmScreen? (isS8Screen? 50: 50 ): (isMdScreen? (isIpadProScreen? 120: 120):120)} alt='' style={{ position: 'absolute', left:isSmScreen? (isS8Screen? '300px': '300px'): (isMdScreen? (isIpadProScreen? '450px' : '330px') :isLgScreen?'1430px':'630px'), top:isSmScreen? (isS8Screen? '100px': '100px'): (isMdScreen? (isIpadProScreen? '370px': '370px'): '390px') }} />
-            <Box sx={{ position: 'absolute', width: isSmScreen ? '155px' : (isMdScreen ? (isIpadProScreen ? '450px' : '400px') : '550px'), height: isSmScreen ? '145px' : (isMdScreen ? '370px' : '420px'), backgroundColor: '#302148', marginLeft: isSmScreen ? '200px' : (isMdScreen ? '400px': (isLgScreen ? '1500px' : '700px')), marginTop: '80px', borderRadius: '66px 0px 66px 66px' }}>
-                <Image src='/VectorA1.png' alt='vec1' width={isSmScreen ? (isS8Screen ? 100 : 100) : (isMdScreen ? (isIpadProScreen ? 300 : 300) : 380)} height={isSmScreen ? (isS8Screen ? 90 : 90) : (isMdScreen ? (isIpadProScreen ? 300 : 280) : 325)}  style={{ marginLeft: isSmScreen ? (isS8Screen ? '35px' : '35px') : (isMdScreen ? (isIpadProScreen ? '146px' : '100px') : '170px'), marginTop: isSmScreen ? (isS8Screen ? '50px' : '50px') : (isMdScreen ? (isIpadProScreen ? '69px' : '87px') : '95px') }} />
-                <Image src='/VectorA2.png' alt='vec2' width={isSmScreen ? (isS8Screen ? 38 : 38) : (isMdScreen ? (isIpadProScreen ? 120 : 120) : 145)} height={isSmScreen ? (isS8Screen ? 40 : 40) : (isMdScreen ? (isIpadProScreen ? 125 : 125) : 145)} style={{ position: 'absolute', left: isSmScreen ? (isS8Screen ? '80px' : '80px') : (isMdScreen ? '250px' : '340px'), top: isSmScreen ? (isS8Screen ? '100px' : '100px') : (isMdScreen ? (isIpadProScreen ? '247px' : '247px') : '275px') }} />
-                <Image src='/logo.png' alt='vec3' width={isSmScreen ? (isS8Screen ? 30 : 30) : (isMdScreen ? (isIpadProScreen ? 80 : 80) : 110)} height={isSmScreen ? (isS8Screen ? 30 : 30) : (isMdScreen ? (isIpadProScreen ? 80 : 80) : 110)} style={{ position: 'absolute', left: isSmScreen ? (isS8Screen ? '60px' : '60px') : (isMdScreen ? (isIpadProScreen ? '200px' : '180px') : '240px'), top: isSmScreen ? (isS8Screen ? '63px' : '62px') : (isMdScreen ? (isIpadProScreen ? '133px' : '138px') : '150px') }} />
             </Box>
-            <Box
+            
+            <Box sx={{paddingLeft:'10px',margin: '0% 0% 5% 5%'}}>
+            <Image src='/Frame.png' width={isSmScreen? 50: (isMdScreen? 120:120)} height={isSmScreen? 50: (isMdScreen? 120:120)} alt='' style={{position:'relative',left:isSmScreen?'-15%':isMdScreen?'10%':'14%',top:isSmScreen?'120px':isMdScreen?'20%':'160px' }} />
+            <Image src='/VectorA.png' alt='vec1' width={isSmScreen ? 120 : (isMdScreen ? 300 : 380)} height={isSmScreen ? 100 : (isMdScreen ? 290 : 325)}  style={{position:'relative',left:'0%',top:isSmScreen?'0%':isMdScreen?'12%':'100px'}}  />
+            </Box>
+            </Box>
+          <Box
             sx={{
-              position: 'absolute',
-              width: isSmScreen ? '300px' : '700px',
-              height: '100px',
+              position: 'relative',
+              width:'100%',
+              height: '80px',
               justifyContent: 'center',
               alignItems: 'center',
-              marginLeft: isSmScreen?'14%': isMdScreen?'10%': '25%',
-              marginTop: isSmScreen?'70%': isMdScreen?'75%': '38%',
+              background:'#272727',
               display: 'flex',
               gap: '20px',
             }}
@@ -106,10 +101,6 @@ const AboutUs = () => {
             )}
           </Box>;
           
-
-
-
-
         </Box>
     );
 };

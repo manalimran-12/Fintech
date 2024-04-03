@@ -7,9 +7,9 @@ export const NewsLetter = () => {
       values: {
         xs: 0,
         sm: 500,
-        md: 1024,
-        lg: 1280,
-        xl: 1920,
+        md: 1025,
+        lg: 1500,
+        xl: 2600,
       },
     },
   });
