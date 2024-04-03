@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import Image from 'next/image';
 import PhoneMod from '@/components/PhoneMod';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import "../app/globals.css";
+
 const Home = () => {
   const theme = createTheme({
     breakpoints: {
@@ -19,7 +21,7 @@ const Home = () => {
   });
 
   const isSmScreen = useMediaQuery(theme.breakpoints.down('sm'));
-  const isMdScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const isMdScreen = useMediaQuery("(min-width: 600px) and (max-width: 1024px)");
   const isLgScreen = useMediaQuery(theme.breakpoints.down('lg'));
   const isIpadProScreen = useMediaQuery("(min-width: 1024px) and (max-width: 1024px)");
 
@@ -27,7 +29,7 @@ const Home = () => {
     box: {
       position: 'absolute',
       width: '100%',
-      height: isSmScreen ? '120vh' : '126vh',
+      height: isSmScreen ? '100vh' : '100vh',
       background: 'linear-gradient(180deg, #351D5B 0%, #272727 53.33%)',
       overflow: 'hidden',
     },
@@ -36,7 +38,7 @@ const Home = () => {
       marginLeft: isSmScreen ? '20px' : (isMdScreen ? '35px' : '90px'),
       marginTop: isSmScreen ? '20px' : '120px',
       marginBottom: '10px',
-      maxWidth: isSmScreen ? '170px' : (isMdScreen? (isIpadProScreen? '450px': '550px'): '800px')
+      maxWidth: isSmScreen ? '170px' : (isMdScreen ? (isIpadProScreen ? '450px' : '550px') : '800px')
     },
     title: {
       fontFamily: 'Rounded Elegance',
@@ -49,7 +51,7 @@ const Home = () => {
     subTitle: {
       fontFamily: 'Montserrat',
       fontStyle: 'normal',
-      fontWeight: '700',
+      fontWeight: '500',
       fontSize: isSmScreen ? '18px' : (isMdScreen ? '35px' : '45px'),
       color: '#D8B150',
     },
@@ -68,7 +70,7 @@ const Home = () => {
       fontSize: isSmScreen ? '12px' : '20px',
       color: 'white',
       backgroundColor: '#D8B150',
-      width: '155px',
+      width: isSmScreen ? '136px' : '200px',
       height: isSmScreen ? '30px' : '49.19px',
       borderRadius: '9837.85px',
       textTransform: 'capitalize',
@@ -80,7 +82,7 @@ const Home = () => {
       fontFamily: 'Montserrat',
       fontSize: isSmScreen ? '12px' : '20px',
       color: 'white',
-      width: '180px',
+      width: isSmScreen ? '139px' : '250px',
       height: isSmScreen ? '30px' : '49.19px',
       borderRadius: '9837.85px',
       textTransform: 'capitalize',
@@ -102,13 +104,14 @@ const Home = () => {
             Virtual Islamic Banking
           </Typography>
           <Image src='/Line 1.png' alt='line' width={isSmScreen ? 153.1 : (isMdScreen ? 200 : 263)} height={4} sx={{ paddingTop: '0px' }} />
-          <Typography variant="h5" sx={contentData.subTitle}>
+          <Typography variant="h5" sx={{ ...contentData.subTitle, fontWeight: 700, fontSize: isSmScreen ? '24px' : '54px' }}>
             Transforming Finance
           </Typography>
-          <Typography variant="h5" sx={{ ...contentData.subTitle, color: '#FFFFFF', fontSize: isSmScreen ? '17px' : '30px' }}>
+
+          <Typography variant="h5" sx={{ ...contentData.subTitle, color: '#FFFFFF', fontSize: isSmScreen ? '17px' : '40px', fontWeight: 400 }}>
             with Fast & Easy!
           </Typography>
-          <Typography variant='body2' sx={contentData.description}>
+          <Typography variant='body2' sx={{ ...contentData.description }} >
             From Virtual Islamic/ Digital Banking and payment platforms to asset management, our FinTech products encompass a wide spectrum of offerings that are reshaping the financial landscape.
           </Typography>
           <Box sx={{ display: 'flex', flexDirection: isSmScreen ? 'column' : 'row', gap: isSmScreen ? '10px' : '20px', marginTop: isSmScreen ? '18px' : '35px' }}>
@@ -129,8 +132,8 @@ const Home = () => {
             style={{
               ...contentData.gradientBox,
               ...{
-                width: isSmScreen ? '130px' : (isMdScreen ? (isIpadProScreen? '230px': '220px' ): '300.8px'),
-                height: isSmScreen ? '230px' : (isMdScreen ? (isIpadProScreen? '350px': '330px') : '450.19px'),
+                width: isSmScreen ? '130px' : (isMdScreen ? (isIpadProScreen ? '230px' : '220px') : '300.8px'),
+                height: isSmScreen ? '230px' : (isMdScreen ? (isIpadProScreen ? '350px' : '330px') : '450.19px'),
                 left: isSmScreen ? '200px' : (isMdScreen ? (isIpadProScreen ? '550px' : '470px') : 'calc(70% - 132.9px)'),
                 top: isSmScreen ? '130px' : '145.45px',
               },
@@ -139,15 +142,15 @@ const Home = () => {
           <div
             style={{
               ...contentData.gradientBox,
-              ...{ width: isSmScreen ? '18px' : (isMdScreen ? '30px' : '2.5vw'), height: isSmScreen ? '15vh' : (isMdScreen ? (isIpadProScreen? '11vh': '13vh' ) : '30vh'), left: isSmScreen ? '340px' : (isMdScreen ? (isIpadProScreen ? '800px' : '720px') : '1160px'), top: isSmScreen ? '155px' : (isMdScreen ? (isIpadProScreen? '18vh': '19vh' ): '50vh') },
+              ...{ width: isSmScreen ? '18px' : (isMdScreen ? '30px' : '2.5vw'), height: isSmScreen ? '15vh' : (isMdScreen ? (isIpadProScreen ? '11vh' : '13vh') : '30vh'), left: isSmScreen ? '340px' : (isMdScreen ? (isIpadProScreen ? '800px' : '720px') : '1160px'), top: isSmScreen ? '155px' : (isMdScreen ? (isIpadProScreen ? '18vh' : '19vh') : '50vh') },
             }}
           />
-          <Box sx={{width:isSmScreen? '70%' : (isMdScreen? (isIpadProScreen? '40%' : '40%' ): '55%') , height:isSmScreen?'250px':(isMdScreen? (isIpadProScreen? '400px':'400px' ):'550px'), marginTop:isSmScreen?'-360px': (isMdScreen? (isIpadProScreen? '-500px': '-500px'):'-555px'), marginLeft: isSmScreen? '185px': (isMdScreen? (isIpadProScreen? '550px': '530px'): '750px')}}>
-            <PhoneMod/>
+          <Box sx={{ width: isSmScreen ? '70%' : (isMdScreen ? (isIpadProScreen ? '40%' : '40%') : '55%'), height: isSmScreen ? '250px' : (isMdScreen ? (isIpadProScreen ? '400px' : '400px') : '550px'), marginTop: isSmScreen ? '-360px' : (isMdScreen ? (isIpadProScreen ? '-500px' : '-500px') : '-555px'), marginLeft: isSmScreen ? '185px' : (isMdScreen ? (isIpadProScreen ? '550px' : '530px') : '750px') }}>
+            <PhoneMod />
           </Box>
         </Box>
       </Box>
-    </Box>
+    </Box >
   );
 };
 
