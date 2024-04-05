@@ -73,7 +73,7 @@ const Products=()=>{
                 key={index}
                 sx={{
                 width: isSmScreen? '40%' : isMdScreen? '40%' :isLgScreen?'40%':isXlScreen?'290px':'35%',
-                height: isSmScreen?'96%':isMdScreen?'180px':isLgScreen?'330px':'20vw',
+                height: isSmScreen?'90%':isMdScreen?'180px':isLgScreen?'330px':'20vw',
                 backgroundColor: index === 1 ? '#4d3672' : '#313131',
                 backgroundImage: index === 1 ? `url(${card.backgroundImage1}), url(${card.backgroundImage2})` : 'none',
                 backgroundSize: index === 1 ? '60% 100%' : 'auto',
@@ -89,7 +89,7 @@ const Products=()=>{
                 <Image src={card.imageSrc} alt='cards' width={isSmScreen? 20 : (isMdScreen? 30 :(isLgScreen? 80 :40))} height={isSmScreen? 20: (isMdScreen? 30  :(isLgScreen? 80 :40))} style={{ marginTop: isMdScreen ? '0px' : '12px', marginBottom: '10px' }} />
                 <Typography variant="h6" sx={{ width:isSmScreen?'98%':'85%', fontFamily: "Raleway, sans-serif", fontSize: isSmScreen? '1.6vw' : (isMdScreen ? '1.4vw' : '1.2vw'), fontWeight: isSmScreen? '400' : '400', lineHeight: isSmScreen? '10px' :isMdScreen ? '15px' : isLgScreen?'25px':'18px',  color: '#FFFFFF' }}>{card.title}</Typography>
                 <Typography variant="body1" sx={{width:isSmScreen?'100%':isMdScreen?'110%':isLgScreen?'100%':'90%',fontFamily: "Raleway, sans-serif", fontSize: isSmScreen? '1vw' : (isMdScreen ? "1.2vw" : '1.5vw'), fontWeight: isSmScreen? '50' : '100', lineHeight: isSmScreen? '10px' :isMdScreen?'12px' :isLgScreen?'20px': isXlScreen?'25px':'20px',  marginTop:isSmScreen?'2px': isMdScreen ? '6px' : '7px', color: 'white' }}>{card.description}</Typography>
-                <Button  sx={{color: '#D8B150', height:isSmScreen?'10px':isMdScreen?'16px':isLgScreen?'60px':'20px',width:isSmScreen?'70px':isMdScreen?'80px':isLgScreen?'160px':'120px',left:isSmScreen? '5px':isMdScreen?'5px':isMdScreen?'-4px': '10px',marginTop:isSmScreen? '6px' :isMdScreen?'0px': '11px'}} endIcon={<EastIcon sx={{ height: isSmScreen ? '10px' :isMdScreen?'12px':isLgScreen?'50px': '20px',marginLeft:'-10px' }} />}><Typography sx={{textTransform:'none',color:'#D8B150',fontSize:isSmScreen?'9px':isMdScreen?'12px':isLgScreen?'25px':'20px',marginLeft:'-20px'}}>Know more</Typography></Button>
+                <Button  sx={{color: '#D8B150', height:isSmScreen?'10px':isMdScreen?'16px':isLgScreen?'60px':'20px',width:isSmScreen?'70px':isMdScreen?'80px':isLgScreen?'160px':'120px',left:isSmScreen? '5px':isMdScreen?'5px':isMdScreen?'-4px': '10px',marginTop:isSmScreen? '6px' :isMdScreen?'0px': '11px'}} endIcon={<EastIcon sx={{ height: isSmScreen ? '10px' :isMdScreen?'12px':isLgScreen?'50px': '20px',marginLeft:'-10px' }} />}><Typography sx={{textTransform:'none',color:'#D8B150',fontSize:isSmScreen?'7px':isMdScreen?'12px':isLgScreen?'25px':'20px',marginLeft:'-30px'}}>Know more</Typography></Button>
             </CardContent>
         </Card>
 ))}
